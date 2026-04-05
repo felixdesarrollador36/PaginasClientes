@@ -1,0 +1,123 @@
+.page-style-buy-coins .buy-coins-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-style-buy-coins .buy-coins-balance-pill {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffd700, #ffa500);
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.page-style-buy-coins .buy-coins-intro-card {
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
+}
+
+.page-style-buy-coins .buy-coins-intro-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.page-style-buy-coins .buy-coins-intro-title {
+    margin-bottom: 8px;
+    color: #ffd700;
+}
+
+.page-style-buy-coins .buy-coins-intro-text {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.page-style-buy-coins .buy-coins-config-alert {
+    border: 1px solid rgba(255, 106, 106, 0.45);
+    background: linear-gradient(135deg, rgba(140, 28, 28, 0.22), rgba(64, 10, 10, 0.2));
+}
+
+.page-style-buy-coins .buy-coins-config-alert-title {
+    margin: 0 0 6px;
+    color: #ff9e9e;
+    font-size: 1rem;
+}
+
+.page-style-buy-coins .buy-coins-config-alert-text {
+    margin: 0;
+    color: var(--text-2);
+    font-size: 0.9rem;
+}
+
+.page-style-buy-coins .buy-coins-grid {
+    gap: 24px;
+}
+
+.page-style-buy-coins .buy-coins-package-card {
+    text-align: center;
+}
+
+.page-style-buy-coins .buy-coins-package-card--bonus {
+    border: 2px solid #ffd700;
+}
+
+.page-style-buy-coins .buy-coins-bonus-banner {
+    margin: -1px -1px 0;
+    padding: 4px;
+    background: #ffd700;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.page-style-buy-coins .buy-coins-package-body {
+    padding: 24px;
+}
+
+.page-style-buy-coins .buy-coins-package-icon {
+    margin-bottom: 8px;
+    font-size: 2rem;
+}
+
+.page-style-buy-coins .buy-coins-package-amount {
+    margin-bottom: 4px;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.page-style-buy-coins .buy-coins-package-label {
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.page-style-buy-coins .buy-coins-price {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.page-style-buy-coins .buy-coins-paypal-disabled {
+    margin: 8px 0 0;
+    padding: 11px 10px;
+    border-radius: 10px;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    color: var(--text-muted);
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 0.82rem;
+}
+
+.page-style-buy-coins .buy-coins-info-body {
+    padding: 16px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.page-style-buy-coins .buy-coins-info-body p {
+    margin: 0 0 12px;
+}
+
+.page-style-buy-coins .buy-coins-info-body p:last-child {
+    margin-bottom: 0;
+}

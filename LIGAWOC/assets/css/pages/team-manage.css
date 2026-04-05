@@ -1,0 +1,191 @@
+.page-style-team-manage .team-manage-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.page-style-team-manage .team-manage-empty-state {
+    padding: 20px 0;
+}
+
+.page-style-team-manage .team-manage-request-card {
+    margin-bottom: 10px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+}
+
+.page-style-team-manage .team-manage-request-header,
+.page-style-team-manage .team-manage-member-main,
+.page-style-team-manage .team-manage-member-row,
+.page-style-team-manage .team-manage-request-actions,
+.page-style-team-manage .team-manage-member-actions,
+.page-style-team-manage .team-manage-modal-actions {
+    display: flex;
+}
+
+.page-style-team-manage .team-manage-request-header,
+.page-style-team-manage .team-manage-member-main {
+    align-items: center;
+    gap: 12px;
+}
+
+.page-style-team-manage .team-manage-request-header {
+    margin-bottom: 10px;
+}
+
+.page-style-team-manage .team-manage-avatar-placeholder {
+    width: 38px;
+    height: 38px;
+}
+
+.page-style-team-manage .team-manage-avatar-placeholder--request {
+    width: 40px;
+    height: 40px;
+}
+
+.page-style-team-manage .team-manage-request-ign {
+    color: var(--neon-orchid);
+}
+
+.page-style-team-manage .team-manage-request-time {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.page-style-team-manage .team-manage-request-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.page-style-team-manage .team-manage-request-message {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.page-style-team-manage .team-manage-request-actions {
+    gap: 8px;
+}
+
+.page-style-team-manage .team-manage-member-row {
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-style-team-manage .team-manage-avatar-image {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.page-style-team-manage .team-manage-member-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.page-style-team-manage .team-manage-captain-badge {
+    margin-left: 4px;
+}
+
+.page-style-team-manage .team-manage-member-meta {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+}
+
+.page-style-team-manage .team-manage-role-badge {
+    font-size: 0.6rem;
+}
+
+.page-style-team-manage .team-manage-member-actions {
+    gap: 6px;
+}
+
+.page-style-team-manage .team-manage-action-btn {
+    font-size: 0.75rem;
+}
+
+.page-style-team-manage.has-modal-open {
+    overflow: hidden;
+}
+
+.page-style-team-manage .team-manage-role-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+.page-style-team-manage .team-manage-role-modal.active {
+    display: flex;
+}
+
+.page-style-team-manage .team-manage-role-modal-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 28px;
+}
+
+.page-style-team-manage .team-manage-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.page-style-team-manage .team-manage-modal-title {
+    margin-bottom: 6px;
+    font-family: var(--font-heading);
+}
+
+.page-style-team-manage .team-manage-modal-text {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.page-style-team-manage .team-manage-role-select {
+    font-size: 1rem;
+}
+
+.page-style-team-manage .team-manage-modal-actions {
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.page-style-team-manage .team-manage-modal-actions .btn {
+    flex: 1;
+}
+
+@media (max-width: 640px) {
+    .page-style-team-manage .team-manage-request-actions,
+    .page-style-team-manage .team-manage-member-actions,
+    .page-style-team-manage .team-manage-modal-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+}

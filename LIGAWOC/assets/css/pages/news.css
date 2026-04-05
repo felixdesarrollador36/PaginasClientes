@@ -1,0 +1,99 @@
+.page-style-news .news-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.page-style-news .news-main > * {
+    margin-bottom: 0 !important;
+}
+
+.page-style-news .news-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.page-style-news .news-filter-link--category:not(.btn-primary) {
+    border-color: color-mix(in srgb, var(--category-color) 25%, transparent);
+    color: var(--category-color);
+}
+
+.page-style-news .news-grid {
+    gap: 24px !important;
+}
+
+.page-style-news .news-card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+}
+
+.page-style-news .news-card-media {
+    overflow: hidden;
+}
+
+.page-style-news .news-card-img-placeholder--page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    font-size: 2rem;
+}
+
+.page-style-news .news-card-body--page {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.page-style-news .news-card-category--page {
+    align-self: flex-start;
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    background: color-mix(in srgb, var(--category-color) 14%, transparent);
+    color: var(--category-color);
+    font-size: 0.7rem;
+}
+
+.page-style-news .news-card-title--page {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.page-style-news .news-card-excerpt--page {
+    flex-grow: 1;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.page-style-news .news-card-meta--page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.page-style-news .news-card-meta-item {
+    display: inline-flex;
+    align-items: center;
+}
+
+.page-style-news .news-card-meta-icon {
+    margin-right: 4px;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .page-style-news .news-grid {
+        gap: 16px !important;
+    }
+}

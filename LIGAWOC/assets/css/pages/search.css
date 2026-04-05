@@ -1,0 +1,228 @@
+/* =========================================================
+   search.css
+   Scoped under .page-style-search
+   ========================================================= */
+
+.page-style-search .search-form {
+    margin-bottom: 28px;
+}
+
+.page-style-search .search-input-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.page-style-search #searchQuery {
+    flex: 1;
+    font-size: 1.05rem;
+    padding: 12px 18px;
+    border-radius: 12px;
+}
+
+.page-style-search .search-submit-btn {
+    padding: 12px 24px;
+    white-space: nowrap;
+}
+
+.page-style-search .search-empty-state {
+    padding: 60px 0;
+}
+
+.page-style-search .search-summary {
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.page-style-search .search-summary-count {
+    color: var(--accent-main);
+}
+
+.page-style-search .search-result-list {
+    display: grid;
+    gap: 10px;
+}
+
+.page-style-search .search-result-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.page-style-search .search-result-link:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.page-style-search .search-avatar-round,
+.page-style-search .search-avatar-placeholder,
+.page-style-search .search-team-logo,
+.page-style-search .search-team-fallback {
+    width: 42px;
+    height: 42px;
+}
+
+.page-style-search .search-avatar-round {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-style-search .search-avatar-placeholder {
+    font-size: 1.1rem;
+}
+
+.page-style-search .search-result-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.page-style-search .search-result-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.page-style-search .search-role-badge {
+    font-size: 0.65rem;
+    margin-left: 4px;
+}
+
+.page-style-search .search-role-badge.admin {
+    padding: 3px 8px;
+    background: linear-gradient(90deg, #ff4500, #ff6600, #ff4500);
+    background-size: 200% 100%;
+    animation: searchFireGlow 1.5s ease infinite;
+    color: #fff;
+    border-radius: 999px;
+}
+
+.page-style-search .search-role-badge.designer {
+    padding: 3px 8px;
+}
+
+.page-style-search .search-result-subtext {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.page-style-search .search-freelance {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.page-style-search .search-team-logo,
+.page-style-search .search-team-fallback {
+    border-radius: 10px;
+}
+
+.page-style-search .search-team-logo {
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-style-search .search-team-fallback {
+    background: rgba(110, 65, 255, 0.2);
+    color: var(--accent-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.page-style-search .search-team-tag {
+    margin-left: 6px;
+}
+
+.page-style-search .search-news-image,
+.page-style-search .search-news-placeholder {
+    width: 56px;
+    height: 42px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.page-style-search .search-news-image {
+    object-fit: cover;
+}
+
+.page-style-search .search-news-placeholder {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.page-style-search .search-news-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-style-search .search-news-meta {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.page-style-search .search-news-badge {
+    font-size: 0.65rem;
+}
+
+.page-style-search .search-quick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.page-style-search .search-quick-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    transition: transform 0.2s ease;
+}
+
+.page-style-search .search-quick-link:hover {
+    transform: translateY(-3px);
+}
+
+.page-style-search .search-quick-title {
+    font-weight: 700;
+}
+
+.page-style-search .search-quick-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+@keyframes searchFireGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+    }
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 0 0 25px rgba(255, 100, 0, 0.7);
+    }
+}
+
+@media (max-width: 640px) {
+    .page-style-search .search-input-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .page-style-search .search-submit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

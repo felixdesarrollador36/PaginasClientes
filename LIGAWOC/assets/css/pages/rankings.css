@@ -1,0 +1,356 @@
+/* =========================
+   EMPTY STATE: Responsive Sizing (Rankings)
+========================= */
+
+@media (max-width: 599px) {
+    .empty-state {
+        padding: 20px 0 !important;
+    }
+    .empty-state-title {
+        font-size: 1.1rem !important;
+    }
+    .empty-state p {
+        font-size: 0.85rem !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .empty-state {
+        padding: 14px 0 !important;
+    }
+    .empty-state-title {
+        font-size: 0.95rem !important;
+    }
+    .empty-state p {
+        font-size: 0.75rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .empty-state {
+        padding: 10px 0 !important;
+    }
+    .empty-state-title {
+        font-size: 0.80rem !important;
+    }
+    .empty-state p {
+        font-size: 0.65rem !important;
+    }
+}
+/* =========================
+   TABS: Responsive Sizing (Rankings)
+========================= */
+
+@media (max-width: 599px) {
+    .tabs {
+        font-size: 0.75rem;
+        gap: 1px !important;
+        margin-bottom: 12px !important;
+    }
+    .tab {
+        padding: 4px 10px !important;
+        font-size: 0.75rem !important;
+        border-radius: 6px !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .tabs {
+        font-size: 0.65rem;
+        gap: 0.5px !important;
+        margin-bottom: 10px !important;
+    }
+    .tab {
+        padding: 3px 8px !important;
+        font-size: 0.65rem !important;
+        border-radius: 5px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .tabs {
+        font-size: 0.55rem;
+        gap: 0px !important;
+        margin-bottom: 8px !important;
+    }
+    .tab {
+        padding: 2px 6px !important;
+        font-size: 0.55rem !important;
+        border-radius: 4px !important;
+    }
+}
+/* =========================
+   FILTER BAR: Responsive Sizing (Rankings)
+========================= */
+
+@media (max-width: 599px) {
+    .filter-bar,
+    .rankings-filter-bar {
+        gap: 8px !important;
+    }
+    .rankings-filter,
+    .rankings-filter--season,
+    .rankings-filter--tournament {
+        font-size: 0.80rem !important;
+        padding: 4px 8px !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .filter-bar,
+    .rankings-filter-bar {
+        gap: 5px !important;
+    }
+    .rankings-filter,
+    .rankings-filter--season,
+    .rankings-filter--tournament {
+        font-size: 0.70rem !important;
+        padding: 3px 6px !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .filter-bar,
+    .rankings-filter-bar {
+        gap: 3px !important;
+    }
+    .rankings-filter,
+    .rankings-filter--season,
+    .rankings-filter--tournament {
+        font-size: 0.60rem !important;
+        padding: 2px 4px !important;
+        max-width: 100% !important;
+    }
+}
+/* =========================
+   TITLES & NOTES: Responsive Sizing (Rankings)
+========================= */
+
+@media (max-width: 599px) {
+    .page-title {
+        font-size: 1.1rem !important;
+    }
+    .page-subtitle {
+        font-size: 0.85rem !important;
+    }
+    .rankings-note,
+    .rankings-note--main,
+    .rankings-note-muted {
+        font-size: 0.75rem !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .page-title {
+        font-size: 0.95rem !important;
+    }
+    .page-subtitle {
+        font-size: 0.75rem !important;
+    }
+    .rankings-note,
+    .rankings-note--main,
+    .rankings-note-muted {
+        font-size: 0.65rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .page-title {
+        font-size: 0.80rem !important;
+    }
+    .page-subtitle {
+        font-size: 0.65rem !important;
+    }
+    .rankings-note,
+    .rankings-note--main,
+    .rankings-note-muted {
+        font-size: 0.55rem !important;
+    }
+}
+.page-style-rankings .rankings-note {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 0.78rem;
+}
+
+.page-style-rankings .rankings-note--main {
+    color: var(--accent-main);
+}
+
+.page-style-rankings .rankings-note--secondary {
+    color: var(--text-secondary);
+}
+
+.page-style-rankings .rankings-note-muted {
+    margin-left: 8px;
+    color: var(--text-muted);
+}
+
+.page-style-rankings .rankings-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.page-style-rankings .rankings-filter--season {
+    max-width: 200px;
+}
+
+.page-style-rankings .rankings-filter--tournament {
+    max-width: 300px;
+}
+
+.page-style-rankings .rankings-col-rank {
+    width: 60px;
+}
+
+.page-style-rankings .rankings-team-link,
+.page-style-rankings .rankings-player-cell,
+.page-style-rankings .rankings-hero-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-style-rankings .rankings-hero-cell {
+    gap: 12px;
+}
+
+.page-style-rankings .rankings-team-link {
+    font-weight: 600;
+}
+
+.page-style-rankings .rankings-team-logo,
+.page-style-rankings .rankings-player-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.page-style-rankings .rankings-team-tag {
+    font-size: 0.65rem;
+}
+
+.page-style-rankings .rankings-diff-positive {
+    color: var(--success);
+}
+
+.page-style-rankings .rankings-diff-negative {
+    color: var(--danger);
+}
+
+.page-style-rankings .rankings-diff-neutral {
+    color: var(--text-muted);
+}
+
+.page-style-rankings .rankings-points,
+.page-style-rankings .rankings-mvp-count {
+    font-family: var(--font-heading);
+}
+
+.page-style-rankings .rankings-empty-state {
+    padding: 40px 0;
+}
+
+.page-style-rankings .rankings-player-name,
+.page-style-rankings .rankings-player-link {
+    font-weight: 600;
+}
+
+.page-style-rankings .rankings-player-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-style-rankings .rankings-kda {
+    color: var(--accent);
+}
+
+.page-style-rankings .rankings-kda-meta {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.page-style-rankings .rankings-kda-breakdown {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.page-style-rankings .rankings-winrate-positive {
+    color: var(--success);
+}
+
+.page-style-rankings .rankings-winrate-negative {
+    color: var(--danger);
+}
+
+.page-style-rankings .rankings-hero-image,
+.page-style-rankings .rankings-hero-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.page-style-rankings .rankings-hero-image {
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.page-style-rankings .rankings-hero-placeholder {
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: gray;
+}
+
+.page-style-rankings .rankings-hero-name {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+}
+
+.page-style-rankings .rankings-hero-winrate {
+    font-size: 1.1rem;
+}
+
+.page-style-rankings .rankings-picks-badge {
+    font-size: 1rem;
+    padding: 5px 10px;
+}
+
+.page-style-rankings .rankings-center {
+    text-align: center;
+}
+
+.page-style-rankings .rankings-mvp-count {
+    font-size: 1.2rem;
+    color: var(--accent-main);
+}
+
+.page-style-rankings .rankings-mvp-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.page-style-rankings .rankings-muted-cell {
+    color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+    .page-style-rankings .rankings-note {
+        flex-wrap: wrap;
+    }
+
+    .page-style-rankings .rankings-filter {
+        max-width: none;
+        width: 100%;
+    }
+}

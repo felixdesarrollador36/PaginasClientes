@@ -1,0 +1,2018 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 22-03-2026 a las 21:29:00
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `ligawoc`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `audit_logs`
+--
+
+CREATE TABLE `audit_logs` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `action` varchar(100) NOT NULL,
+  `entity_type` varchar(50) DEFAULT NULL,
+  `entity_id` int(11) DEFAULT NULL,
+  `old_value` text DEFAULT NULL,
+  `new_value` text DEFAULT NULL,
+  `ip_address` varchar(45) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `coin_packages`
+--
+
+CREATE TABLE `coin_packages` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `coins` int(11) NOT NULL,
+  `price_usd` decimal(10,2) NOT NULL,
+  `bonus_coins` int(11) DEFAULT 0,
+  `is_active` tinyint(1) DEFAULT 1,
+  `sort_order` int(11) DEFAULT 0,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `coin_packages`
+--
+
+INSERT INTO `coin_packages` (`id`, `name`, `coins`, `price_usd`, `bonus_coins`, `is_active`, `sort_order`, `created_at`) VALUES
+(1, 'Paquete PequeÃ±o', 50, 1.03, 0, 1, 1, '2026-03-17 10:45:54'),
+(2, 'Paquete BÃ¡sico', 150, 2.96, 0, 1, 2, '2026-03-17 10:45:54'),
+(3, 'Paquete Popular', 250, 4.89, 0, 1, 3, '2026-03-17 10:45:54'),
+(4, 'Paquete Grande', 500, 10.03, 0, 1, 4, '2026-03-17 10:45:54'),
+(5, 'Paquete Premium', 1000, 20.33, 0, 1, 5, '2026-03-17 10:45:54'),
+(6, 'Paquete Elite', 1500, 30.62, 0, 1, 6, '2026-03-17 10:45:54'),
+(7, 'Paquete Legendario', 2500, 51.20, 0, 1, 7, '2026-03-17 10:45:54'),
+(8, 'Paquete Mega', 5000, 101.37, 0, 1, 8, '2026-03-17 10:45:54');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `coin_purchases`
+--
+
+CREATE TABLE `coin_purchases` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `package_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `coins_purchased` int(11) NOT NULL,
+  `bonus_coins` int(11) DEFAULT 0,
+  `payment_method` varchar(50) DEFAULT 'paypal',
+  `transaction_id` varchar(100) DEFAULT NULL,
+  `status` enum('pending','completed','failed','refunded') DEFAULT 'pending',
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `coin_purchases`
+--
+
+INSERT INTO `coin_purchases` (`id`, `user_id`, `package_id`, `amount`, `coins_purchased`, `bonus_coins`, `payment_method`, `transaction_id`, `status`, `created_at`) VALUES
+(1, 88, 1, 1.00, 100, 0, 'paypal', NULL, 'completed', '2026-03-17 10:30:44'),
+(2, 88, 1, 1.00, 100, 0, 'paypal', NULL, 'completed', '2026-03-17 10:31:53'),
+(3, 2, 3, 10.00, 1200, 200, 'paypal', NULL, 'completed', '2026-03-17 10:31:55'),
+(4, 88, 1, 1.00, 100, 0, 'paypal', '1U7198465D854502U', 'completed', '2026-03-17 10:38:16');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `designer_applications`
+--
+
+CREATE TABLE `designer_applications` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `portfolio` text NOT NULL,
+  `status` enum('pending','approved','rejected') DEFAULT 'pending',
+  `reviewed_by` int(11) DEFAULT NULL,
+  `reviewed_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `designer_payouts`
+--
+
+CREATE TABLE `designer_payouts` (
+  `id` int(11) NOT NULL,
+  `designer_id` int(11) NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `status` enum('pending','processing','completed','rejected') DEFAULT 'pending',
+  `payment_method` varchar(50) DEFAULT NULL,
+  `transaction_id` varchar(100) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `processed_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `email_change_codes`
+--
+
+CREATE TABLE `email_change_codes` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `new_email` varchar(100) NOT NULL,
+  `code` varchar(6) NOT NULL,
+  `used` tinyint(1) DEFAULT 0,
+  `expires_at` datetime NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `email_change_codes`
+--
+
+INSERT INTO `email_change_codes` (`id`, `user_id`, `new_email`, `code`, `used`, `expires_at`, `created_at`) VALUES
+(1, 38, 'ismaelconde123@gmail.com', '718077', 1, '2026-03-17 04:53:49', '2026-03-17 04:38:49'),
+(2, 38, 'ligawocdominicana@gmail.com', '807735', 1, '2026-03-17 04:55:37', '2026-03-17 04:40:37');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `item_categories`
+--
+
+CREATE TABLE `item_categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `slug` varchar(50) NOT NULL,
+  `type` enum('marco','portada','avatar','badge') NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `icon` varchar(50) DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT 1,
+  `sort_order` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `item_categories`
+--
+
+INSERT INTO `item_categories` (`id`, `name`, `slug`, `type`, `description`, `icon`, `is_active`, `sort_order`) VALUES
+(1, 'Marcos de Perfil', 'marcos', 'marco', 'Marcos decorativos para tu foto de perfil', NULL, 1, 1),
+(2, 'Portadas', 'portadas', 'portada', 'Fondos para tu banner de perfil', NULL, 1, 2),
+(3, 'Avatares', 'avatares', 'avatar', 'Avatares exclusivos', NULL, 1, 3),
+(4, 'Insignias', 'insignias', 'badge', 'Insignias y logros', NULL, 1, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `match_comments`
+--
+
+CREATE TABLE `match_comments` (
+  `id` int(11) NOT NULL,
+  `match_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `match_player_stats`
+--
+
+CREATE TABLE `match_player_stats` (
+  `id` int(11) NOT NULL,
+  `match_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL,
+  `hero_used` varchar(100) DEFAULT NULL,
+  `kills` int(11) DEFAULT 0,
+  `deaths` int(11) DEFAULT 0,
+  `assists` int(11) DEFAULT 0,
+  `gold_earned` int(11) DEFAULT 0,
+  `mvp_score` decimal(4,2) DEFAULT 0.00,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `match_results`
+--
+
+CREATE TABLE `match_results` (
+  `id` int(11) NOT NULL,
+  `match_id` int(11) NOT NULL,
+  `game_number` int(11) DEFAULT 1,
+  `team1_score` int(11) DEFAULT 0,
+  `team2_score` int(11) DEFAULT 0,
+  `team1_kills` int(11) DEFAULT 0,
+  `team2_kills` int(11) DEFAULT 0,
+  `team1_towers` int(11) DEFAULT 0,
+  `team2_towers` int(11) DEFAULT 0,
+  `mvp_user_id` int(11) DEFAULT NULL,
+  `screenshot` varchar(255) DEFAULT NULL,
+  `submitted_by` int(11) DEFAULT NULL,
+  `verified_by` int(11) DEFAULT NULL,
+  `verification_status` enum('pending','verified','disputed') DEFAULT 'pending',
+  `notes` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ml_heroes`
+--
+
+CREATE TABLE `ml_heroes` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `role` varchar(100) NOT NULL,
+  `image_url` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `ml_heroes`
+--
+
+INSERT INTO `ml_heroes` (`id`, `name`, `role`, `image_url`) VALUES
+(1, 'Miya', 'Tirador', 'assets/heroes_img/Tirador/miya.png'),
+(2, 'Balmond', 'Combatiente/Tanque', 'assets/heroes_img/Combatiente/balmond.png'),
+(3, 'Saber', 'Asesino', 'assets/heroes_img/Asesino/saber.png'),
+(4, 'Alice', 'Mago/Tanque', 'assets/heroes_img/MAGO/alice.png'),
+(5, 'Nana', 'Mago/Apoyo', 'assets/heroes_img/MAGO/nana.png'),
+(6, 'Tigreal', 'Tanque/Apoyo', 'assets/heroes_img/Tanque/tigreal.png'),
+(7, 'Alucard', 'Combatiente/Asesino', 'assets/heroes_img/Combatiente/alucard.png'),
+(8, 'Karina', 'Asesino', 'assets/heroes_img/Asesino/karina.png'),
+(9, 'Akai', 'Tanque/Apoyo', 'assets/heroes_img/Tanque/akai.png'),
+(10, 'Franco', 'Tanque', 'assets/heroes_img/Tanque/franco.png'),
+(11, 'Bane', 'Combatiente/Mago', 'assets/heroes_img/Combatiente/bane.png'),
+(12, 'Bruno', 'Tirador', 'assets/heroes_img/Tirador/bruno.png'),
+(13, 'Clint', 'Tirador', 'assets/heroes_img/Tirador/clint.png'),
+(14, 'Rafaela', 'Apoyo/Mago', 'assets/heroes_img/APOYO/rafaela.png'),
+(15, 'Eudora', 'Mago', 'assets/heroes_img/MAGO/eudora.png'),
+(16, 'Zilong', 'Combatiente/Asesino', 'assets/heroes_img/Combatiente/zilong.png'),
+(17, 'Fanny', 'Asesino', 'assets/heroes_img/Asesino/fanny.png'),
+(18, 'Layla', 'Tirador', 'assets/heroes_img/Tirador/layla.png'),
+(19, 'Minotaur', 'Tanque/Apoyo', 'assets/heroes_img/Tanque/minotaur.png'),
+(20, 'Lolita', 'Apoyo/Tanque', 'assets/heroes_img/APOYO/lolita.png'),
+(21, 'Hayabusa', 'Asesino', 'assets/heroes_img/Asesino/hayabusa.png'),
+(22, 'Freya', 'Combatiente', 'assets/heroes_img/Combatiente/freya.png'),
+(23, 'Gord', 'Mago', 'assets/heroes_img/MAGO/gord.png'),
+(24, 'Natalia', 'Asesino', 'assets/heroes_img/Asesino/natalia.png'),
+(25, 'Kagura', 'Mago', 'assets/heroes_img/MAGO/kagura.png'),
+(26, 'Chou', 'Combatiente', 'assets/heroes_img/Combatiente/chou.png'),
+(27, 'Sun', 'Combatiente', 'assets/heroes_img/Combatiente/sun.png'),
+(28, 'Alpha', 'Combatiente', 'assets/heroes_img/Combatiente/alpha.png'),
+(29, 'Ruby', 'Combatiente/Tanque', 'assets/heroes_img/Combatiente/ruby.png'),
+(30, 'Yi Sun-shin', 'Asesino/Tirador', 'assets/heroes_img/Asesino/yi sun-shin.png'),
+(31, 'Moskov', 'Tirador', 'assets/heroes_img/Tirador/moskov.png'),
+(32, 'Johnson', 'Tanque/Apoyo', 'assets/heroes_img/Tanque/johnson.png'),
+(33, 'Cyclops', 'Mago', 'assets/heroes_img/MAGO/cyclops.png'),
+(34, 'Estes', 'Apoyo', 'assets/heroes_img/APOYO/estes.png'),
+(35, 'Hilda', 'Combatiente/Tanque', 'assets/heroes_img/Combatiente/hilda.png'),
+(36, 'Aurora', 'Mago', 'assets/heroes_img/MAGO/aurora.png'),
+(37, 'Lapu-Lapu', 'Combatiente/Asesino', 'assets/heroes_img/Combatiente/lapu-lapu.png'),
+(38, 'Vexana', 'Mago', 'assets/heroes_img/MAGO/vexana.png'),
+(39, 'Roger', 'Combatiente/Tirador', 'assets/heroes_img/Combatiente/roger.png'),
+(40, 'Karrie', 'Tirador', 'assets/heroes_img/Tirador/karrie.png'),
+(41, 'Gatotkaca', 'Tanque/Combatiente', 'assets/heroes_img/Tanque/gatotkaca.png'),
+(42, 'Argus', 'Combatiente', 'assets/heroes_img/Combatiente/argus.png'),
+(43, 'Odette', 'Mago', 'assets/heroes_img/MAGO/odette.png'),
+(44, 'Lancelot', 'Asesino', 'assets/heroes_img/Asesino/lancelot.png'),
+(45, 'Diggie', 'Apoyo', 'assets/heroes_img/APOYO/diggie.png'),
+(46, 'Hylos', 'Tanque/Apoyo', 'assets/heroes_img/Tanque/hylos.png'),
+(47, 'Zhask', 'Mago', 'assets/heroes_img/MAGO/zhask.png'),
+(48, 'Helcurt', 'Asesino', 'assets/heroes_img/Asesino/helcurt.png'),
+(49, 'Pharsa', 'Mago', 'assets/heroes_img/MAGO/pharsa.png'),
+(50, 'Lesley', 'Tirador/Asesino', 'assets/heroes_img/Tirador/lesley.png'),
+(51, 'Jawhead', 'Combatiente', 'assets/heroes_img/Combatiente/jawhead.png'),
+(52, 'Angela', 'Apoyo', 'assets/heroes_img/APOYO/angela.png'),
+(53, 'Gusion', 'Asesino/Mago', 'assets/heroes_img/Asesino/gusion.png'),
+(54, 'Valir', 'Mago', 'assets/heroes_img/MAGO/valir.png'),
+(55, 'Martis', 'Combatiente', 'assets/heroes_img/Combatiente/martis.png'),
+(56, 'Uranus', 'Tanque', 'assets/heroes_img/Tanque/uranus.png'),
+(57, 'Hanabi', 'Tirador', 'assets/heroes_img/Tirador/hanabi.png'),
+(58, 'Chang\'e', 'Mago', 'assets/heroes_img/MAGO/chang\'e.png'),
+(59, 'Kaja', 'Apoyo/Combatiente', 'assets/heroes_img/APOYO/kaja.png'),
+(60, 'Selena', 'Asesino/Mago', 'assets/heroes_img/Asesino/selena.png'),
+(61, 'Aldous', 'Combatiente', 'assets/heroes_img/Combatiente/aldous.png'),
+(62, 'Claude', 'Tirador', 'assets/heroes_img/Tirador/claude.png'),
+(63, 'Vale', 'Mago', 'assets/heroes_img/MAGO/vale.png'),
+(64, 'Leomord', 'Combatiente', 'assets/heroes_img/Combatiente/leomord.png'),
+(65, 'Lunox', 'Mago', 'assets/heroes_img/MAGO/lunox.png'),
+(66, 'Hanzo', 'Asesino', 'assets/heroes_img/Asesino/hanzo.png'),
+(67, 'Belerick', 'Tanque/Apoyo', 'assets/heroes_img/Tanque/belerick.png'),
+(68, 'Kimmy', 'Tirador/Mago', 'assets/heroes_img/Tirador/kimmy.png'),
+(69, 'Thamuz', 'Combatiente', 'assets/heroes_img/Combatiente/thamuz.png'),
+(70, 'Harith', 'Mago', 'assets/heroes_img/MAGO/harith.png'),
+(71, 'Minsitthar', 'Combatiente', 'assets/heroes_img/Combatiente/minsitthar.png'),
+(72, 'Kadita', 'Mago/Asesino', 'assets/heroes_img/MAGO/kadita.png'),
+(73, 'Badang', 'Combatiente', 'assets/heroes_img/Combatiente/badang.png'),
+(74, 'Guinevere', 'Combatiente/Mago', 'assets/heroes_img/Combatiente/guinevere.png'),
+(75, 'Granger', 'Tirador', 'assets/heroes_img/Tirador/granger.png'),
+(76, 'Khufra', 'Tanque/Apoyo', 'assets/heroes_img/Tanque/khufra.png'),
+(77, 'Esmeralda', 'Mago/Tanque', 'assets/heroes_img/MAGO/esmeralda.png'),
+(78, 'Terizla', 'Combatiente', 'assets/heroes_img/Combatiente/terizla.png'),
+(79, 'X.Borg', 'Combatiente', 'assets/heroes_img/Combatiente/x.borg.png'),
+(80, 'Ling', 'Asesino', 'assets/heroes_img/Asesino/ling.png'),
+(81, 'Dyrroth', 'Combatiente', 'assets/heroes_img/Combatiente/dyrroth.png'),
+(82, 'Lylia', 'Mago', 'assets/heroes_img/MAGO/lylia.png'),
+(83, 'Baxia', 'Tanque', 'assets/heroes_img/Tanque/baxia.png'),
+(84, 'Masha', 'Combatiente/Tanque', 'assets/heroes_img/Combatiente/masha.png'),
+(85, 'Wanwan', 'Tirador', 'assets/heroes_img/Tirador/wanwan.png'),
+(86, 'Silvanna', 'Combatiente/Mago', 'assets/heroes_img/Combatiente/silvanna.png'),
+(87, 'Cecilion', 'Mago', 'assets/heroes_img/MAGO/cecilion.png'),
+(88, 'Carmilla', 'Apoyo/Tanque', 'assets/heroes_img/APOYO/carmilla.png'),
+(89, 'Atlas', 'Tanque/Apoyo', 'assets/heroes_img/Tanque/atlas.png'),
+(90, 'Popol and Kupa', 'Tirador', 'assets/heroes_img/Tirador/popol and kupa.png'),
+(91, 'Yu Zhong', 'Combatiente', 'assets/heroes_img/Combatiente/yu zhong.png'),
+(92, 'Luo Yi', 'Mago/Apoyo', 'assets/heroes_img/MAGO/luo yi.png'),
+(93, 'Benedetta', 'Asesino/Combatiente', 'assets/heroes_img/Asesino/benedetta.png'),
+(94, 'Khaleed', 'Combatiente', 'assets/heroes_img/Combatiente/khaleed.png'),
+(95, 'Barats', 'Tanque/Combatiente', 'assets/heroes_img/Tanque/barats.png'),
+(96, 'Brody', 'Tirador', 'assets/heroes_img/Tirador/brody.png'),
+(97, 'Yve', 'Mago', 'assets/heroes_img/MAGO/yve.png'),
+(98, 'Mathilda', 'Apoyo/Asesino', 'assets/heroes_img/APOYO/mathilda.png'),
+(99, 'Paquito', 'Combatiente', 'assets/heroes_img/Combatiente/paquito.png'),
+(100, 'Gloo', 'Tanque/Apoyo', 'assets/heroes_img/Tanque/gloo.png'),
+(101, 'Beatrix', 'Tirador', 'assets/heroes_img/Tirador/beatrix.png'),
+(102, 'Phoveus', 'Combatiente', 'assets/heroes_img/Combatiente/phoveus.png'),
+(103, 'Natan', 'Tirador', 'assets/heroes_img/Tirador/natan.png'),
+(104, 'Aulus', 'Combatiente', 'assets/heroes_img/Combatiente/aulus.png'),
+(105, 'Floryn', 'Apoyo', 'assets/heroes_img/APOYO/floryn.png'),
+(106, 'Valentina', 'Mago', 'assets/heroes_img/MAGO/valentina.png'),
+(107, 'Edith', 'Tanque/Tirador', 'assets/heroes_img/Tanque/edith.png'),
+(108, 'Yin', 'Combatiente/Asesino', 'assets/heroes_img/Combatiente/yin.png'),
+(109, 'Melissa', 'Tirador', 'assets/heroes_img/Tirador/melissa.png'),
+(110, 'Xavier', 'Mago', 'assets/heroes_img/MAGO/xavier.png'),
+(111, 'Julian', 'Combatiente/Mago', 'assets/heroes_img/Combatiente/julian.png'),
+(112, 'Fredrinn', 'Tanque/Combatiente', 'assets/heroes_img/Tanque/fredrinn.png'),
+(113, 'Joy', 'Asesino', 'assets/heroes_img/Asesino/joy.png'),
+(114, 'Novaria', 'Mago', 'assets/heroes_img/MAGO/novaria.png'),
+(115, 'Arlott', 'Combatiente/Asesino', 'assets/heroes_img/Combatiente/arlott.png'),
+(116, 'Ixia', 'Tirador', 'assets/heroes_img/Tirador/ixia.png'),
+(117, 'Nolan', 'Asesino', 'assets/heroes_img/Asesino/nolan.png'),
+(118, 'Cici', 'Combatiente', 'assets/heroes_img/Combatiente/cici.png'),
+(119, 'Chip', 'Apoyo/Tanque', 'assets/heroes_img/APOYO/chip.png'),
+(120, 'Suyou', 'Asesino/Combatiente', 'assets/heroes_img/Asesino/suyou.png');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `content` text NOT NULL,
+  `excerpt` varchar(500) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `author_id` int(11) NOT NULL,
+  `is_published` tinyint(1) DEFAULT 0,
+  `is_featured` tinyint(1) DEFAULT 0,
+  `publish_date` datetime DEFAULT NULL,
+  `views` int(11) DEFAULT 0,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `slug`, `content`, `excerpt`, `image`, `category_id`, `author_id`, `is_published`, `is_featured`, `publish_date`, `views`, `created_at`, `updated_at`) VALUES
+(1, 'Podcast de WoC como invitados NIGHMER', 'mlbb', 'Who is Duke', 'NIGHMER', 'news/news_1772913727_69ac843f77b10.png', 1, 2, 1, 0, '2026-03-07 09:33:00', 28, '2026-03-07 09:33:46', '2026-03-22 16:25:13');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `news_categories`
+--
+
+CREATE TABLE `news_categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `slug` varchar(50) NOT NULL,
+  `color` varchar(7) DEFAULT '#7C3AED',
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `news_categories`
+--
+
+INSERT INTO `news_categories` (`id`, `name`, `slug`, `color`, `created_at`) VALUES
+(1, 'General', 'general', '#7C3AED', '2026-03-22 15:18:10'),
+(2, 'Torneos', 'torneos', '#9D4EDD', '2026-03-22 15:18:10'),
+(3, 'Actualizaciones', 'actualizaciones', '#6B2DB5', '2026-03-22 15:18:10'),
+(4, 'Comunidad', 'comunidad', '#B565F0', '2026-03-22 15:18:10'),
+(5, 'Parches ML', 'parches-ml', '#C77DFF', '2026-03-22 15:18:10');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `type` enum('match','team','tournament','news','system','prize') NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `message` text NOT NULL,
+  `link` varchar(500) DEFAULT NULL,
+  `is_read` tinyint(1) DEFAULT 0,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `notifications`
+--
+
+INSERT INTO `notifications` (`id`, `user_id`, `type`, `title`, `message`, `link`, `is_read`, `created_at`) VALUES
+(1, 9, 'team', 'Nueva solicitud de uniÃ³n', 'Berserker quiere unirse a Proevolutiongamers', 'teams/manage/1', 0, '2026-03-10 16:40:41'),
+(2, 18, 'team', 'Nueva solicitud de uniÃ³n', 'Momo_8 quiere unirse a KOI Gaming', 'teams/manage/3', 0, '2026-03-10 16:47:48'),
+(3, 18, 'team', 'Nueva solicitud de uniÃ³n', 'Kouseii quiere unirse a KOI Gaming', 'teams/manage/3', 0, '2026-03-10 16:57:38'),
+(4, 20, 'team', 'Nueva solicitud de uniÃ³n', 'miwuaifuescam quiere unirse a Night Raid', 'teams/manage/4', 0, '2026-03-10 17:00:41'),
+(5, 24, 'team', 'Nueva solicitud de uniÃ³n', 'Tavitoxx quiere unirse a Blaze Souls Zenith', 'teams/manage/5', 0, '2026-03-10 17:02:17'),
+(6, 20, 'team', 'Nueva solicitud de uniÃ³n', 'ManuUnzert quiere unirse a Night Raid', 'teams/manage/4', 0, '2026-03-10 17:03:51'),
+(7, 24, 'team', 'Nueva solicitud de uniÃ³n', 'LELOUCHK quiere unirse a Blaze Souls Zenith', 'teams/manage/5', 0, '2026-03-10 17:04:11'),
+(8, 24, 'team', 'Nueva solicitud de uniÃ³n', 'Avena quiere unirse a Blaze Souls Zenith', 'teams/manage/5', 0, '2026-03-10 17:04:16'),
+(9, 9, 'team', 'Nueva solicitud de uniÃ³n', 'Strovk quiere unirse a Proevolutiongamers', 'teams/manage/1', 0, '2026-03-10 17:14:25'),
+(10, 18, 'team', 'Nueva solicitud de uniÃ³n', 'Chester quiere unirse a KOI Gaming', 'teams/manage/3', 0, '2026-03-10 17:15:22'),
+(11, 29, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo KOI Gaming', 'teams/view/3', 0, '2026-03-10 17:29:15'),
+(12, 25, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo KOI Gaming', 'teams/view/3', 0, '2026-03-10 17:29:19'),
+(13, 19, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo KOI Gaming', 'teams/view/3', 0, '2026-03-10 17:29:23'),
+(14, 18, 'team', 'Nueva solicitud de uniÃ³n', 'Alex quiere unirse a KOI Gaming', 'teams/manage/3', 0, '2026-03-10 17:29:45'),
+(15, 34, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo KOI Gaming', 'teams/view/3', 0, '2026-03-10 17:31:31'),
+(16, 33, 'team', 'Nueva solicitud de uniÃ³n', 'Kebotepremium quiere unirse a Brothers E-sport', 'teams/manage/6', 0, '2026-03-10 17:55:33'),
+(17, 11, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Brothers E-sport', 'teams/view/6', 0, '2026-03-10 17:59:24'),
+(18, 21, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Night Raid', 'teams/view/4', 0, '2026-03-10 18:06:17'),
+(19, 23, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Night Raid', 'teams/view/4', 0, '2026-03-10 18:06:28'),
+(20, 27, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Blaze Souls Zenith', 'teams/view/5', 0, '2026-03-10 18:10:45'),
+(21, 16, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Blaze Souls Zenith', 'teams/view/5', 0, '2026-03-10 18:10:48'),
+(22, 4, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Blaze Souls Zenith', 'teams/view/5', 0, '2026-03-10 18:10:50'),
+(23, 20, 'team', 'Nueva solicitud de uniÃ³n', 'Jordan quiere unirse a Night Raid', 'teams/manage/4', 0, '2026-03-10 18:11:34'),
+(24, 39, 'team', 'Nueva solicitud de uniÃ³n', 'Andelson quiere unirse a BORN 2 KILL', 'teams/manage/8', 0, '2026-03-10 18:16:52'),
+(25, 35, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo BORN 2 KILL', 'teams/view/8', 0, '2026-03-10 18:17:11'),
+(26, 40, 'team', 'Nueva solicitud de uniÃ³n', 'Guzz_420 quiere unirse a Steel Angels', 'teams/manage/9', 0, '2026-03-10 18:33:54'),
+(27, 43, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Steel Angels', 'teams/view/9', 0, '2026-03-10 18:35:55'),
+(28, 40, 'team', 'Nueva solicitud de uniÃ³n', 'Gabsoff quiere unirse a Steel Angels', 'teams/manage/9', 0, '2026-03-10 18:36:39'),
+(29, 38, 'team', 'Nueva solicitud de uniÃ³n', 'Shyy quiere unirse a Liga WoC Venezuela', 'teams/manage/7', 1, '2026-03-10 18:37:48'),
+(30, 26, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Steel Angels', 'teams/view/9', 0, '2026-03-10 18:37:49'),
+(31, 45, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Liga WoC Venezuela', 'teams/view/7', 0, '2026-03-10 18:48:50'),
+(32, 46, 'team', 'Nueva solicitud de uniÃ³n', 'Nerf quiere unirse a Blaze Souls Phoenix', 'teams/manage/11', 0, '2026-03-10 19:15:54'),
+(33, 46, 'team', 'Nueva solicitud de uniÃ³n', 'Terrel quiere unirse a Blaze Souls Phoenix', 'teams/manage/11', 0, '2026-03-10 19:16:12'),
+(34, 47, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Blaze Souls Phoenix', 'teams/view/11', 0, '2026-03-10 19:18:46'),
+(35, 50, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Blaze Souls Phoenix', 'teams/view/11', 0, '2026-03-10 19:18:50'),
+(36, 46, 'team', 'Nueva solicitud de uniÃ³n', 'Aizzo quiere unirse a Blaze Souls Phoenix', 'teams/manage/11', 0, '2026-03-10 19:19:44'),
+(37, 48, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Blaze Souls Phoenix', 'teams/view/11', 0, '2026-03-10 19:21:41'),
+(38, 33, 'team', 'Nueva solicitud de uniÃ³n', 'kaze16 quiere unirse a Brothers E-sport', 'teams/manage/6', 0, '2026-03-10 19:26:08'),
+(39, 40, 'team', 'Nueva solicitud de uniÃ³n', 'Lin_Yukine quiere unirse a Steel Angels', 'teams/manage/9', 0, '2026-03-10 19:32:25'),
+(40, 33, 'team', 'Nueva solicitud de uniÃ³n', 'LilShadow quiere unirse a Brothers E-sport', 'teams/manage/6', 0, '2026-03-10 19:32:58'),
+(41, 28, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Steel Angels', 'teams/view/9', 0, '2026-03-10 19:33:53'),
+(42, 24, 'team', 'Nueva solicitud de uniÃ³n', 'Vixen quiere unirse a Blaze Souls Zenith', 'teams/manage/5', 0, '2026-03-10 19:42:37'),
+(43, 54, 'team', 'Nueva solicitud de uniÃ³n', 'Yohanan8 quiere unirse a Goat Stars', 'teams/manage/13', 0, '2026-03-10 19:44:50'),
+(44, 54, 'team', 'Nueva solicitud de uniÃ³n', 'Litlle quiere unirse a Goat Stars', 'teams/manage/13', 0, '2026-03-10 19:53:02'),
+(45, 54, 'team', 'Nueva solicitud de uniÃ³n', 'sundragon quiere unirse a Goat Stars', 'teams/manage/13', 0, '2026-03-10 19:53:20'),
+(46, 45, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Tanque en Liga WoC Venezuela', 'teams/view/7', 0, '2026-03-10 19:56:41'),
+(47, 45, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Asesino en Liga WoC Venezuela', 'teams/view/7', 0, '2026-03-10 19:56:48'),
+(48, 44, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Brothers E-sport', 'teams/view/6', 0, '2026-03-10 19:58:30'),
+(49, 53, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Brothers E-sport', 'teams/view/6', 0, '2026-03-10 19:58:36'),
+(50, 37, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Night Raid', 'teams/view/4', 0, '2026-03-10 20:03:34'),
+(51, 20, 'team', 'Nueva solicitud de uniÃ³n', 'jinwoo quiere unirse a Night Raid', 'teams/manage/4', 0, '2026-03-10 20:22:52'),
+(52, 51, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Goat Stars', 'teams/view/13', 0, '2026-03-10 20:41:10'),
+(53, 31, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Goat Stars', 'teams/view/13', 0, '2026-03-10 20:41:13'),
+(54, 57, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Goat Stars', 'teams/view/13', 0, '2026-03-10 20:41:17'),
+(55, 60, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Night Raid', 'teams/view/4', 0, '2026-03-10 20:42:28'),
+(56, 21, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Asesino en Night Raid', 'teams/view/4', 0, '2026-03-10 20:42:44'),
+(57, 23, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Combatiente en Night Raid', 'teams/view/4', 0, '2026-03-10 20:42:53'),
+(58, 37, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a ADC (Tirador) en Night Raid', 'teams/view/4', 0, '2026-03-10 20:42:56'),
+(59, 62, 'team', 'Nueva solicitud de uniÃ³n', 'Panda quiere unirse a Nexus', 'teams/manage/15', 0, '2026-03-10 20:51:31'),
+(60, 40, 'team', 'Nueva solicitud de uniÃ³n', 'moondragon quiere unirse a Steel Angels', 'teams/manage/9', 0, '2026-03-10 20:52:11'),
+(61, 40, 'team', 'Nueva solicitud de uniÃ³n', 'Juanzmh110 quiere unirse a Steel Angels', 'teams/manage/9', 0, '2026-03-10 20:52:29'),
+(62, 64, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Steel Angels', 'teams/view/9', 0, '2026-03-10 20:52:55'),
+(63, 63, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Steel Angels', 'teams/view/9', 0, '2026-03-10 20:52:57'),
+(64, 65, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Nexus', 'teams/view/15', 0, '2026-03-10 20:53:50'),
+(65, 49, 'team', 'Nueva solicitud de uniÃ³n', 'AFKs quiere unirse a Divinas', 'teams/manage/12', 0, '2026-03-10 20:57:40'),
+(66, 49, 'team', 'Nueva solicitud de uniÃ³n', 'Antonio quiere unirse a Divinas', 'teams/manage/12', 0, '2026-03-10 20:58:15'),
+(67, 43, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Apoyo en Steel Angels', 'teams/view/9', 0, '2026-03-10 21:00:48'),
+(68, 43, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a ADC (Tirador) en Steel Angels', 'teams/view/9', 0, '2026-03-10 21:01:09'),
+(69, 67, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Divinas', 'teams/view/12', 0, '2026-03-10 21:03:18'),
+(70, 66, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Divinas', 'teams/view/12', 0, '2026-03-10 21:03:22'),
+(71, 49, 'team', 'Nueva solicitud de uniÃ³n', 'Dio_Nix quiere unirse a Divinas', 'teams/manage/12', 0, '2026-03-10 21:12:01'),
+(72, 54, 'team', 'Nueva solicitud de uniÃ³n', 'Noah quiere unirse a Goat Stars', 'teams/manage/13', 0, '2026-03-10 21:30:26'),
+(73, 49, 'team', 'Nueva solicitud de uniÃ³n', 'Amy quiere unirse a Divinas', 'teams/manage/12', 0, '2026-03-10 21:30:28'),
+(74, 12, 'team', 'Nueva solicitud de uniÃ³n', 'Galaxykai quiere unirse a SK Esport', 'teams/manage/10', 0, '2026-03-10 21:31:38'),
+(75, 70, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Divinas', 'teams/view/12', 0, '2026-03-10 21:36:44'),
+(76, 68, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Divinas', 'teams/view/12', 0, '2026-03-10 21:42:03'),
+(77, 62, 'team', 'Nueva solicitud de uniÃ³n', 'Samuel3735 quiere unirse a Nexus', 'teams/manage/15', 0, '2026-03-10 21:44:22'),
+(78, 69, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Nexus', 'teams/view/15', 0, '2026-03-10 21:46:26'),
+(79, 38, 'team', 'Nueva solicitud de uniÃ³n', 'HyperKen quiere unirse a Liga WoC Venezuela', 'teams/manage/7', 1, '2026-03-10 21:58:20'),
+(80, 38, 'team', 'Nueva solicitud de uniÃ³n', 'Azubzin71 quiere unirse a Liga WoC Venezuela', 'teams/manage/7', 1, '2026-03-10 22:02:59'),
+(81, 74, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Liga WoC Venezuela', 'teams/view/7', 1, '2026-03-10 22:04:39'),
+(82, 41, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Liga WoC Venezuela', 'teams/view/7', 0, '2026-03-10 22:04:42'),
+(83, 74, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Tanque en Liga WoC Venezuela', 'teams/view/7', 1, '2026-03-10 22:07:18'),
+(84, 74, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Asesino en Liga WoC Venezuela', 'teams/view/7', 1, '2026-03-10 22:07:23'),
+(85, 24, 'team', 'Nueva solicitud de uniÃ³n', 'Street quiere unirse a Blaze Souls Zenith', 'teams/manage/5', 0, '2026-03-10 22:14:03'),
+(86, 71, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo SK Esport', 'teams/view/10', 0, '2026-03-10 22:24:36'),
+(87, 12, 'team', 'Nueva solicitud de uniÃ³n', 'Ryuk quiere unirse a SK Esport', 'teams/manage/10', 0, '2026-03-10 22:32:20'),
+(88, 12, 'team', 'Nueva solicitud de uniÃ³n', 'Ouma quiere unirse a SK Esport', 'teams/manage/10', 0, '2026-03-10 22:42:15'),
+(89, 76, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo SK Esport', 'teams/view/10', 0, '2026-03-10 22:44:16'),
+(90, 77, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo SK Esport', 'teams/view/10', 0, '2026-03-10 22:44:21'),
+(91, 75, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Blaze Souls Zenith', 'teams/view/5', 0, '2026-03-10 23:01:24'),
+(92, 55, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Blaze Souls Zenith', 'teams/view/5', 0, '2026-03-10 23:01:28'),
+(93, 78, 'team', 'Nueva solicitud de uniÃ³n', 'FelzRodz quiere unirse a No Hate.', 'teams/manage/16', 1, '2026-03-10 23:59:05'),
+(94, 80, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo No Hate.', 'teams/view/16', 1, '2026-03-11 00:04:38'),
+(95, 81, 'team', 'Nueva solicitud de uniÃ³n', 'Anthar quiere unirse a We Are.', 'teams/manage/17', 0, '2026-03-11 01:06:50'),
+(96, 82, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo We Are.', 'teams/view/17', 0, '2026-03-11 01:15:43'),
+(97, 39, 'team', 'Nueva solicitud de uniÃ³n', 'Lucky quiere unirse a BORN 2 KILL', 'teams/manage/8', 0, '2026-03-11 01:18:53'),
+(98, 81, 'team', 'Nueva solicitud de uniÃ³n', 'Cheguetown quiere unirse a We Are.', 'teams/manage/17', 0, '2026-03-11 02:38:02'),
+(99, 83, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo BORN 2 KILL', 'teams/view/8', 0, '2026-03-11 02:40:45'),
+(100, 81, 'team', 'Nueva solicitud de uniÃ³n', 'Dark quiere unirse a We Are.', 'teams/manage/17', 0, '2026-03-11 02:45:28'),
+(101, 39, 'team', 'Nueva solicitud de uniÃ³n', 'XENON quiere unirse a BORN 2 KILL', 'teams/manage/8', 0, '2026-03-11 03:34:11'),
+(102, 58, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo We Are.', 'teams/view/17', 0, '2026-03-11 03:53:10'),
+(103, 84, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo We Are.', 'teams/view/17', 0, '2026-03-11 03:53:21'),
+(104, 36, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo BORN 2 KILL', 'teams/view/8', 0, '2026-03-11 03:54:13'),
+(105, 33, 'team', 'Nueva solicitud de uniÃ³n', 'Karman quiere unirse a Brothers E-sport', 'teams/manage/6', 0, '2026-03-11 07:04:41'),
+(106, 72, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Goat Stars', 'teams/view/13', 0, '2026-03-11 07:23:43'),
+(107, 40, 'team', 'Nueva solicitud de uniÃ³n', 'Acker75 quiere unirse a Steel Angels', 'teams/manage/9', 0, '2026-03-11 09:00:28'),
+(108, 85, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Brothers E-sport', 'teams/view/6', 0, '2026-03-11 09:51:10'),
+(109, 24, 'team', 'Nueva solicitud de uniÃ³n', 'DragunoV quiere unirse a Blaze Souls Zenith', 'teams/manage/5', 0, '2026-03-11 12:01:32'),
+(110, 81, 'team', 'Nueva solicitud de uniÃ³n', 'SHADEPR1ME quiere unirse a We Are.', 'teams/manage/17', 0, '2026-03-11 12:55:58'),
+(111, 81, 'team', 'Nueva solicitud de uniÃ³n', 'YisusGr quiere unirse a We Are.', 'teams/manage/17', 0, '2026-03-11 13:04:07'),
+(112, 81, 'team', 'Nueva solicitud de uniÃ³n', 'Nozel quiere unirse a We Are.', 'teams/manage/17', 0, '2026-03-11 13:17:30'),
+(113, 54, 'team', 'Nueva solicitud de uniÃ³n', 'Frosty quiere unirse a Goat Stars', 'teams/manage/13', 0, '2026-03-11 13:46:07'),
+(114, 87, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Blaze Souls Zenith', 'teams/view/5', 0, '2026-03-11 13:53:58'),
+(115, 39, 'team', 'Nueva solicitud de uniÃ³n', 'Jesussosa quiere unirse a BORN 2 KILL', 'teams/manage/8', 0, '2026-03-11 14:39:40'),
+(116, 40, 'team', 'Nueva solicitud de uniÃ³n', '404_ quiere unirse a Steel Angels', 'teams/manage/9', 0, '2026-03-11 15:12:37'),
+(117, 95, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Steel Angels', 'teams/view/9', 0, '2026-03-11 15:36:24'),
+(118, 12, 'team', 'Nueva solicitud de uniÃ³n', 'Tonyy quiere unirse a SK Esport', 'teams/manage/10', 0, '2026-03-11 16:07:32'),
+(119, 94, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo BORN 2 KILL', 'teams/view/8', 0, '2026-03-11 16:08:42'),
+(120, 96, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo SK Esport', 'teams/view/10', 0, '2026-03-11 16:31:51'),
+(121, 74, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Manager en Liga WoC Venezuela', 'teams/view/7', 0, '2026-03-11 17:10:02'),
+(122, 38, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Manager en Liga WoC Venezuela', 'teams/view/7', 1, '2026-03-11 17:10:08'),
+(123, 38, 'team', 'Nueva solicitud de uniÃ³n', 'Moderador 2 quiere unirse a Liga WoC Venezuela', 'teams/manage/7', 1, '2026-03-11 17:15:17'),
+(124, 38, 'team', 'Nueva solicitud de uniÃ³n', 'Moderador 1 quiere unirse a Liga WoC Venezuela', 'teams/manage/7', 1, '2026-03-11 17:16:02'),
+(125, 71, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a ADC (Tirador) en SK Esport', 'teams/view/10', 0, '2026-03-11 17:17:22'),
+(126, 88, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Liga WoC Venezuela', 'teams/view/7', 1, '2026-03-11 17:18:06'),
+(127, 89, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Liga WoC Venezuela', 'teams/view/7', 0, '2026-03-11 17:18:09'),
+(128, 38, 'team', 'Nueva solicitud de uniÃ³n', 'RYUU quiere unirse a Liga WoC Venezuela', 'teams/manage/7', 1, '2026-03-11 17:21:15'),
+(129, 39, 'team', 'Nueva solicitud de uniÃ³n', 'Maki quiere unirse a BORN 2 KILL', 'teams/manage/8', 0, '2026-03-11 17:23:16'),
+(130, 100, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Liga WoC Venezuela', 'teams/view/7', 0, '2026-03-11 17:23:33'),
+(131, 93, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Goat Stars', 'teams/view/13', 0, '2026-03-11 17:27:20'),
+(132, 38, 'team', 'Nueva solicitud de uniÃ³n', 'ryo quiere unirse a Liga WoC Venezuela', 'teams/manage/7', 1, '2026-03-11 17:27:37'),
+(133, 99, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo BORN 2 KILL', 'teams/view/8', 0, '2026-03-11 17:34:17'),
+(134, 101, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Liga WoC Venezuela', 'teams/view/7', 0, '2026-03-11 17:37:10'),
+(135, 86, 'team', 'Solicitud rechazada', 'Tu solicitud para unirte a Steel Angels fue rechazada.', 'teams', 0, '2026-03-11 17:41:27'),
+(136, 54, 'team', 'Nueva solicitud de uniÃ³n', 'Acker75 quiere unirse a Goat Stars', 'teams/manage/13', 0, '2026-03-11 17:55:18'),
+(137, 86, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Goat Stars', 'teams/view/13', 0, '2026-03-11 18:05:02'),
+(138, 12, 'team', 'Nueva solicitud de uniÃ³n', 'Keossss quiere unirse a SK Esport', 'teams/manage/10', 0, '2026-03-11 18:17:34'),
+(139, 102, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo SK Esport', 'teams/view/10', 0, '2026-03-11 18:18:23'),
+(140, 62, 'team', 'Nueva solicitud de uniÃ³n', 'Jean_S quiere unirse a Nexus', 'teams/manage/15', 0, '2026-03-11 18:37:11'),
+(141, 103, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Nexus', 'teams/view/15', 0, '2026-03-11 22:01:09'),
+(142, 87, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a ADC (Tirador) en Blaze Souls Zenith', 'teams/view/5', 0, '2026-03-12 17:45:39'),
+(143, 78, 'team', 'Nueva solicitud de uniÃ³n', 'dalbin_31 quiere unirse a No Hate.', 'teams/manage/16', 1, '2026-03-13 09:23:41'),
+(144, 107, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo No Hate.', 'teams/view/16', 0, '2026-03-13 09:24:37'),
+(145, 78, 'team', 'Nueva solicitud de uniÃ³n', 'ManuPm quiere unirse a No Hate.', 'teams/manage/16', 1, '2026-03-13 09:46:09'),
+(146, 108, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo No Hate.', 'teams/view/16', 0, '2026-03-13 09:46:54'),
+(147, 109, 'team', 'Nueva solicitud de uniÃ³n', 'JPayamps quiere unirse a Between realm', 'teams/manage/19', 1, '2026-03-13 12:15:47'),
+(148, 105, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Between realm', 'teams/view/19', 0, '2026-03-13 12:16:36'),
+(149, 109, 'team', 'Nueva solicitud de uniÃ³n', 'Anthonylord quiere unirse a Between realm', 'teams/manage/19', 1, '2026-03-13 13:33:30'),
+(150, 110, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Between realm', 'teams/view/19', 0, '2026-03-13 13:44:13'),
+(151, 109, 'team', 'Nueva solicitud de uniÃ³n', 'Progenitor quiere unirse a Between realm', 'teams/manage/19', 1, '2026-03-13 13:47:01'),
+(152, 111, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Between realm', 'teams/view/19', 1, '2026-03-13 13:49:52'),
+(153, 12, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Tanque en SK Esport', 'teams/view/10', 0, '2026-03-13 16:25:59'),
+(154, 71, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a ADC (Tirador) en SK Esport', 'teams/view/10', 0, '2026-03-13 16:26:10'),
+(155, 109, 'team', 'Nueva solicitud de uniÃ³n', 'Mr_Nightmare quiere unirse a Between realms', 'teams/manage/19', 1, '2026-03-13 18:46:47'),
+(156, 12, 'team', 'Nueva solicitud de uniÃ³n', 'Nearr quiere unirse a SK Esport', 'teams/manage/10', 0, '2026-03-13 18:50:27'),
+(157, 114, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo SK Esport', 'teams/view/10', 0, '2026-03-13 18:51:14'),
+(158, 78, 'team', 'Nueva solicitud de uniÃ³n', 'TOWIL quiere unirse a No Hate.', 'teams/manage/16', 1, '2026-03-13 21:43:59'),
+(159, 115, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo No Hate.', 'teams/view/16', 0, '2026-03-13 21:59:57'),
+(160, 113, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo Between realms', 'teams/view/19', 0, '2026-03-13 22:13:22'),
+(161, 78, 'team', 'Nueva solicitud de uniÃ³n', 'Zsasz quiere unirse a No Hate.', 'teams/manage/16', 1, '2026-03-13 22:38:24'),
+(162, 116, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo No Hate.', 'teams/view/16', 0, '2026-03-13 22:40:44'),
+(163, 51, 'team', 'Expulsado del equipo', 'Has sido retirado del equipo Goat Stars', 'teams', 0, '2026-03-16 16:55:14'),
+(164, 78, 'team', 'Nueva solicitud de uniÃ³n', 'Skayyyyyy quiere unirse a No Hate.', 'teams/manage/16', 1, '2026-03-16 20:43:59'),
+(165, 120, 'team', 'Â¡Solicitud aprobada!', 'Has sido aceptado en el equipo No Hate.', 'teams/view/16', 0, '2026-03-16 20:44:34'),
+(166, 122, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Mago en &#039;OR', 'teams/view/20', 0, '2026-03-22 10:57:43'),
+(167, 122, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Mago en &#039;OR', 'teams/view/20', 0, '2026-03-22 10:59:45'),
+(168, 122, 'team', 'Rol actualizado', 'El capitÃ¡n actualizÃ³ tu rol a Asesino en &#039;OR', 'teams/view/20', 0, '2026-03-22 11:08:14');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `paypal_orders`
+--
+
+CREATE TABLE `paypal_orders` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `package_id` int(11) NOT NULL,
+  `paypal_order_id` varchar(50) NOT NULL,
+  `paypal_capture_id` varchar(50) DEFAULT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `status` enum('created','approved','completed','failed','denied') DEFAULT 'created',
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `paypal_orders`
+--
+
+INSERT INTO `paypal_orders` (`id`, `user_id`, `package_id`, `paypal_order_id`, `paypal_capture_id`, `amount`, `status`, `created_at`, `updated_at`) VALUES
+(1, 88, 1, '1MK12548DU488720W', NULL, 1.00, 'created', '2026-03-17 09:45:19', NULL),
+(2, 88, 1, '67Y585781S806334G', NULL, 1.00, 'created', '2026-03-17 09:45:30', NULL),
+(3, 88, 2, '73W92656L7388393M', NULL, 5.00, 'created', '2026-03-17 09:45:31', NULL),
+(4, 88, 1, '123258831S1901255', NULL, 1.00, 'created', '2026-03-17 09:48:49', NULL),
+(5, 88, 1, '1V782136S65848111', NULL, 1.00, 'created', '2026-03-17 10:09:40', NULL),
+(6, 88, 1, '0X990050CW321751X', NULL, 1.00, 'created', '2026-03-17 10:09:47', NULL),
+(7, 88, 1, '22X658459R623003F', NULL, 1.00, 'failed', '2026-03-17 10:13:02', '2026-03-17 10:17:21'),
+(8, 88, 1, '94T11285G4787782T', NULL, 1.00, 'failed', '2026-03-17 10:24:12', '2026-03-17 10:25:30'),
+(9, 88, 1, '8ST68513H3045805J', '1U7198465D854502U', 1.00, 'completed', '2026-03-17 10:38:16', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `platform_config`
+--
+
+CREATE TABLE `platform_config` (
+  `id` int(11) NOT NULL,
+  `config_key` varchar(100) NOT NULL,
+  `config_value` text DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `platform_config`
+--
+
+INSERT INTO `platform_config` (`id`, `config_key`, `config_value`, `description`, `updated_at`) VALUES
+(1, 'site_name', 'Liga WOC', 'Nombre del sitio', '2026-03-22 15:18:51'),
+(2, 'site_description', 'Plataforma de torneos de Mobile Legends', 'Descripción del sitio', '2026-03-22 15:18:51'),
+(3, 'points_win', '3', 'Puntos por victoria', '2026-03-22 15:18:51'),
+(4, 'points_loss', '0', 'Puntos por derrota', '2026-03-22 15:18:51'),
+(5, 'points_draw', '1', 'Puntos por empate', '2026-03-22 15:18:51'),
+(6, 'max_team_members', '7', 'Máximo de miembros por equipo', '2026-03-22 15:18:51'),
+(7, 'current_season', '1', 'Temporada actual', '2026-03-22 15:18:51'),
+(8, 'registration_open', '1', 'Registro abierto', '2026-03-22 15:18:51');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `player_rankings`
+--
+
+CREATE TABLE `player_rankings` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `season_id` int(11) DEFAULT NULL,
+  `matches_played` int(11) DEFAULT 0,
+  `matches_won` int(11) DEFAULT 0,
+  `mvp_count` int(11) DEFAULT 0,
+  `kills` int(11) DEFAULT 0,
+  `deaths` int(11) DEFAULT 0,
+  `assists` int(11) DEFAULT 0,
+  `points` int(11) DEFAULT 0,
+  `position` int(11) DEFAULT 0,
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prizes`
+--
+
+CREATE TABLE `prizes` (
+  `id` int(11) NOT NULL,
+  `tournament_id` int(11) NOT NULL,
+  `position` int(11) NOT NULL,
+  `prize_type` enum('money','diamonds','skin','other') NOT NULL,
+  `description` varchar(200) NOT NULL,
+  `value` varchar(100) DEFAULT NULL,
+  `awarded_to_team_id` int(11) DEFAULT NULL,
+  `is_delivered` tinyint(1) DEFAULT 0,
+  `delivered_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `seasons`
+--
+
+CREATE TABLE `seasons` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date DEFAULT NULL,
+  `is_active` tinyint(1) DEFAULT 0,
+  `description` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `seasons`
+--
+
+INSERT INTO `seasons` (`id`, `name`, `start_date`, `end_date`, `is_active`, `description`, `created_at`) VALUES
+(1, 'Temporada 1', '2026-03-06', NULL, 0, 'Primera temporada de Liga WOC', '2026-03-06 09:57:09'),
+(2, 'Temporada 2', '2026-03-17', NULL, 1, '', '2026-03-17 23:33:30');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `shop_items`
+--
+
+CREATE TABLE `shop_items` (
+  `id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `designer_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text DEFAULT NULL,
+  `image` varchar(255) NOT NULL,
+  `price_coins` int(11) NOT NULL,
+  `is_active` tinyint(1) DEFAULT 1,
+  `is_featured` tinyint(1) DEFAULT 0,
+  `total_sales` int(11) DEFAULT 0,
+  `approved_by` int(11) DEFAULT NULL,
+  `approved_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `shop_items`
+--
+
+INSERT INTO `shop_items` (`id`, `category_id`, `designer_id`, `name`, `description`, `image`, `price_coins`, `is_active`, `is_featured`, `total_sales`, `approved_by`, `approved_at`, `created_at`) VALUES
+(1, 1, 88, 'marco legendario', '', 'item_1773740603_5743.png', 100, 1, 0, 0, NULL, NULL, '2026-03-17 05:43:23'),
+(2, 1, 88, 'api', '', 'item_1773740805_9419.png', 100, 1, 0, 0, NULL, NULL, '2026-03-17 05:46:45'),
+(3, 1, 88, 'a', '', 'item_1773741129_1609.png', 100, 1, 0, 0, NULL, NULL, '2026-03-17 05:52:09'),
+(4, 1, 88, 'as', '', 'item_1773741250_5706.png', 1, 1, 0, 0, NULL, NULL, '2026-03-17 05:54:10'),
+(5, 1, 88, 'marco legendario', '', 'item_1773741474_3869.png', 1, 1, 0, 1, NULL, NULL, '2026-03-17 05:57:54'),
+(6, 1, 88, 'marco legendario', '', 'item_1773741496_8877.png', 1, 1, 0, 0, NULL, NULL, '2026-03-17 05:58:16'),
+(7, 1, 88, 'marco legendario', '', 'item_1773741507_6964.png', 1, 1, 0, 0, NULL, NULL, '2026-03-17 05:58:27'),
+(8, 1, 88, 'marco legendario', '', 'item_1773741698_4719.png', 1, 1, 0, 0, NULL, NULL, '2026-03-17 06:01:38'),
+(9, 1, 88, 'd', '', 'item_1773741728_9209.png', 100, 1, 0, 0, NULL, NULL, '2026-03-17 06:02:08'),
+(10, 1, 88, 'ed', '', 'item_1773741822_3531.png', 100, 1, 0, 0, NULL, NULL, '2026-03-17 06:03:42'),
+(11, 1, 88, 'ededs', '', 'item_1773741881_4466.png', 100, 1, 0, 0, NULL, NULL, '2026-03-17 06:04:41'),
+(12, 1, 88, 'zx', '', 'item_1773741947_9755.png', 100, 1, 0, 0, NULL, NULL, '2026-03-17 06:05:47'),
+(13, 1, 88, 'xc', '', 'item_1773748875_2860.png', 2, 1, 0, 1, NULL, NULL, '2026-03-17 08:01:15'),
+(14, 2, 88, 'legen', '', 'item_1773749355_5815.png', 5, 1, 0, 1, NULL, NULL, '2026-03-17 08:09:15'),
+(15, 1, 88, 'qw', '', 'item_1773750182_8577.png', 2, 1, 0, 1, NULL, NULL, '2026-03-17 08:23:02'),
+(16, 1, 88, 'uquiqeuqw', '', 'item_1773783086_1901.png', 5, 1, 0, 0, NULL, NULL, '2026-03-17 17:31:26'),
+(17, 2, 88, 'portada prestigiosa', '', 'item_1773785007_1342.png', 10, 1, 0, 0, NULL, NULL, '2026-03-17 18:03:27'),
+(18, 2, 88, 'Natan Prime Red', '', 'item_1773785907_4362.png', 600, 1, 0, 2, NULL, NULL, '2026-03-17 18:18:27'),
+(19, 1, 88, 'iiuiiu', '', 'item_1773805674_8622.png', 10, 1, 0, 2, NULL, NULL, '2026-03-17 23:47:54');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `streams`
+--
+
+CREATE TABLE `streams` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `url` varchar(500) NOT NULL,
+  `platform` enum('youtube','twitch','facebook','other') DEFAULT 'youtube',
+  `tournament_id` int(11) DEFAULT NULL,
+  `is_live` tinyint(1) DEFAULT 0,
+  `scheduled_at` datetime DEFAULT NULL,
+  `thumbnail` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `teams`
+--
+
+CREATE TABLE `teams` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `tag` varchar(10) DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `banner` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `region` varchar(50) DEFAULT NULL,
+  `captain_id` int(11) NOT NULL,
+  `max_members` int(11) DEFAULT 7,
+  `is_active` tinyint(1) DEFAULT 1,
+  `is_verified` tinyint(1) DEFAULT 0,
+  `wins` int(11) DEFAULT 0,
+  `losses` int(11) DEFAULT 0,
+  `points` int(11) DEFAULT 0,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `teams`
+--
+
+INSERT INTO `teams` (`id`, `name`, `tag`, `logo`, `banner`, `description`, `region`, `captain_id`, `max_members`, `is_active`, `is_verified`, `wins`, `losses`, `points`, `created_at`, `updated_at`) VALUES
+(1, 'Proevolutiongamers', 'PEG', 'teams/team_1773167542_69b063b676741.jpg', NULL, 'Team con deseo de mejorar cada dÃ­a y con ganas de aprender cosas nuevas', 'RepÃºblica Dominicana', 9, 20, 1, 0, 0, 0, 0, '2026-03-10 14:32:22', '2026-03-11 16:30:27'),
+(2, 'Bio Gaming', 'BG', 'teams/team_1773175595_69b0832b8a0a3.png', NULL, '', 'La Guaira, Venezuela', 15, 20, 1, 0, 0, 0, 0, '2026-03-10 16:46:35', '2026-03-11 16:30:27'),
+(3, 'KOI Gaming', 'KOI', 'teams/team_1773175609_69b0833947c2b.png', NULL, '', 'Venezuela', 18, 20, 1, 0, 0, 0, 0, '2026-03-10 16:46:49', '2026-03-11 16:30:27'),
+(4, 'Night Raid', 'NG', 'teams/team_1773176140_69b0854ce292e.png', NULL, '', 'Argentina, Latino America', 20, 20, 1, 0, 0, 0, 0, '2026-03-10 16:55:40', '2026-03-11 16:30:27'),
+(5, 'Blaze Souls Zenith', 'BSZ', 'teams/team_1773176377_69b0863946db4.jpg', NULL, 'Las leyendas que se forjan entre el fuego y el acero den una ovaciÃ³n a blaze Souls Zenith ðŸ”¥âš”ï¸', 'Venezuela', 24, 20, 1, 0, 0, 0, 0, '2026-03-10 16:59:37', '2026-03-11 16:30:27'),
+(6, 'Brothers E-sport', 'BS', 'teams/team_1773178309_69b08dc50803b.jpg', NULL, 'Un equipo comprometido con mejorar', 'Santiago de los caballeros , RD', 33, 20, 1, 0, 0, 0, 0, '2026-03-10 17:31:49', '2026-03-11 16:30:27'),
+(7, 'Liga WoC Venezuela', 'WoC', 'teams/team_1773180578_69b096a2a72cb.jpg', NULL, 'WoC en Venezuela', 'Caracas', 38, 20, 1, 1, 0, 0, 0, '2026-03-10 18:09:38', '2026-03-11 20:23:39'),
+(8, 'BORN 2 KILL', 'B2K.GAMING', 'teams/team_1773180821_69b09795d9614.jpg', NULL, 'Equipo competitivo participe en la liga Woc , clasificaciÃ³n desafÃ­o latam y mÃ¡s.', 'Venezuela', 39, 20, 1, 0, 0, 0, 0, '2026-03-10 18:13:41', '2026-03-11 16:30:27'),
+(9, 'Steel Angels', 'SA', 'teams/team_1773181333_69b09995ddd5f.jpg', NULL, 'SA', 'Venezuela', 40, 20, 1, 0, 0, 0, 0, '2026-03-10 18:22:13', '2026-03-11 16:30:27'),
+(10, 'SK Esport', 'SK', 'teams/team_1773182519_69b09e37da019.jpg', NULL, '', 'El Salvador', 12, 20, 1, 0, 0, 0, 0, '2026-03-10 18:41:59', '2026-03-11 16:30:27'),
+(11, 'Blaze Souls Phoenix', 'BS', 'teams/team_1773183214_69b0a0ee75cbe.jpg', NULL, '', 'Venezuela', 46, 20, 1, 0, 0, 0, 0, '2026-03-10 18:53:34', '2026-03-11 16:30:27'),
+(12, 'Divinas', 'DIVA', 'teams/team_1773184480_69b0a5e091f14.png', NULL, '', '', 49, 20, 1, 0, 0, 0, 0, '2026-03-10 19:14:40', '2026-03-11 16:30:27'),
+(13, 'Goat Stars', 'G.S', 'teams/team_1773185790_69b0aafeaf2f6.jpg', NULL, 'Grupo mixto', 'South America', 54, 20, 1, 0, 0, 0, 0, '2026-03-10 19:36:30', '2026-03-11 16:30:27'),
+(14, 'King of Zodiac', 'KOZ', 'teams/team_1773187909_69b0b345be80e.jpg', NULL, '', '', 61, 20, 1, 0, 0, 0, 0, '2026-03-10 20:11:49', '2026-03-11 16:30:27'),
+(15, 'Nexus', 'NX', 'teams/team_1773189794_69b0baa21eebf.jpg', NULL, 'En este equipo, tu valor se mide con las Kills', 'Puerto plata RD', 62, 20, 1, 0, 0, 0, 0, '2026-03-10 20:43:14', '2026-03-11 16:30:27'),
+(16, 'No Hate.', 'HATE', 'teams/team_1773409269_69b413f53fc90.jpg', NULL, 'El odio no lo es todo!', 'HigÃ¼ey,  Santo Domingo Este', 78, 20, 1, 0, 0, 0, 0, '2026-03-10 23:43:54', '2026-03-13 09:41:09'),
+(17, 'We Are.', '', 'teams/team_1773204640_69b0f4a0e0302.jpg', NULL, '', 'Venezuela', 81, 20, 1, 0, 0, 0, 0, '2026-03-11 00:50:40', '2026-03-11 16:30:27'),
+(18, 'Prueba', '123', NULL, NULL, '', 'RD', 10, 20, 1, 0, 0, 0, 0, '2026-03-11 17:18:59', '2026-03-11 17:18:59'),
+(19, 'Between realms', 'BR', 'teams/team_1773416566_69b4307683db3.jpg', NULL, '', '', 109, 20, 1, 0, 0, 0, 0, '2026-03-13 11:42:46', '2026-03-13 15:15:58'),
+(20, 'Testing', 'web', 'teams/team_1774208014_69c0440e7bfd4.jpg', NULL, '666', 'Planet Hack', 122, 20, 1, 0, 0, 0, 0, '2026-03-22 10:13:10', '2026-03-22 15:33:34');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `team_join_requests`
+--
+
+CREATE TABLE `team_join_requests` (
+  `id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `ml_id` varchar(50) NOT NULL,
+  `ml_server` varchar(20) NOT NULL,
+  `ml_nickname` varchar(50) NOT NULL,
+  `nickname` varchar(50) DEFAULT NULL,
+  `role` enum('adc','mage','tank','assassin','fighter','support') NOT NULL,
+  `lane_1` enum('gold','mid','exp','roam','jungle') NOT NULL,
+  `lane_2` enum('gold','mid','exp','roam','jungle') DEFAULT NULL,
+  `main_hero` varchar(50) NOT NULL,
+  `current_rank` varchar(30) DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `status` enum('pending','approved','rejected') DEFAULT 'pending',
+  `reviewed_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `team_join_requests`
+--
+
+INSERT INTO `team_join_requests` (`id`, `team_id`, `user_id`, `ml_id`, `ml_server`, `ml_nickname`, `nickname`, `role`, `lane_1`, `lane_2`, `main_hero`, `current_rank`, `message`, `status`, `reviewed_at`, `created_at`) VALUES
+(1, 1, 13, '', '', '', 'Berserker', 'tank', 'roam', 'exp', 'Tigreal', 'mythical_immortal', '', 'pending', NULL, '2026-03-10 16:40:41'),
+(2, 3, 19, '', '', '', 'Momo', 'tank', 'roam', 'gold', '', 'mythical_immortal', 'Sunny tocame las bolitas', 'approved', '2026-03-10 17:29:23', '2026-03-10 16:47:48'),
+(3, 3, 25, '', '', '', 'Sinsajo', 'assassin', 'jungle', 'exp', '', 'mythical_immortal', 'Sunny tocame las balls', 'approved', '2026-03-10 17:29:19', '2026-03-10 16:57:38'),
+(4, 4, 23, '', '', '', '', 'fighter', '', 'mid', '', '', 'Si', 'approved', '2026-03-10 18:06:28', '2026-03-10 17:00:41'),
+(5, 5, 4, '', '', '', 'tavitoxx', 'mage', '', 'gold', 'Yve', 'mythical_immortal', 'Soy de aqui vale', 'approved', '2026-03-10 18:10:50', '2026-03-10 17:02:17'),
+(6, 4, 21, '', '', '', '', '', 'jungle', 'gold', '', '', '', 'approved', '2026-03-10 18:06:17', '2026-03-10 17:03:51'),
+(7, 5, 16, '', '', '', 'LELOUCH', 'assassin', 'jungle', '', 'Fredrinn', 'mythical_immortal', '', 'approved', '2026-03-10 18:10:48', '2026-03-10 17:04:11'),
+(8, 5, 27, '', '', '', '', 'fighter', '', 'gold', '', 'mythical_immortal', '', 'approved', '2026-03-10 18:10:45', '2026-03-10 17:04:16'),
+(9, 1, 30, '', '', '', 'Strovk', 'mage', '', 'roam', '', 'mythical_immortal', '', 'pending', NULL, '2026-03-10 17:14:25'),
+(10, 3, 29, '', '', '', 'Chester', 'fighter', '', 'jungle', '', 'mythical_immortal', '', 'approved', '2026-03-10 17:29:15', '2026-03-10 17:15:22'),
+(11, 3, 34, '', '', '', '', '', '', '', '', '', '', 'approved', '2026-03-10 17:31:31', '2026-03-10 17:29:45'),
+(12, 6, 11, '', '', '', 'Kebote', '', '', 'roam', '', '', '', 'approved', '2026-03-10 17:59:24', '2026-03-10 17:55:33'),
+(13, 4, 37, '', '', '', 'Negro', '', '', '', 'Popol and Kupa', 'mythical_honor', 'Atr jaja', 'approved', '2026-03-10 20:03:34', '2026-03-10 18:11:34'),
+(14, 8, 35, '', '', '', 'ILIA TOPURIA', 'tank', 'roam', 'roam', '', 'mythical_glory', '', 'approved', '2026-03-10 18:17:11', '2026-03-10 18:16:52'),
+(15, 9, 43, '', '', '', 'Guzz', '', '', 'roam', 'Kimmy', 'legend', '', 'approved', '2026-03-10 18:35:55', '2026-03-10 18:33:54'),
+(16, 9, 26, '', '', '', 'Gabs', 'assassin', 'jungle', 'mid', 'Julian', 'mythical_glory', 'Aki y OdÃ­n nos obligÃ³', 'approved', '2026-03-10 18:37:49', '2026-03-10 18:36:39'),
+(17, 7, 45, '', '', '', 'Shyy', 'assassin', 'jungle', 'gold', 'Fanny', 'mythical_immortal', '', 'approved', '2026-03-10 18:48:50', '2026-03-10 18:37:48'),
+(18, 11, 50, '', '', '', '', 'mage', '', '', 'Kagura', 'mythical_immortal', '', 'approved', '2026-03-10 19:18:50', '2026-03-10 19:15:54'),
+(19, 11, 47, '', '', '', 'Terrel', 'fighter', '', '', 'Esmeralda', 'mythical_immortal', 'Porque soy parte del equipo', 'approved', '2026-03-10 19:18:46', '2026-03-10 19:16:12'),
+(20, 11, 48, '', '', '', 'Aizzo', 'assassin', '', 'jungle', '', 'mythical_immortal', '', 'approved', '2026-03-10 19:21:41', '2026-03-10 19:19:44'),
+(21, 6, 53, '', '', '', 'Kaze', 'mage', '', '', '', 'mythical_immortal', '', 'approved', '2026-03-10 19:58:36', '2026-03-10 19:26:08'),
+(22, 9, 28, '', '', '', '', 'mage', '', 'gold', 'Zhuxin', 'mythical_immortal', '', 'approved', '2026-03-10 19:33:53', '2026-03-10 19:32:25'),
+(23, 6, 44, '', '', '', '', '', '', 'jungle', '', 'mythical_glory', '', 'approved', '2026-03-10 19:58:30', '2026-03-10 19:32:58'),
+(24, 5, 55, '', '', '', 'Vixen', 'fighter', '', '', 'Lapu-Lapu', 'mythical_immortal', '', 'approved', '2026-03-10 23:01:28', '2026-03-10 19:42:37'),
+(25, 13, 57, '', '', '', 'Yohan', '', '', '', '', 'mythical_glory', '', 'approved', '2026-03-10 20:41:17', '2026-03-10 19:44:50'),
+(26, 13, 31, '', '', '', 'LitlleCrack', 'fighter', '', 'jungle', 'Ruby', 'mythical_glory', 'Unirme al equipo', 'approved', '2026-03-10 20:41:13', '2026-03-10 19:53:02'),
+(27, 13, 51, '', '', '', 'Sundragon', '', 'jungle', '', '', 'mythical_immortal', '', 'approved', '2026-03-10 20:41:10', '2026-03-10 19:53:20'),
+(28, 4, 60, '', '', '', '', 'tank', '', '', '', '', '', 'approved', '2026-03-10 20:42:28', '2026-03-10 20:22:52'),
+(29, 15, 65, '', '', '', 'It&#039;s Panda âœ“', 'tank', 'roam', 'gold', '', 'mythical_immortal', 'Panda es el mÃ¡s singon', 'approved', '2026-03-10 20:53:50', '2026-03-10 20:51:31'),
+(30, 9, 63, '', '', '', 'Moon, Maple', 'fighter', '', 'roam', '', 'mythical_immortal', '', 'approved', '2026-03-10 20:52:57', '2026-03-10 20:52:11'),
+(31, 9, 64, '', '', '', 'Juanzmh110', 'fighter', '', 'mid', 'Guinevere', 'mythical_glory', 'I love you&lt;3 odin', 'approved', '2026-03-10 20:52:55', '2026-03-10 20:52:29'),
+(32, 12, 66, '', '', '', '[AFKs]', 'tank', 'roam', '', 'Khaleed', 'mythical_honor', 'Klk soy luis', 'approved', '2026-03-10 21:03:22', '2026-03-10 20:57:40'),
+(33, 12, 67, '', '', '', '', 'mage', '', 'mid', 'Kadita', 'mythical_glory', '', 'approved', '2026-03-10 21:03:18', '2026-03-10 20:58:15'),
+(34, 12, 68, '', '', '', 'Dionix', 'assassin', 'jungle', 'jungle', '', 'mythical_glory', '', 'approved', '2026-03-10 21:42:03', '2026-03-10 21:12:01'),
+(35, 13, 72, '', '', '', '', 'mage', '', 'gold', '', 'mythical_glory', '', 'approved', '2026-03-11 07:23:43', '2026-03-10 21:30:26'),
+(36, 12, 70, '', '', '', 'Amy', 'mage', '', 'mid', 'Zhuxin', 'mythic', '', 'approved', '2026-03-10 21:36:44', '2026-03-10 21:30:28'),
+(37, 10, 71, '', '', '', '', '', '', 'jungle', '', 'mythical_immortal', '', 'approved', '2026-03-10 22:24:36', '2026-03-10 21:31:38'),
+(38, 15, 69, '', '', '', 'Samu', 'mage', '', '', 'Kagura', 'mythical_immortal', 'Porque mi compa me invitÃ³ (â â€¢â â€¿â â€¢â )', 'approved', '2026-03-10 21:46:26', '2026-03-10 21:44:22'),
+(39, 7, 41, '', '', '', 'Ken', 'tank', 'roam', '', 'Chip', 'mythical_immortal', '', 'approved', '2026-03-10 22:04:42', '2026-03-10 21:58:20'),
+(40, 7, 74, '', '', '', 'Azubzin71', 'assassin', 'jungle', 'exp', 'Alucard', 'mythical_immortal', '', 'approved', '2026-03-10 22:04:39', '2026-03-10 22:02:59'),
+(41, 5, 75, '', '', '', 'Street', 'tank', 'roam', '', 'Badang', 'mythical_immortal', 'Idk', 'approved', '2026-03-10 23:01:24', '2026-03-10 22:14:03'),
+(42, 10, 76, '', '', '', 'Ryuk', 'tank', 'roam', 'exp', 'Franco', 'mythical_immortal', 'Porque yo los voy a carrear con el Franco pro', 'approved', '2026-03-10 22:44:16', '2026-03-10 22:32:20'),
+(43, 10, 77, '', '', '', 'Ouma', 'fighter', '', 'jungle', 'Gloo', 'mythical_immortal', 'Por q si', 'approved', '2026-03-10 22:44:21', '2026-03-10 22:42:15'),
+(44, 16, 80, '', '', '', 'El VarÃ³n', 'tank', 'roam', '', 'Minotaur', 'mythical_immortal', '', 'approved', '2026-03-11 00:04:38', '2026-03-10 23:59:05'),
+(45, 17, 82, '', '', '', 'Anthar', '', '', 'jungle', 'Claude', 'mythical_immortal', 'Mmalo bb', 'approved', '2026-03-11 01:15:43', '2026-03-11 01:06:50'),
+(46, 8, 83, '', '', '', 'Lucky', 'assassin', 'jungle', '', 'Yi Sun-shin', 'mythical_immortal', '', 'approved', '2026-03-11 02:40:45', '2026-03-11 01:18:53'),
+(47, 17, 84, '', '', '', 'Cheguetown', 'fighter', '', '', 'Arlott', 'mythical_immortal', '', 'approved', '2026-03-11 03:53:21', '2026-03-11 02:38:02'),
+(48, 17, 58, '', '', '', 'Â²âµDark.', 'tank', 'roam', 'gold', '', 'mythical_immortal', 'Kenneth aceptame no seas malo', 'approved', '2026-03-11 03:53:10', '2026-03-11 02:45:28'),
+(49, 8, 36, '', '', '', 'XENON', 'mage', '', 'roam', 'Lylia', 'mythical_immortal', '', 'approved', '2026-03-11 03:54:13', '2026-03-11 03:34:11'),
+(50, 6, 85, '', '', '', '', 'fighter', '', 'exp', '', 'mythical_immortal', '', 'approved', '2026-03-11 09:51:10', '2026-03-11 07:04:41'),
+(51, 9, 86, '', '', '', 'Aiser', 'fighter', 'jungle', 'exp', 'Yin', 'mythical_honor', 'Aki y odin me obligÃ³', 'rejected', '2026-03-11 17:41:27', '2026-03-11 09:00:28'),
+(52, 5, 87, '', '', '', 'DragunoV', '', '', 'exp', 'Beatrix', 'epic', '', 'approved', '2026-03-11 13:53:58', '2026-03-11 12:01:32'),
+(53, 17, 90, '', '', '', 'SHADEPR1ME', 'support', 'roam', 'exp', 'Hilda', 'mythical_immortal', 'Acepta pe ctm', 'pending', NULL, '2026-03-11 12:55:58'),
+(54, 17, 91, '', '', '', '', 'mage', '', 'roam', '', 'mythical_immortal', '', 'pending', NULL, '2026-03-11 13:04:07'),
+(55, 17, 92, '', '', '', 'Nozel', 'fighter', '', NULL, 'Yu Zhong', 'epic', '', 'pending', NULL, '2026-03-11 13:17:30'),
+(56, 13, 93, '', '', '', 'Frosty', 'mage', 'roam', 'mid', '', 'epic', 'Soy el goat', 'approved', '2026-03-11 17:27:20', '2026-03-11 13:46:07'),
+(57, 8, 94, '', '', '', 'you lost', 'tank', 'roam', NULL, '', 'mythical_immortal', '', 'approved', '2026-03-11 16:08:42', '2026-03-11 14:39:40'),
+(58, 9, 95, '', '', '', '404_', 'tank', 'roam', 'gold', 'Hilda', 'mythical_immortal', 'Porque shi', 'approved', '2026-03-11 15:36:24', '2026-03-11 15:12:37'),
+(59, 10, 96, '', '', '', 'Tonyy', 'mage', '', 'roam', 'Lylia', 'mythical_immortal', 'Hola mia mor', 'approved', '2026-03-11 16:31:51', '2026-03-11 16:07:32'),
+(60, 7, 89, '', '', '', 'mod', 'tank', 'roam', 'roam', 'Franco', 'mythical_immortal', '', 'approved', '2026-03-11 17:18:09', '2026-03-11 17:15:17'),
+(61, 7, 88, '', '', '', 'mod2', 'tank', 'roam', 'roam', 'Grock', 'mythical_immortal', '', 'approved', '2026-03-11 17:18:06', '2026-03-11 17:16:02'),
+(62, 7, 100, '', '', '', 'RYUU PRIME', 'tank', 'roam', 'mid', 'Chou', 'mythical_immortal', 'Tqm', 'approved', '2026-03-11 17:23:33', '2026-03-11 17:21:15'),
+(63, 8, 99, '', '', '', '', '', '', 'gold', '', 'mythical_immortal', '', 'approved', '2026-03-11 17:34:17', '2026-03-11 17:23:16'),
+(64, 7, 101, '', '', '', 'ryo', '', 'roam', 'jungle', '', 'epic', 'ola soy ryo', 'approved', '2026-03-11 17:37:10', '2026-03-11 17:27:37'),
+(65, 13, 86, '', '', '', 'Aiser', 'assassin', 'jungle', 'exp', 'Yin', 'epic', 'Aki y odin me obligaron', 'approved', '2026-03-11 18:05:02', '2026-03-11 17:55:18'),
+(66, 10, 102, '', '', '', 'Keoss.', 'assassin', 'jungle', NULL, '', 'mythical_immortal', '', 'approved', '2026-03-11 18:18:23', '2026-03-11 18:17:34'),
+(67, 15, 103, '', '', '', '', '', '', NULL, 'Moskov', NULL, '', 'approved', '2026-03-11 22:01:09', '2026-03-11 18:37:11'),
+(68, 16, 107, '', '', '', 'Cri&#039;', '', '', 'jungle', 'Natan', 'legend', 'Xd', 'approved', '2026-03-13 09:24:37', '2026-03-13 09:23:41'),
+(69, 16, 108, '', '', '', '', 'assassin', 'jungle', NULL, '', 'epic', '', 'approved', '2026-03-13 09:46:54', '2026-03-13 09:46:09'),
+(70, 19, 105, '', '', '', '', 'assassin', 'jungle', NULL, '', NULL, '', 'approved', '2026-03-13 12:16:36', '2026-03-13 12:15:47'),
+(71, 19, 110, '', '', '', 'Exotico', 'tank', 'roam', 'exp', '', 'epic', '', 'approved', '2026-03-13 13:44:13', '2026-03-13 13:33:30'),
+(72, 19, 111, '', '', '', '4-progenitor', 'fighter', '', 'gold', '', 'epic', 'Por quÃ© soy el mejor exp lane de RD y nesecito acarrear mancos', 'approved', '2026-03-13 13:49:52', '2026-03-13 13:47:01'),
+(73, 19, 113, '', '', '', 'Night', 'mage', '', NULL, '', 'epic', 'I AM THE BEST.', 'approved', '2026-03-13 22:13:22', '2026-03-13 18:46:47'),
+(74, 10, 114, '', '', '', '', 'mage', '', 'gold', '', 'mythical_immortal', '', 'approved', '2026-03-13 18:51:14', '2026-03-13 18:50:27'),
+(75, 16, 115, '', '', '', '', '', '', 'mid', 'Guinevere', NULL, 'Culo', 'approved', '2026-03-13 21:59:57', '2026-03-13 21:43:59'),
+(76, 16, 116, '', '', '', '', '', '', NULL, '', NULL, '', 'approved', '2026-03-13 22:40:44', '2026-03-13 22:38:24'),
+(77, 16, 120, '', '', '', 'Skayyy', 'mage', '', 'gold', 'Lunox', 'mythical_immortal', 'Porque tengo que entrar obligaoâ€™ oviel muÃ©vete y aceptame', 'approved', '2026-03-16 20:44:34', '2026-03-16 20:43:59');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `team_members`
+--
+
+CREATE TABLE `team_members` (
+  `id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `ml_id` varchar(50) NOT NULL,
+  `ml_server` varchar(20) NOT NULL,
+  `ml_nickname` varchar(50) NOT NULL,
+  `nickname` varchar(50) DEFAULT NULL,
+  `role` enum('adc','mage','tank','assassin','fighter','support') NOT NULL,
+  `lane_1` enum('gold','mid','exp','roam','jungle') NOT NULL,
+  `lane_2` enum('gold','mid','exp','roam','jungle') DEFAULT NULL,
+  `main_hero` varchar(50) NOT NULL,
+  `current_rank` varchar(30) DEFAULT NULL,
+  `is_captain` tinyint(1) DEFAULT 0,
+  `is_starter` tinyint(1) DEFAULT 1,
+  `joined_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `team_members`
+--
+
+INSERT INTO `team_members` (`id`, `team_id`, `user_id`, `ml_id`, `ml_server`, `ml_nickname`, `nickname`, `role`, `lane_1`, `lane_2`, `main_hero`, `current_rank`, `is_captain`, `is_starter`, `joined_at`) VALUES
+(1, 1, 9, '', '', '', 'Getico', '', 'jungle', 'gold', 'Ling', 'mythical_immortal', 1, 1, '2026-03-10 14:32:22'),
+(2, 2, 15, '', '', '', 'Tony310', 'fighter', '', 'jungle', '', 'mythical_glory', 1, 1, '2026-03-10 16:46:35'),
+(3, 3, 18, '', '', '', 'Sunny', 'mage', '', 'gold', 'Yve', 'mythical_immortal', 1, 1, '2026-03-10 16:46:49'),
+(4, 4, 20, '', '', '', 'Titan', 'mage', '', 'roam', '', 'mythical_honor', 1, 1, '2026-03-10 16:55:40'),
+(5, 5, 24, '', '', '', 'GHOST MASTER', 'tank', 'roam', 'mid', 'Carmilla', 'mythical_immortal', 1, 1, '2026-03-10 16:59:37'),
+(6, 3, 29, '', '', '', 'Chester', 'fighter', '', 'jungle', '', 'mythical_immortal', 0, 1, '2026-03-10 17:29:15'),
+(7, 3, 25, '', '', '', 'Sinsajo', 'assassin', 'jungle', 'exp', '', 'mythical_immortal', 0, 1, '2026-03-10 17:29:19'),
+(8, 3, 19, '', '', '', 'Momo', 'tank', 'roam', 'gold', '', 'mythical_immortal', 0, 1, '2026-03-10 17:29:23'),
+(9, 3, 34, '', '', '', '', '', '', '', '', '', 0, 1, '2026-03-10 17:31:31'),
+(10, 6, 33, '', '', '', '', 'tank', 'roam', '', 'Lolita', 'mythical_immortal', 1, 1, '2026-03-10 17:31:49'),
+(11, 6, 11, '', '', '', 'Kebote', '', '', 'roam', '', '', 0, 1, '2026-03-10 17:59:24'),
+(12, 4, 21, '', '', '', '', 'assassin', 'jungle', 'gold', '', '', 0, 1, '2026-03-10 18:06:17'),
+(13, 4, 23, '', '', '', '', 'fighter', '', 'mid', '', '', 0, 1, '2026-03-10 18:06:28'),
+(14, 7, 38, '', '', '', 'Dukeblack', '', 'roam', 'gold', 'Kaja', 'mythical_immortal', 1, 1, '2026-03-10 18:09:38'),
+(15, 5, 27, '', '', '', '', 'fighter', '', 'gold', '', 'mythical_immortal', 0, 1, '2026-03-10 18:10:45'),
+(16, 5, 16, '', '', '', 'LELOUCH', 'assassin', 'jungle', '', 'Fredrinn', 'mythical_immortal', 0, 1, '2026-03-10 18:10:48'),
+(17, 5, 4, '', '', '', 'tavitoxx', 'mage', '', 'gold', 'Yve', 'mythical_immortal', 0, 1, '2026-03-10 18:10:50'),
+(18, 8, 39, '', '', '', 'KORAQ7', 'fighter', '', 'jungle', '', 'mythical_immortal', 1, 1, '2026-03-10 18:13:41'),
+(19, 8, 35, '', '', '', 'ILIA TOPURIA', 'tank', 'roam', 'roam', '', 'mythical_glory', 0, 1, '2026-03-10 18:17:11'),
+(20, 9, 40, '', '', '', 'Odin', '', '', 'exp', 'Natan', 'mythical_glory', 1, 1, '2026-03-10 18:22:13'),
+(21, 9, 43, '', '', '', 'Guzz', '', '', 'roam', 'Kimmy', 'legend', 0, 1, '2026-03-10 18:35:55'),
+(22, 9, 26, '', '', '', 'Gabs', 'assassin', 'jungle', 'mid', 'Julian', 'mythical_glory', 0, 1, '2026-03-10 18:37:49'),
+(23, 10, 12, '', '', '', 'Eros', 'tank', '', 'gold', 'Phoveus', 'mythical_immortal', 1, 1, '2026-03-10 18:41:59'),
+(24, 7, 45, '', '', '', 'Shyy', 'assassin', 'jungle', 'gold', 'Fanny', 'mythical_immortal', 0, 1, '2026-03-10 18:48:50'),
+(25, 11, 46, '', '', '', 'Zayn', 'tank', 'roam', '', '', 'mythical_immortal', 1, 1, '2026-03-10 18:53:34'),
+(26, 12, 49, '', '', '', 'Jhonny Sins', '', '', '', 'Claude', 'mythical_honor', 1, 1, '2026-03-10 19:14:40'),
+(27, 11, 47, '', '', '', 'Terrel', 'fighter', '', '', 'Esmeralda', 'mythical_immortal', 0, 1, '2026-03-10 19:18:46'),
+(28, 11, 50, '', '', '', '', 'mage', '', '', 'Kagura', 'mythical_immortal', 0, 1, '2026-03-10 19:18:50'),
+(29, 11, 48, '', '', '', 'Aizzo', 'assassin', '', 'jungle', '', 'mythical_immortal', 0, 1, '2026-03-10 19:21:41'),
+(30, 9, 28, '', '', '', '', 'mage', '', 'gold', 'Zhuxin', 'mythical_immortal', 0, 1, '2026-03-10 19:33:53'),
+(31, 13, 54, '', '', '', 'Akinilla', 'tank', 'roam', 'exp', 'Chou', 'mythical_glory', 1, 1, '2026-03-10 19:36:30'),
+(32, 6, 44, '', '', '', '', '', '', 'jungle', '', 'mythical_glory', 0, 1, '2026-03-10 19:58:30'),
+(33, 6, 53, '', '', '', 'Kaze', 'mage', '', '', '', 'mythical_immortal', 0, 1, '2026-03-10 19:58:36'),
+(34, 4, 37, '', '', '', 'Negro', '', '', '', 'Popol and Kupa', 'mythical_honor', 0, 1, '2026-03-10 20:03:34'),
+(35, 14, 61, '', '', '', '', 'assassin', 'jungle', 'gold', '', 'mythical_immortal', 1, 1, '2026-03-10 20:11:49'),
+(37, 13, 31, '', '', '', 'LitlleCrack', 'fighter', '', 'jungle', 'Ruby', 'mythical_glory', 0, 1, '2026-03-10 20:41:13'),
+(38, 13, 57, '', '', '', 'Yohan', '', '', '', '', 'mythical_glory', 0, 1, '2026-03-10 20:41:17'),
+(39, 4, 60, '', '', '', '', 'tank', '', '', '', '', 0, 1, '2026-03-10 20:42:28'),
+(40, 15, 62, '', '', '', '', 'assassin', 'jungle', 'exp', 'Yin', 'mythical_immortal', 1, 1, '2026-03-10 20:43:14'),
+(41, 9, 64, '', '', '', 'Juanzmh110', 'fighter', '', 'mid', 'Guinevere', 'mythical_glory', 0, 1, '2026-03-10 20:52:55'),
+(42, 9, 63, '', '', '', 'Moon, Maple', 'fighter', '', 'roam', '', 'mythical_immortal', 0, 1, '2026-03-10 20:52:57'),
+(43, 15, 65, '', '', '', 'It&#039;s Panda âœ“', 'tank', 'roam', 'gold', '', 'mythical_immortal', 0, 1, '2026-03-10 20:53:50'),
+(44, 12, 67, '', '', '', '', 'mage', '', 'mid', 'Kadita', 'mythical_glory', 0, 1, '2026-03-10 21:03:18'),
+(45, 12, 66, '', '', '', '[AFKs]', 'tank', 'roam', '', 'Khaleed', 'mythical_honor', 0, 1, '2026-03-10 21:03:22'),
+(46, 12, 70, '', '', '', 'Amy', 'mage', '', 'mid', 'Zhuxin', 'mythic', 0, 1, '2026-03-10 21:36:44'),
+(47, 12, 68, '', '', '', 'Dionix', 'assassin', 'jungle', 'jungle', '', 'mythical_glory', 0, 1, '2026-03-10 21:42:03'),
+(48, 15, 69, '', '', '', 'Samu', 'mage', '', '', 'Kagura', 'mythical_immortal', 0, 1, '2026-03-10 21:46:26'),
+(49, 7, 74, '', '', '', 'Azubzin71', '', 'jungle', 'exp', 'Alucard', 'mythical_immortal', 0, 1, '2026-03-10 22:04:39'),
+(50, 7, 41, '', '', '', 'Ken', 'tank', 'roam', '', 'Chip', 'mythical_immortal', 0, 1, '2026-03-10 22:04:42'),
+(51, 10, 71, '', '', '', '', '', '', 'jungle', '', 'mythical_immortal', 0, 1, '2026-03-10 22:24:36'),
+(52, 10, 76, '', '', '', 'Ryuk', 'tank', 'roam', 'exp', 'Franco', 'mythical_immortal', 0, 1, '2026-03-10 22:44:16'),
+(53, 10, 77, '', '', '', 'Ouma', 'fighter', '', 'jungle', 'Gloo', 'mythical_immortal', 0, 1, '2026-03-10 22:44:21'),
+(54, 5, 75, '', '', '', 'Street', 'tank', 'roam', '', 'Badang', 'mythical_immortal', 0, 1, '2026-03-10 23:01:24'),
+(55, 5, 55, '', '', '', 'Vixen', 'fighter', '', '', 'Lapu-Lapu', 'mythical_immortal', 0, 1, '2026-03-10 23:01:28'),
+(56, 16, 78, '', '', '', '', 'fighter', '', 'mid', 'Yu Zhong', 'mythical_immortal', 1, 1, '2026-03-10 23:43:54'),
+(57, 16, 80, '', '', '', 'El VarÃ³n', 'tank', 'roam', '', 'Minotaur', 'mythical_immortal', 0, 1, '2026-03-11 00:04:38'),
+(58, 17, 81, '', '', '', 'El retris', 'assassin', 'jungle', 'gold', '', 'mythical_immortal', 1, 1, '2026-03-11 00:50:40'),
+(59, 17, 82, '', '', '', 'Anthar', '', '', 'jungle', 'Claude', 'mythical_immortal', 0, 1, '2026-03-11 01:15:43'),
+(60, 8, 83, '', '', '', 'Lucky', 'assassin', 'jungle', '', 'Yi Sun-shin', 'mythical_immortal', 0, 1, '2026-03-11 02:40:45'),
+(61, 17, 58, '', '', '', 'Â²âµDark.', 'tank', 'roam', 'gold', '', 'mythical_immortal', 0, 1, '2026-03-11 03:53:10'),
+(62, 17, 84, '', '', '', 'Cheguetown', 'fighter', '', '', 'Arlott', 'mythical_immortal', 0, 1, '2026-03-11 03:53:21'),
+(63, 8, 36, '', '', '', 'XENON', 'mage', '', 'roam', 'Lylia', 'mythical_immortal', 0, 1, '2026-03-11 03:54:13'),
+(64, 13, 72, '', '', '', '', 'mage', '', 'gold', '', 'mythical_glory', 0, 1, '2026-03-11 07:23:43'),
+(65, 6, 85, '', '', '', '', 'fighter', '', 'exp', '', 'mythical_immortal', 0, 1, '2026-03-11 09:51:10'),
+(66, 5, 87, '', '', '', 'DragunoV', '', '', 'exp', 'Beatrix', 'epic', 0, 1, '2026-03-11 13:53:58'),
+(67, 9, 95, '', '', '', '404_', 'tank', 'roam', 'gold', 'Hilda', 'mythical_immortal', 0, 1, '2026-03-11 15:36:24'),
+(68, 8, 94, '', '', '', 'you lost', 'tank', 'roam', NULL, '', 'mythical_immortal', 0, 1, '2026-03-11 16:08:42'),
+(69, 10, 96, '', '', '', 'Tonyy', 'mage', '', 'roam', 'Lylia', 'mythical_immortal', 0, 1, '2026-03-11 16:31:51'),
+(70, 7, 88, '', '', '', 'mod2', 'tank', 'roam', 'roam', 'Grock', 'mythical_immortal', 0, 1, '2026-03-11 17:18:06'),
+(71, 7, 89, '', '', '', 'mod', 'tank', 'roam', 'roam', 'Franco', 'mythical_immortal', 0, 1, '2026-03-11 17:18:09'),
+(72, 18, 10, '', '', '', 'DEATH2908', 'fighter', '', NULL, 'Argus', 'mythical_immortal', 1, 1, '2026-03-11 17:18:59'),
+(73, 7, 100, '', '', '', 'RYUU PRIME', 'tank', 'roam', 'mid', 'Chou', 'mythical_immortal', 0, 1, '2026-03-11 17:23:33'),
+(74, 13, 93, '', '', '', 'Frosty', 'mage', 'roam', 'mid', '', 'epic', 0, 1, '2026-03-11 17:27:20'),
+(75, 8, 99, '', '', '', '', '', '', 'gold', '', 'mythical_immortal', 0, 1, '2026-03-11 17:34:17'),
+(76, 7, 101, '', '', '', 'ryo', '', 'roam', 'jungle', '', 'epic', 0, 1, '2026-03-11 17:37:10'),
+(77, 13, 86, '', '', '', 'Aiser', 'assassin', 'jungle', 'exp', 'Yin', 'epic', 0, 1, '2026-03-11 18:05:02'),
+(78, 10, 102, '', '', '', 'Keoss.', 'assassin', 'jungle', NULL, '', 'mythical_immortal', 0, 1, '2026-03-11 18:18:23'),
+(79, 15, 103, '', '', '', '', '', '', NULL, 'Moskov', NULL, 0, 1, '2026-03-11 22:01:09'),
+(80, 16, 107, '', '', '', 'Cri&#039;', '', '', 'jungle', 'Natan', 'legend', 0, 1, '2026-03-13 09:24:37'),
+(81, 16, 108, '', '', '', '', 'assassin', 'jungle', NULL, '', 'epic', 0, 1, '2026-03-13 09:46:54'),
+(82, 19, 109, '', '', '', '', '', '', NULL, '', 'legend', 1, 1, '2026-03-13 11:42:46'),
+(83, 19, 105, '', '', '', '', 'assassin', 'jungle', NULL, '', NULL, 0, 1, '2026-03-13 12:16:36'),
+(84, 19, 110, '', '', '', 'Exotico', 'tank', 'roam', 'exp', '', 'epic', 0, 1, '2026-03-13 13:44:13'),
+(85, 19, 111, '', '', '', '4-progenitor', 'fighter', '', 'gold', '', 'epic', 0, 1, '2026-03-13 13:49:52'),
+(86, 10, 114, '', '', '', '', 'mage', '', 'gold', '', 'mythical_immortal', 0, 1, '2026-03-13 18:51:14'),
+(87, 16, 115, '', '', '', '', '', '', 'mid', 'Guinevere', NULL, 0, 1, '2026-03-13 21:59:57'),
+(88, 19, 113, '', '', '', 'Night', 'mage', '', NULL, '', 'epic', 0, 1, '2026-03-13 22:13:22'),
+(89, 16, 116, '', '', '', '', '', '', NULL, '', NULL, 0, 1, '2026-03-13 22:40:44'),
+(90, 16, 120, '', '', '', 'Skayyy', 'mage', '', 'gold', 'Lunox', 'mythical_immortal', 0, 1, '2026-03-16 20:44:34'),
+(91, 20, 122, '', '', '', 'https://ligawocdominicana.com/config/app.php', 'assassin', '', NULL, '', 'mythical_honor', 1, 1, '2026-03-22 10:13:10');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `team_rankings`
+--
+
+CREATE TABLE `team_rankings` (
+  `id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL,
+  `season_id` int(11) DEFAULT NULL,
+  `wins` int(11) DEFAULT 0,
+  `losses` int(11) DEFAULT 0,
+  `draws` int(11) DEFAULT 0,
+  `points` int(11) DEFAULT 0,
+  `kills_diff` int(11) DEFAULT 0,
+  `towers_diff` int(11) DEFAULT 0,
+  `tournaments_played` int(11) DEFAULT 0,
+  `tournaments_won` int(11) DEFAULT 0,
+  `matches_played` int(11) DEFAULT 0,
+  `position` int(11) DEFAULT 0,
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `team_rankings`
+--
+
+INSERT INTO `team_rankings` (`id`, `team_id`, `season_id`, `wins`, `losses`, `draws`, `points`, `kills_diff`, `towers_diff`, `tournaments_played`, `tournaments_won`, `matches_played`, `position`, `updated_at`) VALUES
+(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 14:32:22'),
+(2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 16:46:35'),
+(3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 16:46:49'),
+(4, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 16:55:40'),
+(5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 16:59:37'),
+(6, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 17:31:49'),
+(7, 7, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 18:09:38'),
+(8, 8, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 18:13:41'),
+(9, 9, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 18:22:13'),
+(10, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 18:41:59'),
+(11, 11, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 18:53:34'),
+(12, 12, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 19:14:40'),
+(13, 13, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 19:36:30'),
+(14, 14, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 20:11:49'),
+(15, 15, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 20:43:14'),
+(16, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-10 23:43:54'),
+(17, 17, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-11 00:50:40'),
+(18, 18, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-11 17:18:59'),
+(19, 19, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-13 11:42:46'),
+(20, 20, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2026-03-22 10:13:10');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tournaments`
+--
+
+CREATE TABLE `tournaments` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `description` text DEFAULT NULL,
+  `rules` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `season_id` int(11) DEFAULT NULL,
+  `format` enum('single_elimination','double_elimination','group_stage','round_robin') NOT NULL,
+  `team_size` int(11) DEFAULT 5,
+  `max_teams` int(11) DEFAULT 16,
+  `min_rank` varchar(30) DEFAULT NULL,
+  `entry_fee` decimal(10,2) DEFAULT 0.00,
+  `prize_pool` varchar(500) DEFAULT NULL,
+  `status` enum('draft','registration','ready','in_progress','completed','cancelled') DEFAULT 'draft',
+  `registration_start` datetime DEFAULT NULL,
+  `registration_end` datetime DEFAULT NULL,
+  `start_date` datetime DEFAULT NULL,
+  `end_date` datetime DEFAULT NULL,
+  `stream_url` varchar(500) DEFAULT NULL,
+  `created_by` int(11) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `is_main_tournament` tinyint(1) NOT NULL DEFAULT 0,
+  `tournament_type` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `tournaments`
+--
+
+INSERT INTO `tournaments` (`id`, `name`, `slug`, `description`, `rules`, `image`, `season_id`, `format`, `team_size`, `max_teams`, `min_rank`, `entry_fee`, `prize_pool`, `status`, `registration_start`, `registration_end`, `start_date`, `end_date`, `stream_url`, `created_by`, `created_at`, `updated_at`, `is_main_tournament`, `tournament_type`) VALUES
+(1, 'PRUEBA', 'prueba', '', '', 'tournaments/tournament_1773731542.png', NULL, 'single_elimination', 5, 16, NULL, 0.00, '50', 'in_progress', '2026-03-17 03:11:00', '2026-03-24 03:11:00', '2026-03-25 03:11:00', '2026-03-31 03:12:00', '', 2, '2026-03-17 03:12:22', '2026-03-17 17:14:06', 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tournament_matches`
+--
+
+CREATE TABLE `tournament_matches` (
+  `id` int(11) NOT NULL,
+  `tournament_id` int(11) NOT NULL,
+  `round` int(11) NOT NULL DEFAULT 1,
+  `match_number` int(11) NOT NULL,
+  `bracket_type` enum('winners','losers','finals','group','round_robin') DEFAULT 'winners',
+  `group_name` varchar(10) DEFAULT NULL,
+  `team1_id` int(11) DEFAULT NULL,
+  `team2_id` int(11) DEFAULT NULL,
+  `winner_id` int(11) DEFAULT NULL,
+  `loser_id` int(11) DEFAULT NULL,
+  `team1_score` int(11) DEFAULT 0,
+  `team2_score` int(11) DEFAULT 0,
+  `best_of` int(11) DEFAULT 1,
+  `room_id` varchar(50) DEFAULT NULL,
+  `room_password` varchar(50) DEFAULT NULL,
+  `scheduled_at` datetime DEFAULT NULL,
+  `started_at` datetime DEFAULT NULL,
+  `completed_at` datetime DEFAULT NULL,
+  `status` enum('pending','scheduled','live','completed','disputed','cancelled') DEFAULT 'pending',
+  `next_match_id` int(11) DEFAULT NULL,
+  `referee_id` int(11) DEFAULT NULL,
+  `notes` text DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `tournament_matches`
+--
+
+INSERT INTO `tournament_matches` (`id`, `tournament_id`, `round`, `match_number`, `bracket_type`, `group_name`, `team1_id`, `team2_id`, `winner_id`, `loser_id`, `team1_score`, `team2_score`, `best_of`, `room_id`, `room_password`, `scheduled_at`, `started_at`, `completed_at`, `status`, `next_match_id`, `referee_id`, `notes`, `created_at`) VALUES
+(1, 1, 1, 1, 'winners', NULL, 10, 13, NULL, NULL, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, 'pending', NULL, NULL, NULL, '2026-03-17 17:12:26'),
+(2, 1, 1, 2, 'winners', NULL, 9, 16, NULL, NULL, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, 'pending', NULL, NULL, NULL, '2026-03-17 17:12:26'),
+(3, 1, 1, 3, 'winners', NULL, 3, 7, NULL, NULL, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, 'pending', NULL, NULL, NULL, '2026-03-17 17:12:26'),
+(4, 1, 1, 4, 'winners', NULL, NULL, NULL, NULL, NULL, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, 'completed', NULL, NULL, NULL, '2026-03-17 17:12:26'),
+(5, 1, 2, 5, 'winners', NULL, NULL, NULL, NULL, NULL, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, 'pending', NULL, NULL, NULL, '2026-03-17 17:12:26'),
+(6, 1, 2, 6, 'winners', NULL, NULL, NULL, NULL, NULL, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, 'pending', NULL, NULL, NULL, '2026-03-17 17:12:26'),
+(7, 1, 3, 7, 'winners', NULL, NULL, NULL, NULL, NULL, 0, 0, 1, NULL, NULL, NULL, NULL, NULL, 'pending', NULL, NULL, NULL, '2026-03-17 17:12:26');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tournament_teams`
+--
+
+CREATE TABLE `tournament_teams` (
+  `id` int(11) NOT NULL,
+  `tournament_id` int(11) NOT NULL,
+  `team_id` int(11) NOT NULL,
+  `seed` int(11) DEFAULT NULL,
+  `group_name` varchar(10) DEFAULT NULL,
+  `status` enum('registered','confirmed','eliminated','winner','disqualified') DEFAULT 'registered',
+  `payment_status` enum('pending','paid','waived') DEFAULT 'pending',
+  `registered_at` datetime DEFAULT current_timestamp(),
+  `roster` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`roster`))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `tournament_teams`
+--
+
+INSERT INTO `tournament_teams` (`id`, `tournament_id`, `team_id`, `seed`, `group_name`, `status`, `payment_status`, `registered_at`, `roster`) VALUES
+(1, 1, 7, NULL, NULL, 'registered', 'waived', '2026-03-17 03:13:47', '[45,74,41,100,101]'),
+(2, 1, 3, NULL, NULL, 'registered', 'waived', '2026-03-17 05:36:21', '[18,29,25,19,34]'),
+(3, 1, 9, NULL, NULL, 'registered', 'waived', '2026-03-17 06:44:34', '[40,26,28,64,95]'),
+(4, 1, 16, NULL, NULL, 'registered', 'waived', '2026-03-17 10:02:39', '[78,80,107,108,115]'),
+(5, 1, 10, NULL, NULL, 'registered', 'waived', '2026-03-17 11:34:15', '[12,71,76,102,114]'),
+(6, 1, 13, NULL, NULL, 'registered', 'waived', '2026-03-17 12:50:16', '[54,31,57,72,93]');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('player','designer','admin','superadmin','moderator') DEFAULT 'player',
+  `cover` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `ml_id` varchar(50) DEFAULT NULL,
+  `ml_server` varchar(20) DEFAULT NULL,
+  `ml_nickname` varchar(50) DEFAULT NULL,
+  `main_hero` varchar(50) DEFAULT NULL,
+  `current_rank` varchar(30) DEFAULT NULL,
+  `whatsapp` varchar(30) DEFAULT NULL,
+  `phone_brand` varchar(100) DEFAULT NULL,
+  `discord` varchar(100) DEFAULT NULL,
+  `bio` text DEFAULT NULL,
+  `is_verified` tinyint(1) DEFAULT 0,
+  `verification_token` varchar(100) DEFAULT NULL,
+  `reset_token` varchar(100) DEFAULT NULL,
+  `reset_expires` datetime DEFAULT NULL,
+  `is_banned` tinyint(1) DEFAULT 0,
+  `ban_reason` varchar(255) DEFAULT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `ban_date` timestamp NULL DEFAULT NULL COMMENT 'Fecha del ban'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `cover`, `avatar`, `ml_id`, `ml_server`, `ml_nickname`, `main_hero`, `current_rank`, `whatsapp`, `phone_brand`, `discord`, `bio`, `is_verified`, `verification_token`, `reset_token`, `reset_expires`, `is_banned`, `ban_reason`, `last_login`, `created_at`, `updated_at`, `ban_date`) VALUES
+(1, 'superadmin', 'admin@ligawocdominicana.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'superadmin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, NULL, '2026-03-06 09:57:09', '2026-03-06 09:57:09', NULL),
+(2, 'AdminWoc', 'wocdominicana@admin.com', '$2y$10$nGZGWrOwr0ohCVpgCAJthOqvf2/wVpaBIOhj2ar5p6rftp.7NACq6', 'superadmin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-20 00:12:23', '2026-03-06 14:27:09', '2026-03-20 00:12:23', NULL),
+(3, 'Saky', 'mperales1877@gmail.com', '$2y$10$zc9F6YuhPepkVsljWB9YxOnWbKEwq0wNFIBODVma.cWFXsWIDPfua', 'player', NULL, NULL, '1091110234', '(1478)', 'Eyes On The Hss', 'Hanabi', 'mythical_immortal', '+584244223778', 'Redmi Note 14 S', 'hitoshi._.2', NULL, 1, '551cd9aaf9116e94d99ca6af2137893fafe1b0132762f00926be14c6aca20687', NULL, NULL, 0, NULL, '2026-03-19 17:12:06', '2026-03-10 13:51:11', '2026-03-19 17:12:06', NULL),
+(4, 'Tavitoxx', 'chiling.vzla2@gmail.com', '$2y$10$BNq3rJh8WEVVEEs4Ny8JQOWM.fHAa5UMxbJSyJpg7Jkis6KoikMPa', 'player', NULL, NULL, '1318042077', '1574', 'ç‚Žé­‚ | Tavitoxx', 'Yve', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, '73c45c1000a5bae99fdbb7df8af32f496961e2701559c2b2a40353e3da79dc93', NULL, NULL, 0, NULL, '2026-03-10 23:00:52', '2026-03-10 13:56:48', '2026-03-10 23:00:52', NULL),
+(7, 'Draxz1224', 'obitoreynoso@gmail.com', '$2y$10$35vy3Olz0CfwIzbnGVFjf.EypM3K.WP8B.TGeEw47XE9YPCuazx.G', 'player', NULL, NULL, '771441424', '(5262)', '| Draxz', 'Ling', 'mythical_immortal', NULL, NULL, NULL, NULL, 0, 'b435c741319f1281f76ec11538db1398609b9584bbb57649ab9859bcbbaf02e6', NULL, NULL, 0, NULL, NULL, '2026-03-10 14:21:48', '2026-03-10 19:25:13', NULL),
+(9, 'Getico', 'salomejeanmarcos00@gmail.com', '$2y$10$onSyX5Onb32GqfwtM49i6OFXsJGVtgF1/N1CK31QJP6S01ohdVBz2', 'player', NULL, NULL, '577275202', '5232', '| É¢á´‡á´›á´', 'Ling', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 14:27:17', '2026-03-10 14:26:52', '2026-03-10 14:27:17', NULL),
+(10, 'Death', 'baironpastranaagamez@gmail.com', '$2y$10$VD0.F525wLzPzrN3DLM1e.Vt7Ir4TVtFU/t9pep838OLwnl8TXN86', 'player', NULL, 'avatars/avatar_10_1773179105.webp', '885324321', '5289', 'DEATH', 'Argus', 'mythical_glory', '+ 57 3009628269', 'Xiaomi 12T pro', 'Death_lover1320', '', 1, NULL, '091588', '2026-03-10 15:48:49', 0, NULL, '2026-03-21 17:18:04', '2026-03-10 14:34:57', '2026-03-21 17:18:04', NULL),
+(11, 'Kebotepremium', 'eckartbrito@gmail.com', '$2y$10$6U/FFCv639EVsWJrDfgicev8lbsFAyQ7W1hcnN40BLtEMvEv3b8mG', 'player', NULL, NULL, '65507395', '5004', 'Kebote premium', 'Chou', 'mythical_honor', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 17:52:40', '2026-03-10 15:31:46', '2026-03-10 17:52:40', NULL),
+(12, 'Eros', 'riquelmi123321@gmail.com', '$2y$10$lhtrZVBzxDA8163U8APSSOP5A2UqGNXxxWsxUlwDR6qGt/R8PXGBu', 'player', NULL, 'avatars/avatar_12_1773331125.jpg', '82156002', '5018', 'Eros 666 !', 'Claude', 'mythical_immortal', '+50376219853', 'Xiaomi Poco X6 Pro 5G', 'Yunn0o_', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-21 13:57:36', '2026-03-10 16:25:28', '2026-03-21 13:57:36', NULL),
+(13, 'Berserker', 'franciscodariobojos@gmail.com', '$2y$10$HoUUYWnwgPIFedjuOQY6FOl5XJEBtPOu2cPY.fr3M/d0/guwWbAOy', 'player', NULL, NULL, '93737675', '(5020)', '| Ê™Ê€sá´‡Ê€á´‹', 'Tigreal', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 16:38:05', '2026-03-10 16:37:26', '2026-03-10 16:38:05', NULL),
+(14, 'Zahard', 'edureytg@gmail.com', '$2y$10$wovwACxDFS3H53Xc7xYDBupQUKkp1sdmhkeKmTI9vUJPS3sTApR02', 'player', NULL, 'avatars/avatar_14_1773175191.jpg', '37036573', '1024', 'à¿†ä¹™â·¤Î±É§Î±É¾âˆ‚', 'Zilong', 'mythical_immortal', '+584121275120', 'Xiaomi 11T', 'zaharding', 'Ping alto, paciencia baja', 1, NULL, NULL, NULL, 0, NULL, '2026-03-14 20:50:29', '2026-03-10 16:38:33', '2026-03-14 20:50:29', NULL),
+(15, 'Tony310', 'antoniruiz3010@gmail.com', '$2y$10$nFRrxlHoao5mmx8Gv8y8rezA7wdgGH.pabMfMAdBmGaJ7NgTaeCqO', 'player', NULL, 'avatars/avatar_15_1773175480.png', '997921854', '1420', 'Tony310', 'Terizla', 'mythical_glory', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 06:46:58', '2026-03-10 16:41:34', '2026-03-11 06:46:58', NULL),
+(16, 'LELOUCHK', 'carloscarrasquel948@gmail.com', '$2y$10$CDyWTpZNCvgQv2R1fej15OJiHGiNfOQE0rDoHrKYgPfcjMNKrlOD6', 'player', NULL, NULL, 'â€Ž1217786927', '1551', 'ç‚Žé­‚ | LELOUCHâ™¡K', 'Ling', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 18:13:47', '2026-03-10 16:42:29', '2026-03-10 18:13:47', NULL),
+(17, 'TFsander', 'alextorres2840@gmail.com', '$2y$10$voof06kBDnzVxuGZV9bRF.dlKS3drhGZC.z56orZBTqmTgaB7OYJm', 'player', NULL, 'avatars/avatar_17_1773175515.webp', '1475796315', '5418', 'áµ€á¶ sá´€É´á´…á´‡Ê€', 'Yi Sun-shin', 'mythical_immortal', '+528716818017', 'Infinix', 'tfsander21', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-12 02:09:08', '2026-03-10 16:43:02', '2026-03-12 02:09:17', NULL),
+(18, 'Sunny', 'sunnyghyrardino17@gmail.com', '$2y$10$kACqQ4nX4iTVkfpO7k.LIeWSQbunbcWkbZqcbOfzBkpj4oLsKUiCa', 'player', NULL, 'avatars/avatar_18_1773175863.jpg', '1102599094', '1485', 'KOI | Sunny', 'Xavier', 'mythical_immortal', '+58 424-9018090', 'infinix GT 30', 'Sunny_170620', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-17 12:30:36', '2026-03-10 16:44:49', '2026-03-17 12:30:36', NULL),
+(19, 'Momo_8', 'davidlossadaortega@gmail.com', '$2y$10$.lG9NbkSzKvnRZ3CMh6TruJMt119RQibOAb.fI5IcZWZZzJ0/hM4a', 'player', NULL, NULL, '1653273175', '1693', 'KOI | momo_08', 'Gatotkaca', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 16:45:58', '2026-03-10 16:45:06', '2026-03-10 16:45:58', NULL),
+(20, 'Titan', 'rikarmunaz@gmail.com', '$2y$10$VjzHTp5pGp9XzfP9ih7fjePeWsw9Rorvr/REQ8SUx26uRs5gsY9D2', 'player', NULL, NULL, '983384790', '1410', 'Titan', 'Valir', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 20:41:32', '2026-03-10 16:46:29', '2026-03-10 20:41:32', NULL),
+(21, 'ManuUnzert', 'gamecelestials@gmail.com', '$2y$10$Zj8emCfaupe.b80R.ozMzOxpr6XaxoqTtsVThnzECNY.gdxuOBP3y', 'player', NULL, 'avatars/avatar_21_1773189512.jpeg', '1274652295', '1555', 'ManuUnzerT', 'Karina', 'mythic', '1176277144', 'iPhone 16', 'Manuunz0522', 'Game Over', 1, NULL, NULL, NULL, 0, NULL, '2026-03-12 12:43:48', '2026-03-10 16:48:41', '2026-03-12 12:44:45', NULL),
+(23, 'miwuaifuescam', 'federicogomez044@gmail.com', '$2y$10$y3NdL1xlE/56jOc5SIXntOQrrvMlEPkvjUoSZV5eNWcO5DEgRiyfq', 'player', NULL, NULL, '1796634274', '1742', 'Miwuaifuescam', 'Silvanna', 'mythic', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 18:08:22', '2026-03-10 16:52:17', '2026-03-10 18:08:22', NULL),
+(24, 'GHOSTm', 'theghostmasterpro@gmail.com', '$2y$10$oWhpgYREbKYxWe0/vCCYgugQZ/JNHYr1I2RFIA5XfgJ77Csf455IC', 'player', NULL, 'avatars/avatar_24_1773176530.jpg', '1416997786', '(1611)', 'ç‚Žé­‚ | É¢Êœá´sá´›', 'Carmilla', 'mythical_immortal', '+58 04149175588', 'Infinix hot 40i', 'ghostmaster555x', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-18 12:31:18', '2026-03-10 16:54:30', '2026-03-18 12:31:18', NULL),
+(25, 'Kouseii', 'avorygod6@gmail.com', '$2y$10$Fbsutxwye6iCzVuM1O3qpO5kGfaLnzb30EG36s//7x0HpmmmLibHG', 'player', NULL, NULL, '1448355050', '5413', 'KOI | KoÏ…sá¥±Î¹.', 'Nolan', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 16:56:07', '2026-03-10 16:54:34', '2026-03-10 16:56:07', NULL),
+(26, 'Gabsoff', 'janemarcanoch123@gmail.com', '$2y$10$RDOqQXNtMKr3Z5Fkv/Ud..LE3XxiLEbmdHnfD/3igUIMeZN0kTqw.', 'player', NULL, 'avatars/avatar_26_1773182650.jpg', '1597019577', '1675', 'Gabsoff', 'Julian', 'mythical_glory', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 18:34:38', '2026-03-10 16:55:49', '2026-03-10 18:44:10', NULL),
+(27, 'Avena', 'yakson133@gmail.com', '$2y$10$8N1Tpd12F71Ls0482qzX9etGKjxv4S/bCzgC87Ed8HRGeSfT2vGG2', 'player', NULL, NULL, '792852543', '1314', 'Avena', 'Cici', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 17:03:33', '2026-03-10 17:02:54', '2026-03-10 17:03:33', NULL),
+(28, 'Lin_Yukine', 'lion1300xd@gmail.com', '$2y$10$ZKGVK/c6V3Bjm5BtU.P.7eIwN28CqAfTPLkH1u7VhVLzNusdQ3EaC', 'player', NULL, 'avatars/avatar_28_1773176906.jpg', '1611996469', '1682', 'Lin Yukine', 'Zhuxin', 'mythical_immortal', '+58 412-3783063', 'Infinix Smart 8', 'LG Colin#1016', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-15 21:16:07', '2026-03-10 17:06:12', '2026-03-15 21:16:57', NULL),
+(29, 'Chester', 'natacion.nsc@gmail.com', '$2y$10$me7g08NVTuGc3vb4LlZOWe6/qFyIknPQYm3Jm3k/DI/v0gcLmO4p.', 'player', NULL, NULL, '1135947196', '1501', 'KOI | Chester', 'Aulus', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 17:12:34', '2026-03-10 17:11:30', '2026-03-10 17:12:34', NULL),
+(30, 'Strovk', 'shald005222@gmail.com', '$2y$10$wiWI8sdt4EtEXRYKiKOI3e2DH7oZL9LexvYe5ZM85cz5kir4cFWrK', 'player', NULL, NULL, '589096854', '5234', '| êœ±á´›Ê€á´á´ á´‹', NULL, 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 17:12:36', '2026-03-10 17:12:10', '2026-03-10 17:12:36', NULL),
+(31, 'Litlle', 'bigcrack846@gmail.com', '$2y$10$3mcsv.10jo/JoJJn4616oOYNxc9AqqBuZowm7e/2AqNT0ienqFI52', 'player', NULL, NULL, '1036141955', '1440', 'LittleCrack', 'Ruby', 'mythical_glory', '+584241244553', 'Tecno spark 30c', 'BigCrackuwu#4874', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 15:11:40', '2026-03-10 17:14:48', '2026-03-11 15:16:33', NULL),
+(32, 'The_shadow', 'smithambarzoe@gmail.com', '$2y$10$3BQbKXqvBw3dBQUx/7/cw.9RkHDWUA2boxXPewvdH9jX9VRFyvNYW', 'player', NULL, NULL, '684015281', '5239', 'X_berny_x', NULL, 'mythical_immortal', NULL, NULL, NULL, NULL, 0, '769733', NULL, NULL, 0, NULL, NULL, '2026-03-10 17:21:02', '2026-03-10 17:21:02', NULL),
+(33, 'STARLIN', 'josemanuelestrellapolanco@gmail.com', '$2y$10$1Km1PYbYpf1xUfjkZUsfBOEPBKgBpUuBQEhGKDuadAL/n.w8wRuYC', 'player', NULL, 'avatars/avatar_33_1773179410.png', '8656530', '(5002)', '| STARLIN', 'Lolita', 'mythical_immortal', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 09:50:59', '2026-03-10 17:22:19', '2026-03-11 09:50:59', NULL),
+(34, 'Alex', 'ah2743716@gmail.com', '$2y$10$hEuwZ7T5IKYE4O8QuCDyFOHd8HQ90y/iybe2dbVOh7AoNft4pjrOG', 'player', NULL, NULL, '1233596784', '(1549)', 'KOI | â°â·á­„Alex', 'Yi Sun-shin', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 17:28:00', '2026-03-10 17:26:38', '2026-03-10 17:28:00', NULL),
+(35, 'Andelson', 'andersondelgadofeliz@gmail.com', '$2y$10$7ryTuiIwTAC9J5hQvcQDnOhaodluqMS1ru4l226.GTuep7jwbbZDC', 'player', NULL, NULL, '688119110', '(5249)', 'ILIA TOPURIA', 'Minotaur', 'mythical_glory', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 18:15:00', '2026-03-10 17:27:26', '2026-03-10 18:15:00', NULL),
+(36, 'XENON', 'wuptywu@gmail.com', '$2y$10$iQlLmwYYvIKSU8ZJ133v/.CbebYf3kX1DOLiNP9MEGtZWgor3Z9WG', 'player', NULL, 'avatars/avatar_36_1773178763.jpeg', '671243908', '5236', 'XENON', 'Lylia', 'mythical_immortal', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 02:42:47', '2026-03-10 17:36:47', '2026-03-11 02:42:47', NULL),
+(37, 'Jordan', 'yaelrom751@gmail.com', '$2y$10$7wuFwUe84EfUScmk2SOX0ujF6MsxiPuhKyprG2mxxaBx4QZBh2in6', 'player', NULL, NULL, '1407077400', '(1611)', 'JORDAN', 'Popol and Kupa', 'mythical_honor', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 19:35:25', '2026-03-10 18:02:02', '2026-03-10 19:35:25', NULL),
+(38, 'DukeBlack', 'ligawocdominicana@gmail.com', '$2y$10$AX2ks54GsVsAOxW9sSeWYuRa.eKTdl20sRMi88nI/2Zk1L67fw.1u', 'player', NULL, 'avatars/avatar_38_1773726237.jpeg', '540226517', '1231', 'Who is Duke', 'Kaja', 'mythical_immortal', '+18498738113', 'One plus 10T', 'Eldukess', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-18 09:09:08', '2026-03-10 18:04:55', '2026-03-18 09:09:08', NULL),
+(39, 'KORAQ7', 'darwinxmlbb1@gmail.com', '$2y$10$QTiPfvApU7bH.8veO1KKgut0W0CEzX0l3c1DJnNsSbO2hn3Ud7MuC', 'player', NULL, NULL, '433045673', '1205', 'á´®Â²á´· | KORAQ7', 'Martis', 'mythical_immortal', '+584126316653', 'POCO X7 PRO', 'koraq1', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-12 18:35:37', '2026-03-10 18:09:54', '2026-03-12 18:35:37', NULL),
+(40, 'Odin', 'delvinjvillegas@gmail.com', '$2y$10$7/ivTGDcHdBXv7AH7zplruV8JIjAyEdd3m2b1ipcrAbfeAn3G1Tqy', 'player', NULL, 'avatars/avatar_40_1773184481.png', '1434113080', '1619', 'Odin1', 'Natan', 'mythical_glory', '+584242953270', 'Xiaomi Redmi note 14', 'caballero9056825', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-20 08:09:13', '2026-03-10 18:18:45', '2026-03-20 08:09:13', NULL),
+(41, 'HyperKen', 'mauriytperaza@gmail.com', '$2y$10$.tzd0biSViODtnVPRhAkcuGq72pth/PazSBf0XC3RCHOrzyWX9uD2', 'player', NULL, 'avatars/avatar_41_1773181666.jpg', '1187983868', '(1526)', 'HyperionKen', 'Chip', 'mythical_immortal', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 21:57:26', '2026-03-10 18:25:27', '2026-03-10 21:57:26', NULL),
+(43, 'Guzz_420', 'guznella@gmail.com', '$2y$10$Ty3FZ4tw14.OotQIouKtjumbZPexRmqcwVTxBRoiGlLUavSvXDtqK', 'player', NULL, NULL, '397777133', '(1046)', 'Guzz_420', 'Kimmy', 'legend', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 18:29:57', '2026-03-10 18:28:48', '2026-03-10 18:29:57', NULL),
+(44, 'LilShadow', 'eloficialsite38@gmail.com', '$2y$10$ft3zSjkfqWK6wtPEJ3AFQOuc8o4DIQhFOMsS8wdlczJvDsczkdZ4C', 'player', NULL, NULL, '525793553', '5018', 'Lil Shadow@1', 'Hayabusa', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 19:25:11', '2026-03-10 18:35:30', '2026-03-10 19:25:11', NULL),
+(45, 'Shyy', 'fabssrziobr@gmail.com', '$2y$10$04Za.O8ocg8UiSloDvdZQOtMpLAeUQA1gvN1NVbKLTWwVJrgYSueS', 'player', NULL, NULL, '1026825621', '1435', 'Shyy', 'Fanny', 'mythical_immortal', '+584162904486', 'Poco x6 pro', 'Fabssrzio', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-19 17:20:32', '2026-03-10 18:36:36', '2026-03-19 17:20:47', NULL),
+(46, 'Zayn', 'blazesoulsphoenix@gmail.com', '$2y$10$HhNcBOcLRU6YR5p4hzbXTO7LZxsbGjrtQnDsASAeqJ/CyhIXsJWim', 'player', NULL, NULL, '1372960147', '(1596)', 'ç‚Žé­‚ | Zayn', 'Badang', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 18:51:25', '2026-03-10 18:50:56', '2026-03-10 18:51:25', NULL),
+(47, 'Terrel', 'cesarssj0@gmail.com', '$2y$10$OnyEgsN1vP/esImrAWz1BeABr1ZDLUGOqgjDur6XCwXsQ59ujf7K.', 'player', NULL, NULL, '879713760', '(1365)', 'ç‚Žé­‚ |Terrel', 'Esmeralda', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 19:03:03', '2026-03-10 19:01:59', '2026-03-10 19:03:03', NULL),
+(48, 'Aizzo', 'isaacaatisaac@gmail.com', '$2y$10$.CwrOEA5MIk9H8/ZL2N8o.fO6I08kOA0c9A4VK4.XqvA7OsxOJ32S', 'player', NULL, NULL, '1231106200', '1536', 'Aizzo.', 'Fanny', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 19:05:31', '2026-03-10 19:03:43', '2026-03-10 19:05:31', NULL),
+(49, 'Fuhrer', 'lm.urbaezmarte@gmail.com', '$2y$10$vjgBCPMMX3lWnXjmvFwLb.v.u1v2P8cLsIZahnFc8QHfNbQXuH6BK', 'player', NULL, NULL, '1186754672', '5366', 'Jhonny Sins', 'Claude', 'mythical_honor', '8292164463', 'Tecno Spark 20', 'Cadawi.', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-12 11:00:51', '2026-03-10 19:11:34', '2026-03-12 11:16:07', NULL),
+(50, 'Nerf', 'wilkeazuaje06@gmail.com', '$2y$10$Q.4o6jjvkylNh1D3.83bCuHQ7bgbVmoO2MM9dLzBAhB8CBPI0jzO.', 'player', NULL, NULL, '872915466', '1363', '|Nerf My Umbrella', 'Kagura', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-12 12:26:53', '2026-03-10 19:12:04', '2026-03-12 12:26:53', NULL),
+(51, 'sundragon', 'j76152522@gmail.com', '$2y$10$ItPnw12qcper6HFk2WtV1ePlDrqWmeUEybatnkbptuv7GkW7G.bWa', 'player', NULL, NULL, '1286002248', '(1561)', 'Sundragon', 'Fredrinn', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 19:19:56', '2026-03-10 19:18:47', '2026-03-10 19:19:56', NULL),
+(52, 'Zora', 'andrewsebastian0710@gmail.com', '$2y$10$S0/W2H4ebBFXGe3ubDND1uuep3vMFqpKGNDahYs5OWhYlu8C6H7ki', 'player', NULL, NULL, '1266344880', '(1556)', '(-ZORA-)', 'Clint', 'mythical_immortal', NULL, NULL, NULL, NULL, 0, '401716', NULL, NULL, 0, NULL, NULL, '2026-03-10 19:20:05', '2026-03-10 19:36:28', NULL),
+(53, 'kaze16', 'yunopena33@gmail.com', '$2y$10$NROEHriQI.2arbDMjSQpLOd.tfi8kGrx7ffZNvc39DaCxkwdsuu6G', 'player', NULL, 'avatars/avatar_53_1773185023.jpg', '465562292', '5210', 'æ­»à¼„kazeà¼„æ„›', 'Harith', 'mythical_immortal', '8096585502', 'Lg v60', 'Kaze16', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 00:00:37', '2026-03-10 19:22:56', '2026-03-13 00:00:37', NULL),
+(54, 'Akinilla', 'punk.coco.chanel@gmail.com', '$2y$10$bLqSZ/URMdMMsUdqllkZg.Tsy4EL8WJDJQ91n4ZkOTxL7ng3aV1PK', 'player', NULL, 'avatars/avatar_54_1773185689.jpg', '1083461624', '1476', 'Akinilla', 'Chou', 'mythical_glory', '+584127144322', 'Poco x6 pro 5g', 'Akini', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-17 12:49:07', '2026-03-10 19:33:02', '2026-03-17 12:49:07', NULL),
+(55, 'Vixen', 'vicentefcvcarrasquel@gmail.com', '$2y$10$TreSxzVJaIFvIObflesniOtflyv.QsoRISIjTkCGCs72SiiyB7v22', 'player', NULL, NULL, '1696832292', '1709', 'Vixen_420', 'Lapu-Lapu', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 19:40:31', '2026-03-10 19:39:31', '2026-03-10 19:40:31', NULL),
+(56, 'Zechi', 'maattiiiixd@gmail.com', '$2y$10$g5Yuu0KEznGGqw9XRLZZ1utYY6gHWjKVv9oqpCcDbI3.eGA2JAxwa', 'player', NULL, NULL, '484309111', '1207', 'RS-Zechi', 'Xavier', NULL, NULL, NULL, NULL, NULL, 0, '876674', NULL, NULL, 0, NULL, NULL, '2026-03-10 19:41:36', '2026-03-10 20:16:37', NULL),
+(57, 'Yohanan8', 'iorlandovergara@gmail.com', '$2y$10$z05v1Jg50CiyXXoVBTVO7ewIGT/pbLufZLYiYsyizyuoN73tfnLZ6', 'player', NULL, 'avatars/avatar_57_1773186328.jpg', '1254228916', '(5379)', 'Yohanan.', 'Claude', 'mythical_glory', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 19:44:11', '2026-03-10 19:43:33', '2026-03-10 19:45:28', NULL),
+(58, 'Dark', 'ed47423@gmail.com', '$2y$10$UiJIonnY9yElw.Xsj2xTkuSdgDw6bX4tlI08/G52yjAo2IzX06MoK', 'player', NULL, NULL, '1057033879', '1457', 'Â²âµDark.', 'Melissa', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 02:42:58', '2026-03-10 19:51:32', '2026-03-11 02:42:58', NULL),
+(60, 'jinwoo', 'eloymunoz419@gmail.com', '$2y$10$OwYdRTbws6yd67PAL4NjKeoYgQYGHrdZ05O4gqP55v6GyqD5jhaN.', 'player', NULL, NULL, '846290519', '1353', 'Jinwoo', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 20:12:34', '2026-03-10 19:56:26', '2026-03-10 20:12:34', NULL),
+(61, 'StarTzy', 'benzan800@gmail.com', '$2y$10$LJrLqdqNxtnTaE78aG4FJem.f7fAbn0aiEt0exVUQw3GDRm6n02GK', 'player', NULL, NULL, '571184705', '5228', 'StarTzy. âœ¯', 'Alucard', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 20:10:19', '2026-03-10 20:09:40', '2026-03-10 20:10:19', NULL),
+(62, 'Zenitsu', 'aneuris1531@gmail.com', '$2y$10$r/S1VHx6S4U/D7uFz1eAF.A2wmWpqAYUncxyQm66AwWYuoaL.eEHy', 'player', NULL, 'avatars/avatar_62_1773205871.jpg', '682581466', '(5242)', 'â€¢ê§ZENITSUê§‚â€¢', 'Yin', 'mythical_immortal', '829 867 4078', 'S22', 'rey_zenitsu', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 23:37:32', '2026-03-10 20:39:32', '2026-03-13 23:37:32', NULL),
+(63, 'moondragon', 'alejandracerin4@gmail.com', '$2y$10$2ZwA0wqfncMNPlesns5Zmu8A7Ez8pZ72dx7QQmSnBnPEdvzoNf1Jq', 'player', NULL, 'avatars/avatar_63_1773191019.jpg', '1142586448', '[5356)', 'Moondragon', 'Angela', 'mythical_immortal', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 20:48:29', '2026-03-10 20:47:45', '2026-03-10 21:03:39', NULL),
+(64, 'Juanzmh110', 'juanmarcosmh110@gmail.com', '$2y$10$MEmrLAemg6A5mUWD5KONOegaYYCff7YbSaNfBmv1usDzYIt0iYU6u', 'player', NULL, 'avatars/avatar_64_1773190206.jpg', '1302942728', '(1570)', 'Juanzmh110', 'Arlott', 'mythical_glory', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 20:48:57', '2026-03-10 20:48:26', '2026-03-10 20:50:06', NULL),
+(65, 'Panda', 'fritocismoelsensual@gmail.com', '$2y$10$T7.VSPOFEdTVAQ157.8rnOYXsSUpK971I3J0bivEF8fp6ceWjohBW', 'player', NULL, 'avatars/avatar_65_1773190246.jpg', '638615236', '5246', 'It&#039;s Panda âœ“', 'Bruno', 'mythical_immortal', NULL, NULL, NULL, 'IT&amp;#039;S PANDA IS BAAAAACK', 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 01:59:40', '2026-03-10 20:48:32', '2026-03-11 01:59:40', NULL),
+(66, 'AFKs', 'fuerzadetitanniu@gmail.com', '$2y$10$lEPY0l.UQqPMwdoSlbCJ3.LpGE1aQEc.BJFEh0ABG5/uhpu808pNG', 'player', NULL, NULL, '1875212582', '(5490)', '[AFK&#039;s]', 'Khaleed', 'mythical_honor', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 20:55:25', '2026-03-10 20:53:17', '2026-03-10 20:55:25', NULL),
+(67, 'Antonio', 'antoniothen23@gmail.com', '$2y$10$vBBncLDb4M.RZBtiV5rl2u3/jXtNC2JfnSYzPpB1xMZ.AhThAD53G', 'player', NULL, NULL, '474897790', '5212', 'à¼’Antonioà¼’', 'Kadita', 'mythical_glory', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 20:57:26', '2026-03-10 20:56:50', '2026-03-10 20:57:26', NULL),
+(68, 'Dio_Nix', 'dionix150@gmail.com', '$2y$10$RHZH.VyYrHxOQRvsZEOU/.hP6A1VsIg.SHPkejYPMTnVlwRqjMwAu', 'player', NULL, NULL, '1810899921 (5470)', '5470', 'Il reach for you', NULL, 'mythical_glory', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 21:11:01', '2026-03-10 21:09:52', '2026-03-10 21:11:01', NULL),
+(69, 'Samuel3735', 'jonathanmoranmontezuma@gmail.com', '$2y$10$CQwyFURKI4dgO2saLiK3C.58OuSi4dDqH/T6zkT80yiIO7nH37OBK', 'player', NULL, NULL, '1537987710', '(5428)', 'Cr: Samuel _&amp;&amp;', 'Kagura', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 21:35:46', '2026-03-10 21:18:58', '2026-03-10 21:35:46', NULL),
+(70, 'Amy', 'amy.grullon.25@gmail.com', '$2y$10$ooTDEuFTHLblLXaGchRQkO/xdQUlXAtGeuZwWTp41YRuxM.4MSX4e', 'player', NULL, NULL, '1826993243', '5473', 'when u&#039;re all alone', 'Zhuxin', 'mythic', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 21:28:10', '2026-03-10 21:25:42', '2026-03-10 21:28:10', NULL),
+(71, 'Galaxykai', 'Brayahenri@gmail.com', '$2y$10$yrOazeq9V9ZKEgOOtq3J8.3YUqXoEX3NUWLNF9Pp2wm6/VOLudEuy', 'player', NULL, NULL, '127092068', '5024', 'Kai.', 'Clint', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 22:38:10', '2026-03-10 21:27:09', '2026-03-10 22:38:10', NULL),
+(72, 'Noah', 'jesusrondonlinares123@gmail.com', '$2y$10$52I4O7qfTw.1yGxRBYiNpOPl6Hghio2uw6uJsJneEs9weeHmhVKRO', 'player', NULL, 'avatars/avatar_72_1773192640.jpg', '1658758807', '(1692)', 'Noa :3', 'Kagura', 'mythical_glory', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 21:29:51', '2026-03-10 21:28:53', '2026-03-10 21:30:40', NULL),
+(73, 'TephyGG', 'salylopez0723@gmail.com', '$2y$10$EK2D3pJgQ3cJCFOFdkQjCOTXClerapF8BBpwNdZ/qynVxt8D4Qq4m', 'player', NULL, NULL, '566947830', '5230', 'TephyGG', 'Cici', 'mythical_glory', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 21:41:01', '2026-03-10 21:39:55', '2026-03-10 21:41:01', NULL),
+(74, 'Azubzin71', 'garciasadrian71@gmail.com', '$2y$10$T9eMAluIrWxpaa3Su6oRKOp2XBpY72PmjnDqxvqdfuc.at8GhdUOG', 'player', NULL, 'avatars/avatar_74_1773195021.jpg', '101004350', '35067', 'Azubzin71', 'Alucard', 'mythical_immortal', '+17734311682', 'Pixel A6', 'azubzin71', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-12 12:28:03', '2026-03-10 21:59:00', '2026-03-12 12:28:03', NULL),
+(75, 'Street', 'luis17012001@gmail.com', '$2y$10$eWXc4umZcKFfjTRCnCMOSeR1o9Dcdjs659N4hxT6o.OBzB07yGSKC', 'player', NULL, NULL, '1733708359', '(1721)', 'Street', 'Chou', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 22:59:07', '2026-03-10 22:10:56', '2026-03-10 22:59:07', NULL),
+(76, 'Ryuk', 'angelhenriquez39@gmail.com', '$2y$10$iOSzu2KBUlBlGb0375DjluWb9esgb3Zs/.cFVk/1uANfd79U785J6', 'player', NULL, NULL, '65076959', '5005', 'Ryuk', 'Franco', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 22:28:26', '2026-03-10 22:27:55', '2026-03-10 22:28:26', NULL),
+(77, 'Ouma', 'felipehuezo91@gmail.com', '$2y$10$IEeK1WNKwtGLHmJ6saYWeudn/VBjI7hHL7ldP8PtVeWsKUDCFMf62', 'player', NULL, NULL, '65173910', '(5005)', 'á´¿á´±âœ§Ouma', 'Fanny', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-10 22:39:36', '2026-03-10 22:39:04', '2026-03-10 22:39:36', NULL),
+(78, 'Stanford', 'ovieljosue@gmail.com', '$2y$10$1jCggVBblMhKkLtXblSvseikB6uYZW8yxjBgcp34sfa0MbB3f8nd6', 'player', NULL, 'avatars/avatar_78_1773200854.png', '264254842', '(5219)', 'Stanford', 'Yu Zhong', 'mythical_immortal', '8495067403', 'Samsung Galaxy S22 Ultra', 'Josuexd01', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-17 09:51:15', '2026-03-10 23:38:47', '2026-03-17 09:51:15', NULL),
+(80, 'FelzRodz', 'gameplaysdarwin@gmail.com', '$2y$10$DaOt2DowxsRgcwnlJ2cWUOq0J.X7vl.ov2tAReW79NKMlh3RBcj8e', 'player', NULL, 'avatars/avatar_80_1773201429.jpeg', '44432502', '5014', 'Felz Rodz', 'Minotaur', 'mythical_immortal', '8094843229', 'Iphone XS Max', 'FelzRodz#5986', 'Roam, iniciador, estrategia, trabajo en equipo y disciplina', 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 09:24:09', '2026-03-10 23:51:39', '2026-03-13 09:27:36', NULL),
+(81, 'Kenneth', 'kennethsk22gamer@gmail.com', '$2y$10$IoOfE.lZrbWt60hl0k4rgOAOeBbCBO9COkD.DYbNlA0q1cipGEeDq', 'player', NULL, NULL, '1476753500', '1637', 'Kenneth.', 'Nolan', 'mythical_immortal', '+584128909981', 'Tecno Spark 40 Pro Plus', 'Kenneth.', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 12:16:01', '2026-03-11 00:44:55', '2026-03-11 12:17:05', NULL),
+(82, 'Anthar', 'andresnegv13@gmail.com', '$2y$10$Nij/2ZVlduwTP7MMMjiSyOslCAtVgfc.xgTWk6QPz/gP7nGnGmjBO', 'player', NULL, NULL, '1563837318', '(5433)', 'Anthar', 'Clint', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 01:05:07', '2026-03-11 01:02:55', '2026-03-11 01:05:07', NULL),
+(83, 'Lucky', 'christynes123@gmail.com', '$2y$10$nrfKCoHsswo9Tor5F/5R..h6yKf5T.5HFjEy0QbldNlIVO6k17NRe', 'player', NULL, NULL, '812340725', '5271', 'â˜¯ Ä¹Ç—ÄŒÐŒÐŽ â˜¯', 'Yi Sun-shin', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 01:15:27', '2026-03-11 01:14:43', '2026-03-11 01:15:27', NULL),
+(84, 'Cheguetown', 'gabo2323abdala@gmail.com', '$2y$10$53otOosY8m7iPDtnPhxfleaZ20vcvbRALl5Jrpms12dYaRNrLaZkC', 'player', NULL, NULL, '1429183572', '(1619)', '~ Carboncito.', 'Arlott', 'mythical_immortal', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 03:46:05', '2026-03-11 02:36:21', '2026-03-11 03:46:05', NULL),
+(85, 'Karman', 'elboby1999@gmail.com', '$2y$10$XrSzHOxfipZIcXEynm/0WOoJhL30V2KG3wTp59FOTgpJ0lAkR0rZS', 'player', NULL, 'avatars/avatar_85_1773227419.jpg', '113954698', '5025', 'Lord Karman', 'Yu Zhong', 'mythical_immortal', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 07:02:29', '2026-03-11 07:01:09', '2026-03-11 07:10:19', NULL),
+(86, 'Acker75', 'joseaponte9777@gmail.com', '$2y$10$QrBGO.uV6VS1OWr1fCzwm.U7W0jompPjX6fHXaPOd4L06QRziAhKa', 'player', NULL, NULL, '1217698233', '1535', 'AiserX*75', 'Yin', 'mythical_honor', '+58425787338', 'Infinix', 'Ryan', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 17:53:34', '2026-03-11 08:53:17', '2026-03-11 17:54:08', NULL),
+(87, 'DragunoV', 'kevw5286@gmail.com', '$2y$10$9hFJeSRCCnKQDX6/ynVO3O.jSi53Z0uJtQNRs/5MhDbz9w3V6863K', 'player', NULL, 'avatars/avatar_87_1773245001.jpg', '1121416737', '1493', 'ç‚Žé­‚ | DraguÅ‹oÑ´', 'Beatrix', 'epic', '+584123912005', 'Poco M6 pro', 'MBAP64#6804', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 11:59:26', '2026-03-11 11:58:08', '2026-03-11 12:03:21', NULL),
+(88, 'Teed', 'moderadorWoc1@ligawoc.woc', '$2y$10$TJnk81a4SHThZN51fixTNO5xnlB7lB1H7DD2Z3B9AV27H0BFLmchy', 'designer', 'cover_88_1773746895.png', 'avatars/avatar_88_1773745759.jpeg', NULL, NULL, NULL, NULL, NULL, '1', '1', '1', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-17 23:46:36', '2026-03-11 12:31:13', '2026-03-17 23:46:36', NULL),
+(89, 'Moderador 2', 'moderadorWoc2@ligawoc.woc', '$2y$10$TJnk81a4SHThZN51fixTNO5xnlB7lB1H7DD2Z3B9AV27H0BFLmchy', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '18498738113', 'one plus 10t', 'eldukess', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 17:13:55', '2026-03-11 12:31:13', '2026-03-11 17:14:22', NULL),
+(90, 'SHADEPR1ME', 'morgadocoello.ss@gmail.com', '$2y$10$swESlfO42DdmCC9T9xyUIugbVF3Mkown7kxFGXsb0ihueeGmuZ2S6', 'player', NULL, NULL, '932110811', '(1386)', 'à¼„Shade', 'Hilda', 'mythical_immortal', '+584125006176', 'Tecno spark 30c', 'Shade1086', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 12:52:43', '2026-03-11 12:48:05', '2026-03-11 12:52:43', NULL),
+(91, 'YisusGr', '02jesusgr02@gmail.com', '$2y$10$RXFjJ8uv/ANdWezwYS7WR.j6cFWGftVY0Yj/DwwvxscF83RBlMzYO', 'player', NULL, NULL, '604390256', '1027', 'ã€½ï¸J I H Y O', 'Selena', 'mythical_immortal', '+584124254368', 'Infinix Hot 50 Pr', 'yisus_61744', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 13:03:09', '2026-03-11 13:02:22', '2026-03-11 13:03:09', NULL),
+(92, 'Nozel', 'anibaluniversiti@gmail.com', '$2y$10$xSNQaQm3R8OJD6CqX4XFyuPP.Jf666NgJ3NFgxofr4wUDlXpGelbC', 'player', NULL, NULL, '873669710', '(1362)', 'â°â·á­„Nozel', 'Yu Zhong', 'epic', '04248905951', 'Nubia neo 2', 'Nozel', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 13:14:26', '2026-03-11 13:13:46', '2026-03-11 13:14:26', NULL),
+(93, 'Frosty', 'Zultan241995@gmail.com', '$2y$10$9yMYbmYll8l28pQYGI1NjOsN8fTC2DqCeFNUny4nzMp4bGPoag1d6', 'player', NULL, NULL, '249240461', '5041', 'i Frosty', 'Tigreal', 'epic', '1+3465753578', 'iPhone', 'zzzfrosty24', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 13:44:42', '2026-03-11 13:44:16', '2026-03-11 13:44:42', NULL),
+(94, 'Jesussosa', 'leonardobarretoqp@gmail.com', '$2y$10$DYh3FgBq0VoL.l.uwJbnLuDZPB8LnvNe6EykTKuKNEY7xJsmRNnri', 'player', NULL, NULL, '7501919', '5257', 'you lost', 'Kaja', 'mythical_immortal', '57+3052101646', 'Poco x7 pro', 'Jesussosa', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 17:06:14', '2026-03-11 14:24:19', '2026-03-11 17:06:14', NULL),
+(95, '404_', 'asdrubalh17@gmail.com', '$2y$10$bRBA8LPCdx/Sj8USI79o2Om/y5msfOVr3H6taoUraGjbR06xcySiK', 'player', NULL, NULL, '1496360071', '(1642)', '404_', 'Hilda', 'mythical_immortal', '+584249709866', 'Samsung', '_.behemoth', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 15:10:43', '2026-03-11 15:09:57', '2026-03-11 15:10:43', NULL),
+(96, 'Tonyy', 'Renetony2017@icloud.com', '$2y$10$GdGz73OSaclU2fPzJWV3ye6DnY3wrgxLt0TXlpxyj4qDET0nHYX.O', 'player', NULL, NULL, '201664018', '5215', 'Alear.', 'Lylia', 'mythical_immortal', '+50370241185', 'iPhone', 'HolaTonyXD', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 16:03:20', '2026-03-11 16:02:28', '2026-03-11 16:03:20', NULL),
+(97, 'UltraMegaw', 'williammillam1@gmail.com', '$2y$10$aaMp/UpfOtgjwiV/lEBThOC6G9IsoQBkKJTucaro40fzx/lC./b3i', 'player', NULL, 'avatars/avatar_97_1773261817.jpg', '1210029441', '1532', 'UltraMegaw', 'Xavier', 'mythical_immortal', '+584129465846', 'Infinix', 'ultramegaw1', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 16:43:17', '2026-03-11 16:42:08', '2026-03-11 16:43:37', NULL),
+(98, 'nexus', 'christopherbriceno63@gmail.com', '$2y$10$8yBsgllqdSxJ9coJkx7Na.JUAeez/vNqdO.meLM8WsA1SOS1oLFK.', 'player', NULL, NULL, '1186940251', '1529', 'SÃºper Nexus', 'Yu Zhong', 'mythical_immortal', '+584125634359', 'Infinix gt30 pro', 'Nexus', NULL, 0, '808597', NULL, NULL, 0, NULL, NULL, '2026-03-11 17:04:48', '2026-03-11 17:08:28', NULL),
+(99, 'Maki', 'choutevic6@gmail.com', '$2y$10$fd6mg67x9d92FuZgGk2tEOvES1ADcrB5jbVDJXkOlwZL/Dfy0tgre', 'player', NULL, 'avatars/avatar_99_1773264251.jpeg', '849192998', '5279', 'Maki', NULL, 'mythical_immortal', '+5147573832', 'iPhone', 'zackklyrage', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-21 22:03:55', '2026-03-11 17:17:32', '2026-03-21 22:03:55', NULL),
+(100, 'RYUU', 'willisthondota2@gmail.com', '$2y$10$p9WGPSsxPIWOCbMlGXde9uFbZOzzEYQBBnReds2jovodZq8nLLYJi', 'player', NULL, 'avatars/avatar_100_1773441164.png', '690681166', '5039', 'RYUU PRIME', 'Chou', 'mythical_immortal', '+584127811354', 'Redmi Note 13 Pro+ 5G', 'RYUU_MLBB#3489', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 18:31:32', '2026-03-11 17:19:58', '2026-03-13 18:32:44', NULL),
+(101, 'ryo', 'pulidoelkyn@gmail.com', '$2y$10$.e1pimi5Mn5qrSo3MFw7SudiYGjAtHWJeYDWIISj9rDkr.9s8hf.W', 'player', NULL, NULL, '767700746', '10457', 'ë°ì€ | Umbra.', 'Ling', 'epic', '+584241898597', 'poco', 'ryo', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 17:26:09', '2026-03-11 17:25:01', '2026-03-11 17:26:09', NULL),
+(102, 'Keossss', 'saulm3nd0z4@gmail.com', '$2y$10$cFIJLfRGYXB0zzVrVWr72ujwQeqZbqZ4.KBbbf260SeRwejqt4Zam', 'player', NULL, NULL, '59930983', '5002', 'Keoss.', 'Fanny', 'mythical_immortal', '+50373706929', 'red mÃ¡gic 8 pro', 'Blessed.#1386', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 18:15:31', '2026-03-11 18:14:57', '2026-03-11 18:15:31', NULL),
+(103, 'Jean_S', 'jeancarlos.santana4@gmail.com', '$2y$10$EsCFa73YHbpckwbKEB4o0.ZTMbVOfWcmESTNVUJldOk0ruKl8nK6m', 'player', NULL, NULL, '893736858', '5284', 'Jean S', 'Moskov', 'mythical_immortal', '8294662517', 'Iphone', 'jjsantana#3839', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-16 11:58:31', '2026-03-11 18:36:11', '2026-03-16 11:58:31', NULL),
+(104, 'Cristofer', 'cristoferlopez2002@hotmail.com', '$2y$10$vpGMlKC5NBdhqWxDWMFwJuCFxPFOCezmlOpJYfdyzU.xVAffCHIa.', 'player', NULL, NULL, '154622701', '35023', 'Cristoferlopez', 'Lesley', 'mythical_glory', '9293695283', 'Poco x6 pro', 'Cristoferlopez', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-11 18:40:34', '2026-03-11 18:38:11', '2026-03-11 18:40:34', NULL),
+(105, 'JPayamps', 'joisi.manuel.30@gmail.com', '$2y$10$gbVvfFhKB2bp/tTAiXgTBO52m3MApHwTyJLanD80dOB7RV/dmsLn2', 'player', NULL, NULL, '266889250', '5044', 'Titan', 'Yi Sun-shin', 'mythical_immortal', '8096108259', 'iPhone', 'Titan', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 12:15:18', '2026-03-11 19:45:56', '2026-03-13 12:15:18', NULL),
+(106, 'Skilla', 'gilbertjgm2@gmail.com', '$2y$10$ofx9cPGwaJUY9YHseC6CnuLGD.phs4FU/RtCMgbOFDOf5NWhGzUZ.', 'player', NULL, NULL, '541952328', '(1229)', 'Skilla', 'Lunox', 'mythical_immortal', '+584242186294', 'iphone', 'sskillaa', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-12 12:00:34', '2026-03-12 11:59:51', '2026-03-12 12:00:34', NULL),
+(107, 'Creed.', 'dalvinmendez01@gmail.com', '$2y$10$V7PuVXviOrS.oJS49vzq8.IjmnvWS7ZDiGuyuY3KFtAAe9j89eZFW', 'player', NULL, 'avatars/avatar_107_1773409605.png', '309879541', '(5003)', 'Creed.', 'Natan', 'legend', '8493883103', 'Iphone 11 pro', 'dalbin_mdz', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 09:22:15', '2026-03-13 09:21:16', '2026-03-13 09:47:06', NULL),
+(108, 'ManuPm', 'map6111@gmail.com', '$2y$10$JDqbkKo9EMk79uXxwXvvvOa8K.CXFU0KnXlR4fPPgaPpvL1OKctqO', 'player', NULL, 'avatars/avatar_108_1773409642.jpg', '429124616', '(5039)', 'Manu Pm', 'Badang', 'epic', '+8296366987', 'Samsung Galaxy S21 Ultra', 'Manu Pm#9464', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 17:28:21', '2026-03-13 09:42:06', '2026-03-13 17:28:21', NULL),
+(109, 'Macario', 'macariom.170407@gmail.com', '$2y$10$OCfqD5qqTGwJL.pSqqVgI.QrdQcJ17xNEvLaEo1ruXo0Ey02NiP.K', 'player', NULL, 'avatars/avatar_109_1773423973.jpg', '24429587', '(5008)', 'Macario.', 'Zilong', 'legend', '8133605152', 'Sangsum s24 Fe', 'Not_mac.', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 22:13:08', '2026-03-13 11:39:33', '2026-03-13 22:13:08', NULL),
+(110, 'Anthonylord', 'thbigpappy@gmail.com', '$2y$10$moGVk8bTuwwI5rgG7kOwuO5ws2wEbIq7LMJZneUe/cLmHi5PX8P3a', 'player', NULL, 'avatars/avatar_110_1773424057.jpeg', '523693381', '(5208)', '(^_^)â‚¬X0TIC0(^_^)', 'Paquito', 'epic', '8095102854', 'IPhone XS Max', 'Anthonylord', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-17 13:42:34', '2026-03-13 13:30:42', '2026-03-17 13:42:34', NULL),
+(111, 'Progenitor', 'Jeremymartinez0212@gmail.com', '$2y$10$pmLVpXOUVDIF1DyttAXuwep7aES8O/PAqBPlruEsbdtLocLiMvSwq', 'player', NULL, NULL, '127723109', '(5027)', '4-progenitor', 'Uranus', 'epic', '8099453129', 'Iphone13', 'jeremy121212', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 13:56:56', '2026-03-13 13:38:35', '2026-03-13 13:56:56', NULL),
+(113, 'Mr_Nightmare', 'flipyflop52@gmail.com', '$2y$10$UYrwUPr.kmTKPtVWIqu9/.MXX8YuA/EqKMIam6WXBVYaVD.RAypDq', 'player', NULL, NULL, '1479537678', '5419', 'Mr_Nightmare', 'Zhuxin', 'epic', '8497850379', 'Redmi Note 13 Pro+ 5G', 'nightmare1515', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 18:44:22', '2026-03-13 18:43:40', '2026-03-13 18:44:22', NULL),
+(114, 'Nearr', 'everrr0204@gmail.com', '$2y$10$b64s6o3oxZ9kU7NTdSxGH.E5Pla1H55n7VoGzZWEWNjSRJpVCNzMi', 'player', NULL, NULL, '623431599', '5245', 'Æá´‡É‘É¾â€¢', 'Xavier', 'mythical_immortal', '60727660', 'Samsung Galaxy A23', 'strong.01', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 18:46:39', '2026-03-13 18:45:25', '2026-03-13 18:46:39', NULL),
+(115, 'TOWIL', 'wiltonmainkra@outlook.es', '$2y$10$Y5lgtnNGIN0sofi3ItaRIOzo1sfvvl4HKmpcMbRrXkmD.5BIsndUO', 'player', NULL, 'avatars/avatar_115_1773452845.png', '366630327', '5020', 'TOWIL', 'Guinevere', 'epic', '+1(849)262-4871', 'Samsung', 'towil', '', 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 21:42:05', '2026-03-13 21:41:17', '2026-03-13 21:47:25', NULL),
+(116, 'Zsasz', 'chrollo.gameplay@gmail.com', '$2y$10$ZYXJnq9Swpz1miJhR6RkyupCtA00JSizNlvc.maLYCjr6Ze4Nuo5C', 'player', NULL, NULL, '56998393', '5003', '| Zsasz', 'Guinevere', 'legend', '8297644749', 'Samsung S24 Ultra', 'bsscarnage', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-13 22:37:45', '2026-03-13 22:37:00', '2026-03-13 22:37:45', NULL),
+(117, 'kael', 'bestjunglerveneko@gmail.com', '$2y$10$xO0rV2UHe6PW9z.BU8.lfunTcz05jCL0NXsG0YKHM3.70O/uN91I6', 'player', NULL, NULL, '998908077', '1418', 'Kael.', 'Angela', 'warrior', '+584162163017', 'Pocof7pro', 'No se', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-16 11:54:11', '2026-03-16 11:53:35', '2026-03-16 11:54:11', NULL),
+(118, 'Vaan', 'ezeruiz704@gmail.com', '$2y$10$sLvBnZuRCu9GmlzFtwudVenv5f92PrHb21LEY4VnHseM.WzfGLM.y', 'player', NULL, NULL, '252474662', '1207', 'OMG It&#039;s Vaan.', 'Fanny', 'mythical_immortal', '+584126396263', 'Xioami', 'vaan704.', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-16 12:04:29', '2026-03-16 12:03:55', '2026-03-16 12:04:29', NULL),
+(119, 'Jose', 'joseg.csuarez@gmail.com', '$2y$10$mThbq40DaAJIKicoax8cHuBDFt/gyE9QGXXZ.HFAmIfijUmAXRmPO', 'player', NULL, NULL, '1257583027', '1548', 'LaPÒ½pÎ±&#039;EÉ¾QÏ…eÊ‚Ïƒ', NULL, NULL, '+584141645196', 'Infinix gt 30 pro', 'JcInsaneBoy', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-16 12:04:53', '2026-03-16 12:04:05', '2026-03-16 12:04:53', NULL),
+(120, 'Skayyyyyy', 'bryalcantara8@gmail.com', '$2y$10$yTLb2lABv73QvYLiQ/ilzO1RAoluhU63KrD0ryKPbkMlT2rUCFQki', 'player', NULL, NULL, '1485787497', '5419', 'Iâ€™m Skayyy', NULL, 'mythical_immortal', '+18494365205', 'IPhone SE', 'bry03519', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-16 20:41:22', '2026-03-16 20:40:15', '2026-03-16 20:41:22', NULL),
+(121, 'DASH', 'migueladrpro@gmail.com', '$2y$10$i0nBLMwVWSGKFchVuT2YgOgnJpiG/hoI2ulYUyi617q0E6vqCwwYu', 'player', NULL, NULL, '942888887', '1391', 'Plastaculo', NULL, 'mythic', '+5804149885088', 'IPhone 13 Pro Max', 'Dashwood24', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-17 12:09:07', '2026-03-17 12:08:29', '2026-03-17 12:09:07', NULL),
+(122, 'John66', 'fokalaw722@qvmao.com', '$2y$10$tQCySgAsi.3N/G41F2SrfewPMj/A70t1nEJGPcEue3Igr6ps3KgFa', 'player', NULL, NULL, '877851782', '10683', 'Support - Computer', 'Zhask', 'mythical_honor', '8295555555', 'Samsung', 'John66', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-22 15:06:54', '2026-03-18 12:19:35', '2026-03-22 15:06:54', NULL),
+(123, 'Papoyo', 'nenebustoor8292007@gmail.com', '$2y$10$CeLded3C6kjauvOXJeiYfuml1EBRolyUcenNSU.C0RhGpJGW2./4y', 'player', NULL, NULL, '516271159', '(5013)', 'Papoyo', 'Lancelot', 'mythical_immortal', '+18495177853', 'Samsung Note10+5g', 'Nene', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-21 14:35:44', '2026-03-21 14:34:21', '2026-03-21 14:35:44', NULL),
+(124, 'BuzzLight', 'yostinmiguel2@hotmail.com', '$2y$10$O0RiiFPEKdQrjxbmB7ahsuM5T7p5O4ymGhXSlrTGZHiAjDe.hw58W', 'player', NULL, NULL, '31040600', '(5011)', 'Buzz Lightyear', NULL, 'epic', '8498851029', 'iPhone 13 Pro Max', 'llave angular', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-21 19:05:28', '2026-03-21 19:04:42', '2026-03-21 19:05:28', NULL),
+(125, 'Loki', 'alexanderventuraa279@gmail.com', '$2y$10$9M4RR3tkah0N02pNzOzgzuRlL3nw4SuyZSbgfq3agYOsjLw589cO6', 'player', NULL, NULL, '1338532778', '5392', 'Â§LÃ¸kÃ®Â§', 'Grock', 'mythic', '8092152766', 'Samsung galaxy s21 5g', 'haniel4863', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-21 20:39:02', '2026-03-21 20:38:15', '2026-03-21 20:39:02', NULL),
+(126, 'moderador_woc', 'moderador_woc@ligawoc.local', '$2y$10$eIU7LXGzqSks7k.l.Bz2Q.acek3grD19ORsgnBz.EldEET1d6C4r.', 'moderator', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '8495124529', 'Sansumg', '1234', NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-22 16:24:05', '2026-03-22 16:16:17', '2026-03-22 16:24:05', NULL),
+(127, 'admin', 'admin@ligawoc.local', '$2y$10$SkxOE2y5nBFCyHjfRRu0f.SHBp9/kbj0f7n5.1e9oGF5kOHmv/PaC', 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-22 16:19:05', '2026-03-22 16:16:17', '2026-03-22 16:19:05', NULL),
+(128, 'designer', 'designer@ligawoc.local', '$2y$10$QaoSoDh/4AQKVNUR1Zc3Pe0XDcQGYHuDugO7hZTCk/ANbtwtTIdi2', 'designer', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, NULL, '2026-03-22 16:16:17', '2026-03-22 16:16:17', NULL),
+(129, 'player', 'player@ligawoc.local', '$2y$10$yCu7Z9IiBdqgmyf60lheHe6J4fr./F5ZgaYS1dF2jRIegkK9oV0Be', 'player', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, '2026-03-22 16:25:38', '2026-03-22 16:16:17', '2026-03-22 16:25:38', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user_coins`
+--
+
+CREATE TABLE `user_coins` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `coins` int(11) DEFAULT 0,
+  `lifetime_coins` int(11) DEFAULT 0,
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `user_coins`
+--
+
+INSERT INTO `user_coins` (`id`, `user_id`, `coins`, `lifetime_coins`, `updated_at`) VALUES
+(1, 88, 80, 700, '2026-03-17 23:48:32'),
+(4, 2, 1400, 1400, '2026-03-17 10:31:55'),
+(7, 38, 190, 800, '2026-03-18 02:23:58');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user_inventory`
+--
+
+CREATE TABLE `user_inventory` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `purchased_at` datetime DEFAULT current_timestamp(),
+  `equipped_at` datetime DEFAULT NULL,
+  `is_equipped` tinyint(1) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `user_inventory`
+--
+
+INSERT INTO `user_inventory` (`id`, `user_id`, `item_id`, `purchased_at`, `equipped_at`, `is_equipped`) VALUES
+(1, 88, 5, '2026-03-17 06:21:14', NULL, 0),
+(2, 88, 13, '2026-03-17 08:01:20', NULL, 0),
+(3, 88, 14, '2026-03-17 08:09:22', NULL, 0),
+(4, 88, 15, '2026-03-17 08:23:05', '2026-03-17 18:19:38', 1),
+(5, 88, 18, '2026-03-17 18:19:11', '2026-03-17 18:19:26', 1),
+(6, 88, 19, '2026-03-17 23:48:32', NULL, 0),
+(7, 38, 18, '2026-03-18 02:22:35', '2026-03-18 02:22:43', 1),
+(8, 38, 19, '2026-03-18 02:23:58', '2026-03-18 02:24:07', 1);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `audit_logs`
+--
+ALTER TABLE `audit_logs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indices de la tabla `coin_packages`
+--
+ALTER TABLE `coin_packages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `coin_purchases`
+--
+ALTER TABLE `coin_purchases`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_user` (`user_id`),
+  ADD KEY `idx_status` (`status`);
+
+--
+-- Indices de la tabla `designer_applications`
+--
+ALTER TABLE `designer_applications`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_user` (`user_id`),
+  ADD KEY `idx_status` (`status`);
+
+--
+-- Indices de la tabla `designer_payouts`
+--
+ALTER TABLE `designer_payouts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_designer` (`designer_id`);
+
+--
+-- Indices de la tabla `email_change_codes`
+--
+ALTER TABLE `email_change_codes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_user_email` (`user_id`,`new_email`,`used`);
+
+--
+-- Indices de la tabla `item_categories`
+--
+ALTER TABLE `item_categories`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`);
+
+--
+-- Indices de la tabla `match_player_stats`
+--
+ALTER TABLE `match_player_stats`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `match_id` (`match_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `team_id` (`team_id`);
+
+--
+-- Indices de la tabla `match_results`
+--
+ALTER TABLE `match_results`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `match_id` (`match_id`),
+  ADD KEY `mvp_user_id` (`mvp_user_id`),
+  ADD KEY `submitted_by` (`submitted_by`),
+  ADD KEY `verified_by` (`verified_by`);
+
+--
+-- Indices de la tabla `ml_heroes`
+--
+ALTER TABLE `ml_heroes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`),
+  ADD KEY `category_id` (`category_id`),
+  ADD KEY `author_id` (`author_id`);
+
+--
+-- Indices de la tabla `news_categories`
+--
+ALTER TABLE `news_categories`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`);
+
+--
+-- Indices de la tabla `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indices de la tabla `paypal_orders`
+--
+ALTER TABLE `paypal_orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_user` (`user_id`),
+  ADD KEY `idx_paypal_order` (`paypal_order_id`);
+
+--
+-- Indices de la tabla `platform_config`
+--
+ALTER TABLE `platform_config`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `config_key` (`config_key`);
+
+--
+-- Indices de la tabla `player_rankings`
+--
+ALTER TABLE `player_rankings`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_player_season` (`user_id`,`season_id`),
+  ADD KEY `season_id` (`season_id`);
+
+--
+-- Indices de la tabla `prizes`
+--
+ALTER TABLE `prizes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tournament_id` (`tournament_id`),
+  ADD KEY `awarded_to_team_id` (`awarded_to_team_id`);
+
+--
+-- Indices de la tabla `seasons`
+--
+ALTER TABLE `seasons`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `shop_items`
+--
+ALTER TABLE `shop_items`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_category` (`category_id`),
+  ADD KEY `idx_designer` (`designer_id`),
+  ADD KEY `idx_active` (`is_active`);
+
+--
+-- Indices de la tabla `streams`
+--
+ALTER TABLE `streams`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tournament_id` (`tournament_id`);
+
+--
+-- Indices de la tabla `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `captain_id` (`captain_id`);
+
+--
+-- Indices de la tabla `team_join_requests`
+--
+ALTER TABLE `team_join_requests`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `team_id` (`team_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indices de la tabla `team_members`
+--
+ALTER TABLE `team_members`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_user_team` (`user_id`),
+  ADD KEY `team_id` (`team_id`);
+
+--
+-- Indices de la tabla `team_rankings`
+--
+ALTER TABLE `team_rankings`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_team_season` (`team_id`,`season_id`),
+  ADD KEY `season_id` (`season_id`);
+
+--
+-- Indices de la tabla `tournaments`
+--
+ALTER TABLE `tournaments`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`),
+  ADD KEY `season_id` (`season_id`),
+  ADD KEY `created_by` (`created_by`);
+
+--
+-- Indices de la tabla `tournament_matches`
+--
+ALTER TABLE `tournament_matches`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tournament_id` (`tournament_id`),
+  ADD KEY `team1_id` (`team1_id`),
+  ADD KEY `team2_id` (`team2_id`),
+  ADD KEY `winner_id` (`winner_id`),
+  ADD KEY `referee_id` (`referee_id`);
+
+--
+-- Indices de la tabla `tournament_teams`
+--
+ALTER TABLE `tournament_teams`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_tournament_team` (`tournament_id`,`team_id`),
+  ADD KEY `team_id` (`team_id`);
+
+--
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD KEY `idx_banned` (`is_banned`),
+  ADD KEY `idx_role` (`role`),
+  ADD KEY `idx_created_at` (`created_at`);
+
+--
+-- Indices de la tabla `user_coins`
+--
+ALTER TABLE `user_coins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user_id` (`user_id`),
+  ADD KEY `idx_user` (`user_id`);
+
+--
+-- Indices de la tabla `user_inventory`
+--
+ALTER TABLE `user_inventory`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_user_item` (`user_id`,`item_id`),
+  ADD KEY `idx_user` (`user_id`),
+  ADD KEY `idx_equipped` (`is_equipped`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `audit_logs`
+--
+ALTER TABLE `audit_logs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `coin_packages`
+--
+ALTER TABLE `coin_packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `coin_purchases`
+--
+ALTER TABLE `coin_purchases`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `designer_applications`
+--
+ALTER TABLE `designer_applications`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `designer_payouts`
+--
+ALTER TABLE `designer_payouts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `email_change_codes`
+--
+ALTER TABLE `email_change_codes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `item_categories`
+--
+ALTER TABLE `item_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `match_player_stats`
+--
+ALTER TABLE `match_player_stats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `match_results`
+--
+ALTER TABLE `match_results`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `ml_heroes`
+--
+ALTER TABLE `ml_heroes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+
+--
+-- AUTO_INCREMENT de la tabla `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `news_categories`
+--
+ALTER TABLE `news_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `notifications`
+--
+ALTER TABLE `notifications`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
+
+--
+-- AUTO_INCREMENT de la tabla `paypal_orders`
+--
+ALTER TABLE `paypal_orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `platform_config`
+--
+ALTER TABLE `platform_config`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `player_rankings`
+--
+ALTER TABLE `player_rankings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `prizes`
+--
+ALTER TABLE `prizes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `seasons`
+--
+ALTER TABLE `seasons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `shop_items`
+--
+ALTER TABLE `shop_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT de la tabla `streams`
+--
+ALTER TABLE `streams`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT de la tabla `team_join_requests`
+--
+ALTER TABLE `team_join_requests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+
+--
+-- AUTO_INCREMENT de la tabla `team_members`
+--
+ALTER TABLE `team_members`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+
+--
+-- AUTO_INCREMENT de la tabla `team_rankings`
+--
+ALTER TABLE `team_rankings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT de la tabla `tournaments`
+--
+ALTER TABLE `tournaments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `tournament_matches`
+--
+ALTER TABLE `tournament_matches`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `tournament_teams`
+--
+ALTER TABLE `tournament_teams`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+
+--
+-- AUTO_INCREMENT de la tabla `user_coins`
+--
+ALTER TABLE `user_coins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `user_inventory`
+--
+ALTER TABLE `user_inventory`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `audit_logs`
+--
+ALTER TABLE `audit_logs`
+  ADD CONSTRAINT `audit_logs_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+
+--
+-- Filtros para la tabla `match_player_stats`
+--
+ALTER TABLE `match_player_stats`
+  ADD CONSTRAINT `match_player_stats_ibfk_1` FOREIGN KEY (`match_id`) REFERENCES `tournament_matches` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `match_player_stats_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `match_player_stats_ibfk_3` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `match_results`
+--
+ALTER TABLE `match_results`
+  ADD CONSTRAINT `match_results_ibfk_1` FOREIGN KEY (`match_id`) REFERENCES `tournament_matches` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `match_results_ibfk_2` FOREIGN KEY (`mvp_user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `match_results_ibfk_3` FOREIGN KEY (`submitted_by`) REFERENCES `users` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `match_results_ibfk_4` FOREIGN KEY (`verified_by`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+
+--
+-- Filtros para la tabla `news`
+--
+ALTER TABLE `news`
+  ADD CONSTRAINT `news_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `news_categories` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `news_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `notifications`
+--
+ALTER TABLE `notifications`
+  ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `player_rankings`
+--
+ALTER TABLE `player_rankings`
+  ADD CONSTRAINT `player_rankings_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `player_rankings_ibfk_2` FOREIGN KEY (`season_id`) REFERENCES `seasons` (`id`) ON DELETE SET NULL;
+
+--
+-- Filtros para la tabla `prizes`
+--
+ALTER TABLE `prizes`
+  ADD CONSTRAINT `prizes_ibfk_1` FOREIGN KEY (`tournament_id`) REFERENCES `tournaments` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `prizes_ibfk_2` FOREIGN KEY (`awarded_to_team_id`) REFERENCES `teams` (`id`) ON DELETE SET NULL;
+
+--
+-- Filtros para la tabla `streams`
+--
+ALTER TABLE `streams`
+  ADD CONSTRAINT `streams_ibfk_1` FOREIGN KEY (`tournament_id`) REFERENCES `tournaments` (`id`) ON DELETE SET NULL;
+
+--
+-- Filtros para la tabla `teams`
+--
+ALTER TABLE `teams`
+  ADD CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`captain_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `team_join_requests`
+--
+ALTER TABLE `team_join_requests`
+  ADD CONSTRAINT `team_join_requests_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `team_join_requests_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `team_members`
+--
+ALTER TABLE `team_members`
+  ADD CONSTRAINT `team_members_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `team_members_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `team_rankings`
+--
+ALTER TABLE `team_rankings`
+  ADD CONSTRAINT `team_rankings_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `team_rankings_ibfk_2` FOREIGN KEY (`season_id`) REFERENCES `seasons` (`id`) ON DELETE SET NULL;
+
+--
+-- Filtros para la tabla `tournaments`
+--
+ALTER TABLE `tournaments`
+  ADD CONSTRAINT `tournaments_ibfk_1` FOREIGN KEY (`season_id`) REFERENCES `seasons` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `tournaments_ibfk_2` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `tournament_matches`
+--
+ALTER TABLE `tournament_matches`
+  ADD CONSTRAINT `tournament_matches_ibfk_1` FOREIGN KEY (`tournament_id`) REFERENCES `tournaments` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `tournament_matches_ibfk_2` FOREIGN KEY (`team1_id`) REFERENCES `teams` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `tournament_matches_ibfk_3` FOREIGN KEY (`team2_id`) REFERENCES `teams` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `tournament_matches_ibfk_4` FOREIGN KEY (`winner_id`) REFERENCES `teams` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `tournament_matches_ibfk_5` FOREIGN KEY (`referee_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
+
+--
+-- Filtros para la tabla `tournament_teams`
+--
+ALTER TABLE `tournament_teams`
+  ADD CONSTRAINT `tournament_teams_ibfk_1` FOREIGN KEY (`tournament_id`) REFERENCES `tournaments` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `tournament_teams_ibfk_2` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

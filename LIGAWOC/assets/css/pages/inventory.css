@@ -1,0 +1,99 @@
+.page-style-inventory .inventory-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-style-inventory .inventory-coin-balance {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffd700, #ffa500);
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.page-style-inventory .inventory-empty-link {
+    margin-top: 16px;
+}
+
+.page-style-inventory .inventory-grid {
+    gap: 24px;
+}
+
+.page-style-inventory .inventory-card-title {
+    font-size: 1rem;
+}
+
+.page-style-inventory .inventory-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 16px;
+}
+
+.page-style-inventory .inventory-item {
+    position: relative;
+    text-align: center;
+}
+
+.page-style-inventory .inventory-item--toggleable {
+    cursor: pointer;
+}
+
+.page-style-inventory .inventory-item-media {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--bg-elevated);
+}
+
+.page-style-inventory .inventory-item-media--equipped {
+    border: 2px solid var(--success);
+}
+
+.page-style-inventory .inventory-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-style-inventory .inventory-item-equipped-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--success);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.page-style-inventory .inventory-item-name {
+    margin-top: 4px;
+    overflow: hidden;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.page-style-inventory .inventory-item-toggle-btn {
+    width: 100%;
+    margin-top: 4px;
+    padding: 4px;
+    font-size: 0.65rem;
+}
+
+@media (max-width: 768px) {
+    .page-style-inventory .inventory-header-actions {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 520px) {
+    .page-style-inventory .inventory-items-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,127 @@
+/* ===== MATCH HISTORY STYLES ===== */
+.mh-filters { display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap; }
+.mh-view-tabs { display:flex;gap:4px; }
+.mh-tab { padding:7px 14px;border-radius:8px;font-size:0.78rem;font-weight:600;color:var(--text-muted);text-decoration:none;border:1px solid rgba(255,255,255,0.06);transition:all 0.2s; }
+.mh-tab:hover { background:rgba(255,255,255,0.04); }
+.mh-tab.active { background:rgba(var(--accent-rgb,124,92,252),0.15);border-color:rgba(var(--accent-rgb,124,92,252),0.4);color:#fff; }
+
+.mh-tournament-filter { max-width:260px; }
+
+.mh-summary-row { display:flex;gap:10px;margin-bottom:16px; }
+.mh-summary { flex:1;background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:12px;text-align:center; }
+.mh-sum-num { display:block;font-family:var(--font-heading);font-size:1.4rem;font-weight:800; }
+.mh-sum-label { font-size:0.68rem;color:var(--text-muted);text-transform:uppercase; }
+.mh-sum-win .mh-sum-num { color:var(--success); }
+.mh-sum-loss .mh-sum-num { color:var(--danger); }
+.mh-sum-num--positive { color:var(--success); }
+.mh-sum-num--negative { color:var(--danger); }
+
+.mh-empty-card { text-align:center; padding:60px 20px; }
+.mh-empty-icon { font-size:3rem; margin-bottom:10px; }
+.mh-empty-title { color:var(--text-secondary); }
+.mh-empty-copy { color:var(--text-muted); font-size:0.85rem; }
+
+.mh-badge-compact { font-size:0.68rem; }
+.mh-badge-mini { font-size:0.55rem; padding:2px 6px; }
+
+.mh-match-list { display:flex;flex-direction:column;gap:8px; }
+
+/* Match card */
+.mh-card { background:var(--bg-card);border:1px solid rgba(255,255,255,0.06);border-radius:12px;overflow:hidden;transition:all 0.2s; }
+.mh-card:hover { border-color:rgba(255,255,255,0.12); }
+.mh-card-win { border-left:3px solid var(--success); }
+.mh-card-loss { border-left:3px solid var(--danger); }
+
+.mh-card-top { display:flex;justify-content:space-between;align-items:center;padding:8px 16px 0;flex-wrap:wrap;gap:6px; }
+.mh-card-meta { display:flex;align-items:center;gap:8px;flex-wrap:wrap; }
+.mh-card-round { font-size:0.7rem;font-weight:600;color:var(--text-muted); }
+.mh-card-date { font-size:0.7rem;color:var(--text-muted); }
+
+.mh-result-pill { font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px; }
+.mh-result-pill.mh-win { background:rgba(0,214,143,0.1);color:var(--success); }
+.mh-result-pill.mh-loss { background:rgba(255,51,102,0.1);color:var(--danger); }
+
+/* Matchup */
+.mh-matchup { display:flex;align-items:center;padding:16px 20px 20px;gap:12px;position:relative;background:var(--bg-card);transition:background 0.2s; }
+.mh-matchup:hover { background:rgba(255,255,255,0.02); }
+.mh-matchup-toggle { cursor:pointer; }
+.mh-team { display:flex;align-items:center;gap:12px;flex:1;min-width:0; }
+.mh-team-right { justify-content:flex-end; }
+.mh-team-info-right { text-align:right; }
+.mh-team-logo { width:44px;height:44px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,0.08);background:rgba(0,0,0,0.2); }
+.mh-team-logo-ph { width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:800;color:var(--text-muted);border:1px solid rgba(255,255,255,0.05); }
+.mh-team-name { font-weight:800;font-size:0.95rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px;font-family:var(--font-heading);letter-spacing:0.5px; }
+.mh-team-winner .mh-team-name { color:var(--success); }
+
+.mh-score-center { text-align:center;min-width:90px; }
+.mh-scores { display:flex;align-items:center;justify-content:center;gap:6px; }
+.mh-score-box { font-family:var(--font-heading);font-size:1.4rem;font-weight:900;color:var(--text-muted);background:rgba(255,255,255,0.03);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.05); }
+.mh-score-box.mh-score-w { color:var(--bg-body);background:var(--success);border-color:transparent;box-shadow:0 0 10px rgba(0,214,143,0.3); }
+.mh-score-sep { font-size:1.1rem;color:var(--text-muted);opacity:0.6;font-weight:900; }
+.mh-kills-row { font-size:0.7rem;color:var(--text-muted);margin-top:6px;font-weight:600;letter-spacing:0.3px; }
+.mh-kills-sep { margin:0 4px;opacity:0.5; }
+.mh-mvp-tag { font-size:0.7rem;color:var(--accent-main);font-weight:700;margin-top:4px;display:inline-block;background:rgba(var(--accent-rgb,124,92,252),0.1);padding:2px 8px;border-radius:12px; }
+
+.mh-expand-hint { position:absolute;bottom:0px;left:0;right:0;height:24px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--text-muted);opacity:0.6;transition:all 0.2s;background:linear-gradient(to top, rgba(0,0,0,0.2), transparent); }
+.mh-matchup:hover .mh-expand-hint { opacity:1;color:var(--accent-main); }
+.mh-expand-meta { display:flex; align-items:center; gap:4px; }
+.mh-expand-icon { font-size:0.7rem; }
+
+/* Detail expand */
+.mh-detail { background:var(--bg-body);border-top:1px solid rgba(255,255,255,0.04);padding:16px 20px; }
+.mh-detail-hidden { display:none; }
+.mh-detail-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+.mh-detail-header { font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.06); }
+.mh-detail-header.mh-blue { color:#3b82f6; }
+.mh-detail-header.mh-red { color:#ef4444; }
+
+.mh-player-stat-row { display:flex;align-items:center;gap:6px;padding:4px 0; }
+.mh-hero-icon { width:26px;height:26px;border-radius:6px;object-fit:cover; }
+.mh-hero-icon-ph { width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--text-muted); }
+.mh-ps-name { flex:1;font-size:0.76rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+.mh-ps-kda { font-size:0.76rem;font-weight:700;font-family:var(--font-heading); }
+.mh-k { color:var(--success); }
+.mh-d { color:var(--danger); }
+.mh-a { color:var(--info,#3b82f6); }
+.mh-ps-kda-ratio { font-size:0.7rem;font-weight:600;color:var(--text-muted);width:55px;text-align:right; }
+
+/* Comments */
+.mh-comments-section { padding-top:16px; }
+.mh-comments-header { font-size:0.85rem;font-weight:800;margin-bottom:12px;color:var(--text-primary);display:flex;align-items:center;gap:6px; }
+.mh-comments-header::before { content:'';display:block;width:12px;height:4px;background:var(--accent-main);border-radius:4px; }
+.mh-comments-list { display:flex;flex-direction:column;gap:12px;max-height:300px;overflow-y:auto;padding-right:8px; }
+.mh-comments-list::-webkit-scrollbar { width:4px; }
+.mh-comments-list::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.1);border-radius:4px; }
+.mh-comment { display:flex;gap:10px; }
+.mh-comment-avatar { width:32px;height:32px;border-radius:50%;object-fit:cover; }
+.mh-comment-avatar-ph { width:32px;height:32px;border-radius:50%;background:rgba(var(--accent-rgb,124,92,252),0.2);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--accent-main); }
+.mh-comment-body { flex:1;background:rgba(0,0,0,0.2);padding:10px 12px;border-radius:0 12px 12px 12px; }
+.mh-comment-meta { display:flex;justify-content:space-between;align-items:center;margin-bottom:4px; }
+.mh-comment-author { font-size:0.75rem;font-weight:700;color:var(--text-primary); }
+.mh-comment-date { font-size:0.65rem;color:var(--text-muted); }
+.mh-comment-text { font-size:0.8rem;color:rgba(255,255,255,0.85);line-height:1.4;word-break:break-word; }
+.mh-comment-form { display:flex;gap:8px;margin-top:12px; }
+.mh-comment-form .form-control { font-size:0.8rem;padding:8px 12px;background:rgba(0,0,0,0.2); }
+.mh-comment-author-row { font-weight:700; font-size:0.95rem; color:#fff; line-height:1.2; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.mh-comment-author-link { color:#fff; text-decoration:none; }
+.mh-comment-delete-form { display:inline; }
+.mh-comments-empty { font-size:0.75rem; color:var(--text-muted); text-align:center; padding:10px 0; }
+.mh-comment-submit-btn { padding:0 16px; }
+.mh-comments-login-prompt { font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:10px; }
+.mh-comments-login-link { color:var(--accent-main); text-decoration:none; }
+
+.mh-comment-delete-btn {
+    border:none;
+    background:none;
+    color:var(--danger);
+    font-size:0.8rem;
+    cursor:pointer;
+}
+
+@media(max-width:768px) {
+    .mh-matchup { flex-direction:column;gap:8px; }
+    .mh-team,.mh-team-right { justify-content:center; }
+    .mh-detail-grid { grid-template-columns:1fr; }
+    .mh-summary-row { flex-direction:column; }
+    .mh-team-name { max-width:100px; }
+}

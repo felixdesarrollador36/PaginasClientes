@@ -1,0 +1,213 @@
+.page-style-login .login-logo-image {
+    height: 60px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 0 10px rgba(124, 92, 252, 0.4));
+}
+
+.page-style-login .login-password-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-style-login .login-forgot-link {
+    font-weight: 500;
+    font-size: 0.78rem;
+}
+
+.page-style-login .login-remember-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.page-style-login .login-remember-checkbox {
+    accent-color: var(--accent-main);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.page-style-login .login-remember-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+/* Responsive styles for login screen */
+
+@media (max-width: 599px) {
+  .page-style-login .login-logo-image {
+    height: 44px;
+    margin-bottom: 8px;
+  }
+  .page-style-login .login-password-label {
+    font-size: 0.95rem;
+  }
+  .page-style-login .login-forgot-link {
+    font-size: 0.7rem;
+  }
+  .page-style-login .login-remember-row {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .page-style-login .login-remember-label {
+    font-size: 0.75rem;
+  }
+  .page-style-login .form-group {
+    margin-bottom: 14px;
+  }
+  .page-style-login .form-label {
+    font-size: 0.95rem;
+  }
+  .page-style-login .form-control {
+    font-size: 0.95rem;
+    padding: 9px 10px;
+  }
+  .page-style-login .btn {
+    font-size: 0.92rem;
+    padding: 8px 0;
+  }
+  .page-style-login .auth-footer {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 18px;
+  }
+  .auth-logo-text {
+    font-size: 1.1rem;
+  }
+  .auth-logo-sub {
+    font-size: 0.7rem;
+  }
+  .form-label,
+  .login-password-label {
+    font-size: 0.95rem;
+  }
+  .btn-primary.btn-block.btn-lg {
+    font-size: 0.92rem;
+    padding: 8px 0;
+  }
+  .page-style-login .form-label,
+  .page-style-login .login-password-label {
+    font-size: 0.82rem !important;
+    letter-spacing: 0.04em;
+  }
+  .page-style-login .btn-primary.btn-block.btn-lg {
+    font-size: 0.92rem !important;
+    padding: 8px 0 !important;
+  }
+  .page-style-login .auth-footer {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .page-style-login .login-logo-image {
+    height: 36px;
+  }
+  .page-style-login .login-password-label {
+    font-size: 0.9rem;
+  }
+  .page-style-login .login-forgot-link {
+    font-size: 0.65rem;
+  }
+  .page-style-login .login-remember-label {
+    font-size: 0.7rem;
+  }
+  .page-style-login .form-label {
+    font-size: 0.9rem;
+  }
+  .page-style-login .form-control {
+    font-size: 0.9rem;
+    padding: 8px 8px;
+  }
+  .page-style-login .btn {
+    font-size: 0.85rem;
+    padding: 7px 0;
+  }
+  .page-style-login .auth-footer {
+    font-size: 0.8rem;
+  }
+  .auth-logo-text {
+    font-size: 0.95rem;
+  }
+  .auth-logo-sub {
+    font-size: 0.6rem;
+  }
+  .form-label,
+  .login-password-label {
+    font-size: 0.9rem;
+  }
+  .btn-primary.btn-block.btn-lg {
+    font-size: 0.85rem;
+    padding: 7px 0;
+  }
+  .page-style-login .form-label,
+  .page-style-login .login-password-label {
+    font-size: 0.75rem !important;
+  }
+  .page-style-login .btn-primary.btn-block.btn-lg {
+    font-size: 0.85rem !important;
+    padding: 7px 0 !important;
+  }
+  .page-style-login .auth-footer {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .page-style-login .login-logo-image {
+    height: 28px;
+  }
+  .page-style-login .login-password-label {
+    font-size: 0.85rem;
+  }
+  .page-style-login .login-forgot-link {
+    font-size: 0.6rem;
+  }
+  .page-style-login .login-remember-label {
+    font-size: 0.65rem;
+  }
+  .page-style-login .form-label {
+    font-size: 0.85rem;
+  }
+  .page-style-login .form-control {
+    font-size: 0.85rem;
+    padding: 7px 6px;
+  }
+  .page-style-login .btn {
+    font-size: 0.8rem;
+    padding: 6px 0;
+  }
+  .page-style-login .auth-footer {
+    font-size: 0.7rem;
+  }
+  .auth-logo-text {
+    font-size: 0.82rem;
+  }
+  .auth-logo-sub {
+    font-size: 0.5rem;
+  }
+  .form-label,
+  .login-password-label {
+    font-size: 0.85rem;
+  }
+  .btn-primary.btn-block.btn-lg {
+    font-size: 0.8rem;
+    padding: 6px 0;
+  }
+  .page-style-login .form-label,
+  .page-style-login .login-password-label {
+    font-size: 0.7rem !important;
+  }
+  .page-style-login .btn-primary.btn-block.btn-lg {
+    font-size: 0.8rem !important;
+    padding: 6px 0 !important;
+  }
+  .page-style-login .auth-footer {
+    font-size: 0.6rem !important;
+  }
+}

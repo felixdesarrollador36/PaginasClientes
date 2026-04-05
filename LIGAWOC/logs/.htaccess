@@ -1,0 +1,3 @@
+# Este directorio contiene logs privados
+# NUNCA exponer públicamente
+.htaccess

@@ -1,0 +1,1077 @@
+[07-Mar-2026 16:41:29 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:31 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:32 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:39 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:40 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:40 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:44 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:44 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:45 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:45 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:47 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:41:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:43:56 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:43:56 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:43:59 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 16:43:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 6
+[07-Mar-2026 12:48:25 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:48:25 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:48:37 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:48:37 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:48:39 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:48:39 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:48:40 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:48:40 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:49:24 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:49:24 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:49:25 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:49:25 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:49:26 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:49:26 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:50:10 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:50:59 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:50:59 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:54:32 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:54:32 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:07 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:07 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:12 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:12 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:28 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:28 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:41 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:41 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:43 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:43 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:58 America/Santo_Domingo] PHP Warning:  require_once(/home/ligaojmj/public_html/config/../includes/functions.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/config/app.php on line 15
+[07-Mar-2026 12:55:58 America/Santo_Domingo] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/../includes/functions.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/config/app.php:15
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(6): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/config/app.php on line 15
+[10-Mar-2026 17:14:48 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't_tourn.is_main_tournament' in 'WHERE' in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(73): Database->query()
+#2 /home/ligaojmj/public_html/controllers/RankingController.php(173): Database->fetchAll()
+#3 /home/ligaojmj/public_html/heroes.php(16): RankingController->getHeroRankings()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[10-Mar-2026 17:15:26 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't_tourn.is_main_tournament' in 'WHERE' in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(73): Database->query()
+#2 /home/ligaojmj/public_html/controllers/RankingController.php(173): Database->fetchAll()
+#3 /home/ligaojmj/public_html/heroes.php(16): RankingController->getHeroRankings()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[10-Mar-2026 17:16:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tr.is_main_tournament' in 'ON' in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(73): Database->query()
+#2 /home/ligaojmj/public_html/pages/dashboard.php(42): Database->fetchAll()
+#3 /home/ligaojmj/public_html/index.php(205): require_once('/home/ligaojmj/...')
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[10-Mar-2026 17:18:03 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tr.is_main_tournament' in 'ON' in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(73): Database->query()
+#2 /home/ligaojmj/public_html/pages/dashboard.php(42): Database->fetchAll()
+#3 /home/ligaojmj/public_html/index.php(205): require_once('/home/ligaojmj/...')
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[10-Mar-2026 17:18:40 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_main_tournament' in 'SELECT' in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(73): Database->query()
+#2 /home/ligaojmj/public_html/controllers/RankingController.php(191): Database->fetchAll()
+#3 /home/ligaojmj/public_html/pages/rankings.php(7): RankingController->getActiveTournaments()
+#4 /home/ligaojmj/public_html/index.php(205): require_once('/home/ligaojmj/...')
+#5 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[10-Mar-2026 17:37:01 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:37:01 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:37:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:37:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:37:18 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:37:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:37:18 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:37:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:37:18 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:37:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:37:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:37:18 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:37:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:37:18 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:37:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:37:18 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:37:18 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:37:55 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:37:55 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:38:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:38:10 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:39:23 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:39:23 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:39:31 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:39:31 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:39:31 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:39:31 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:39:31 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:39:31 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:39:31 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:39:31 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:39:31 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:39:31 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:39:31 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:39:31 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:39:31 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:39:31 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:39:31 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:39:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:39:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:39:48 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:39:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:39:48 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:39:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:39:48 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:39:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:39:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:39:48 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:39:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:39:48 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:39:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:39:48 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:39:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:40:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:40:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:10 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:10 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:10 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:40:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:10 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:10 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:10 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:10 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:40:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:40:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:22 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:22 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:22 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:40:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:22 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:22 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:22 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:22 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:40:27 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:40:27 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:27 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:27 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:27 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:27 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:27 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:27 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:40:27 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:27 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:27 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:27 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:27 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:27 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:27 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:40:44 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:40:44 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:44 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:44 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:44 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:44 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:44 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:44 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:40:44 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:44 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:44 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:44 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:44 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:44 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:44 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:40:46 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:40:46 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:40:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:40:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:54 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:54 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:54 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:40:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:54 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:54 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:54 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:40:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:40:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:56 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:40:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:56 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:40:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:56 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:40:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:40:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:56 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:40:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:56 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:40:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:56 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:40:56 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:41:00 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:41:00 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:41:00 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:41:00 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:41:00 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:41:00 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:41:00 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:41:00 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:41:00 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:41:00 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:41:00 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:41:00 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:41:00 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:41:00 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:41:00 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:41:19 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:41:19 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:41:19 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:41:19 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:41:19 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:41:19 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:41:19 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:41:19 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:41:19 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:41:19 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:41:19 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:41:19 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:41:19 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:41:19 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:41:19 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:41:30 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:41:30 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:41:35 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:41:35 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:41:35 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:41:35 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:41:35 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:41:35 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:41:35 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:41:35 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:41:35 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:41:35 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:41:35 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:41:35 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:41:35 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:41:35 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:41:35 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:41:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:41:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:41:43 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:41:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:41:43 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:41:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:41:43 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:41:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:41:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:41:43 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:41:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:41:43 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:41:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:41:43 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:41:43 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:41:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:41:57 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:42:17 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:42:17 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:42:17 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:42:17 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:42:17 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:42:17 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:42:17 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:42:17 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:42:17 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:42:17 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:42:17 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:42:17 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:42:17 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:42:17 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:42:17 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:42:42 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:42:42 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:42:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:42:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:42:57 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:42:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:42:57 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:42:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:42:57 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:42:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:42:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:42:57 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:42:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:42:57 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:42:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:42:57 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:42:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:43:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:43:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:43:07 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:43:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:43:07 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:43:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:43:07 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:43:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:43:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:43:07 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:43:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:43:07 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:43:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:43:07 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:43:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:43:29 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:43:29 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:44:49 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:44:49 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 17:44:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:44:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:44:57 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:44:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:44:57 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:44:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:44:57 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:44:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:44:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:44:57 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:44:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:44:57 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:44:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:44:57 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:44:57 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 17:45:10 UTC] PHP Warning:  preg_match_all(): Unknown modifier 'v' in /home/ligaojmj/public_html/restore_backup.php on line 40
+[10-Mar-2026 17:45:10 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ligaojmj/public_html/restore_backup.php on line 44
+[10-Mar-2026 17:45:41 UTC] PHP Warning:  preg_match_all(): Unknown modifier 'v' in /home/ligaojmj/public_html/restore_backup.php on line 41
+[10-Mar-2026 17:45:41 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ligaojmj/public_html/restore_backup.php on line 45
+[10-Mar-2026 17:54:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 17:54:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:54:02 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 17:54:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:54:02 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 17:54:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:54:02 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 17:54:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 17:54:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:54:02 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 17:54:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:54:02 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 17:54:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:54:02 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 17:54:02 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 18:00:14 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 18:00:14 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 18:00:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 26
+[10-Mar-2026 18:00:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 18:00:25 UTC] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 29
+[10-Mar-2026 18:00:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 18:00:25 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 34
+[10-Mar-2026 18:00:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 18:00:25 UTC] PHP Deprecated:  ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 37
+[10-Mar-2026 18:00:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 38
+[10-Mar-2026 18:00:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 18:00:25 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 77
+[10-Mar-2026 18:00:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 18:00:25 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 81
+[10-Mar-2026 18:00:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 18:00:25 UTC] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /home/ligaojmj/public_html/pages/profile.php on line 179
+[10-Mar-2026 18:00:25 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/profile.php on line 182
+[10-Mar-2026 18:02:15 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 18:02:15 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/dashboard.php on line 123
+[10-Mar-2026 18:10:15 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/libs/PHPMailer/src/Exception.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/test_mail.php on line 7
+[10-Mar-2026 18:10:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/libs/PHPMailer/src/Exception.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/test_mail.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/test_mail.php on line 7
+[10-Mar-2026 18:10:34 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/libs/PHPMailer/src/Exception.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/controllers/AuthController.php on line 14
+[10-Mar-2026 18:10:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/libs/PHPMailer/src/Exception.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/controllers/AuthController.php:14
+Stack trace:
+#0 /home/ligaojmj/public_html/controllers/AuthController.php(127): AuthController->sendVerificationEmail()
+#1 /home/ligaojmj/public_html/index.php(70): AuthController->register()
+#2 {main}
+  thrown in /home/ligaojmj/public_html/controllers/AuthController.php on line 14
+[10-Mar-2026 18:11:02 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_PATH" in /home/ligaojmj/public_html/diagnose.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/diagnose.php on line 10
+[10-Mar-2026 18:15:09 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_PATH" in /home/ligaojmj/public_html/test_mail2.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/test_mail2.php on line 6
+[10-Mar-2026 18:15:50 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_PATH" in /home/ligaojmj/public_html/test_mail3.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/test_mail3.php on line 8
+[11-Mar-2026 18:43:59 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 18:44:04 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 18:44:06 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 18:44:07 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 18:44:17 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 18:45:01 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 18:45:08 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 18:45:22 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 20:08:28 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 20:08:38 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 20:29:09 UTC] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/ligaojmj/public_html/update_max.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/update_max.php on line 5
+[11-Mar-2026 21:18:06 UTC] [MAIL] Team join approved to moderadorWoc1@ligawoc.woc: SMTP Error: The following recipients failed: moderadorWoc1@ligawoc.woc: The mail server could not deliver mail to moderadorwoc1@ligawoc.woc.  The
+account or domain may not exist, they may be blacklisted, or missing the
+proper dns entries.
+
+[11-Mar-2026 21:18:09 UTC] [MAIL] Team join approved to moderadorWoc2@ligawoc.woc: SMTP Error: The following recipients failed: moderadorWoc2@ligawoc.woc: The mail server could not deliver mail to moderadorwoc2@ligawoc.woc.  The
+account or domain may not exist, they may be blacklisted, or missing the
+proper dns entries.
+
+[11-Mar-2026 21:27:18 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 21:34:13 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 21:37:02 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[11-Mar-2026 22:18:00 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[13-Mar-2026 13:46:52 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[13-Mar-2026 16:16:25 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[13-Mar-2026 17:44:08 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[13-Mar-2026 17:48:45 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[13-Mar-2026 22:51:09 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[14-Mar-2026 02:13:12 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[14-Mar-2026 02:40:43 UTC] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ligaojmj/public_html/pages/team-manage.php on line 40
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:00:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:07:53 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:02 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:06 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:08 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:12:11 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:15:50 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:26:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method AuthController::getUser() in /home/ligaojmj/public_html/pages/profile.php:5
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(252): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/profile.php on line 5
+[17-Mar-2026 05:30:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method AuthController::getUser() in /home/ligaojmj/public_html/pages/profile.php:5
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(252): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/profile.php on line 5
+[17-Mar-2026 05:38:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method AuthController::getUser() in /home/ligaojmj/public_html/pages/profile.php:5
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(252): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/profile.php on line 5
+[17-Mar-2026 05:41:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method AuthController::updateProfile() in /home/ligaojmj/public_html/index.php:145
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 145
+[17-Mar-2026 05:42:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method AuthController::updateProfile() in /home/ligaojmj/public_html/index.php:145
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 145
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 05:44:30 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 07:56:17 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 07:57:35 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 08:08:47 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 08:08:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 08:15:46 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 08:15:51 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 08:18:18 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 08:18:23 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 08:18:38 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 08:35:35 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ligaojmj_WOC.email_change_codes' doesn't exist in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(82): Database->query()
+#2 /home/ligaojmj/public_html/controllers/AuthController.php(377): Database->update()
+#3 /home/ligaojmj/public_html/index.php(146): AuthController->sendEmailVerificationCode()
+#4 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:15 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:45:18 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:51 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:47:54 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_id" in /home/ligaojmj/public_html/admin/users.php on line 75
+[17-Mar-2026 08:48:04 UTC] PHP Warning:  Undefined array key "ml_server" in /home/ligaojmj/public_html/admin/users.php on line 76
+[17-Mar-2026 09:11:07 UTC] PHP Fatal error:  Uncaught Error: Class "ShopController" not found in /home/ligaojmj/public_html/pages/shop.php:4
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(312): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/shop.php on line 4
+[17-Mar-2026 09:20:20 UTC] PHP Fatal error:  Uncaught Error: Class "ShopController" not found in /home/ligaojmj/public_html/pages/shop.php:4
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(312): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/shop.php on line 4
+[17-Mar-2026 09:21:03 UTC] PHP Fatal error:  Uncaught Error: Class "ShopController" not found in /home/ligaojmj/public_html/pages/shop.php:4
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(312): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/shop.php on line 4
+[17-Mar-2026 09:23:22 UTC] PHP Fatal error:  Uncaught Error: Class "ShopController" not found in /home/ligaojmj/public_html/pages/shop.php:4
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(312): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/shop.php on line 4
+[17-Mar-2026 09:27:01 UTC] PHP Fatal error:  Uncaught Error: Class "ShopController" not found in /home/ligaojmj/public_html/pages/designer.php:4
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(315): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/designer.php on line 4
+[17-Mar-2026 09:27:06 UTC] PHP Fatal error:  Uncaught Error: Class "ShopController" not found in /home/ligaojmj/public_html/pages/shop.php:4
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(315): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/shop.php on line 4
+[17-Mar-2026 09:30:11 UTC] PHP Fatal error:  Uncaught Error: Class "ShopController" not found in /home/ligaojmj/public_html/pages/shop.php:4
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(321): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/shop.php on line 4
+[17-Mar-2026 09:30:13 UTC] PHP Fatal error:  Uncaught Error: Class "ShopController" not found in /home/ligaojmj/public_html/pages/designer.php:4
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(321): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/designer.php on line 4
+[17-Mar-2026 09:34:25 UTC] PHP Fatal error:  Uncaught Error: Class "ShopController" not found in /home/ligaojmj/public_html/pages/shop.php:4
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(321): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/shop.php on line 4
+[17-Mar-2026 09:43:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ligaojmj/public_html/includes/navbar.php:80) in /home/ligaojmj/public_html/config/app.php on line 174
+[17-Mar-2026 09:46:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ligaojmj/public_html/includes/navbar.php:80) in /home/ligaojmj/public_html/config/app.php on line 174
+[17-Mar-2026 09:52:09 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ligaojmj/public_html/includes/navbar.php:80) in /home/ligaojmj/public_html/config/app.php on line 174
+[17-Mar-2026 09:54:10 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ligaojmj/public_html/includes/navbar.php:80) in /home/ligaojmj/public_html/config/app.php on line 174
+[17-Mar-2026 10:01:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ligaojmj/public_html/includes/navbar.php:80) in /home/ligaojmj/public_html/pages/designer.php on line 78
+[17-Mar-2026 10:02:08 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ligaojmj/public_html/includes/navbar.php:80) in /home/ligaojmj/public_html/pages/designer.php on line 78
+[17-Mar-2026 10:03:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ligaojmj/public_html/includes/navbar.php:80) in /home/ligaojmj/public_html/pages/designer.php on line 78
+[17-Mar-2026 10:04:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ligaojmj/public_html/includes/navbar.php:80) in /home/ligaojmj/public_html/pages/designer.php on line 78
+[17-Mar-2026 10:16:48 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/pages/api/../config/app.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/pages/api/shop-item.php on line 6
+[17-Mar-2026 10:16:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/pages/api/../config/app.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/pages/api/shop-item.php:6
+Stack trace:
+#0 /home/ligaojmj/public_html/index.php(57): require_once()
+#1 {main}
+  thrown in /home/ligaojmj/public_html/pages/api/shop-item.php on line 6
+[17-Mar-2026 10:25:51 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /home/ligaojmj/public_html/pages/profile.php on line 339
+[17-Mar-2026 10:26:01 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /home/ligaojmj/public_html/pages/profile.php on line 339
+[17-Mar-2026 10:43:03 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /home/ligaojmj/public_html/pages/profile.php on line 339
+[17-Mar-2026 10:43:27 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /home/ligaojmj/public_html/pages/profile.php on line 339
+[17-Mar-2026 10:44:43 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /home/ligaojmj/public_html/pages/profile.php on line 341
+[17-Mar-2026 10:44:47 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" in /home/ligaojmj/public_html/pages/profile.php on line 341
+[17-Mar-2026 10:56:17 UTC] Equip result: {"success":false,"error":"No tienes este item"}
+[17-Mar-2026 10:56:22 UTC] Equip result: {"success":false,"error":"No tienes este item"}
+[17-Mar-2026 10:56:23 UTC] Equip result: {"success":false,"error":"No tienes este item"}
+[17-Mar-2026 11:24:27 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cover' in 'SELECT' in /home/ligaojmj/public_html/config/database.php:63
+Stack trace:
+#0 /home/ligaojmj/public_html/config/database.php(63): PDO->prepare()
+#1 /home/ligaojmj/public_html/config/database.php(69): Database->query()
+#2 /home/ligaojmj/public_html/index.php(172): Database->fetch()
+#3 {main}
+  thrown in /home/ligaojmj/public_html/config/database.php on line 63
+[17-Mar-2026 12:18:21 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:18:37 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:18:43 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:18:46 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:18:49 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:21:07 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:21:09 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:21:14 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:23:14 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:23:17 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:25:22 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:25:28 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:27:02 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:27:05 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:27:09 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:27:15 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:27:53 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:30:03 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:30:50 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:33:45 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 12:33:48 UTC] PHP Warning:  Undefined variable $debugInfo in /home/ligaojmj/public_html/pages/profile.php on line 52
+[17-Mar-2026 15:20:48 UTC] PHP Warning:  Undefined variable $marcoImage in /home/ligaojmj/public_html/pages/dashboard.php on line 136
+[17-Mar-2026 15:22:43 UTC] PHP Warning:  Undefined variable $marcoImage in /home/ligaojmj/public_html/pages/dashboard.php on line 136
+[17-Mar-2026 15:22:49 UTC] PHP Warning:  Undefined variable $marcoImage in /home/ligaojmj/public_html/pages/dashboard.php on line 136
+[17-Mar-2026 15:22:50 UTC] PHP Warning:  Undefined variable $marcoImage in /home/ligaojmj/public_html/pages/dashboard.php on line 136
+[17-Mar-2026 15:25:40 UTC] PHP Warning:  Undefined variable $marcoImage in /home/ligaojmj/public_html/pages/dashboard.php on line 136
+[17-Mar-2026 15:26:06 UTC] PHP Warning:  Undefined variable $marcoImage in /home/ligaojmj/public_html/pages/dashboard.php on line 136
+[17-Mar-2026 15:26:27 UTC] PHP Warning:  Undefined variable $marcoImage in /home/ligaojmj/public_html/pages/dashboard.php on line 136
+[17-Mar-2026 15:26:31 UTC] PHP Warning:  Undefined variable $marcoImage in /home/ligaojmj/public_html/pages/dashboard.php on line 136
+[17-Mar-2026 15:33:52 UTC] PHP Warning:  Undefined variable $marcoImage in /home/ligaojmj/public_html/pages/dashboard.php on line 136
+[22-Mar-2026 21:10:42 UTC] PHP Warning:  require_once(/home/ligaojmj/public_html/config/database.php): Failed to open stream: No such file or directory in /home/ligaojmj/public_html/index.php on line 7
+[22-Mar-2026 21:10:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ligaojmj/public_html/config/database.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ligaojmj/public_html/index.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ligaojmj/public_html/index.php on line 7

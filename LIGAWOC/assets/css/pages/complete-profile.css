@@ -1,0 +1,16 @@
+.page-style-complete-profile .complete-profile-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.page-style-complete-profile .complete-profile-icon--whatsapp {
+    color: #25D366;
+}
+
+.page-style-complete-profile .complete-profile-icon--device {
+    color: var(--text-muted);
+}
+
+.page-style-complete-profile .complete-profile-icon--discord {
+    color: #5865F2;
+}

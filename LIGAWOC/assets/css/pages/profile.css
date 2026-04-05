@@ -1,0 +1,294 @@
+.page-style-profile {
+    --profile-marco-padding: 10px;
+}
+
+.page-style-profile.has-modal-open {
+    overflow: hidden;
+}
+
+/* ── Profile Hero ── */
+.page-style-profile .profile-cover {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1920 / 500;
+    min-height: 190px;
+    background: linear-gradient(180deg, rgba(6, 10, 19, 0.9), rgba(6, 10, 19, 0.98));
+}
+
+.page-style-profile .profile-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.75) 100%);
+    pointer-events: none;
+}
+
+.page-style-profile .profile-cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.page-style-profile .profile-cover-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    max-width: min(44vw, 165px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-style-profile .profile-cover-btn-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-style-profile .profile-hero-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    right: 10px;          /* stop overflow on very small screens */
+    z-index: 2;
+}
+
+.page-style-profile .profile-avatar-wrap {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.page-style-profile .profile-avatar-inner {
+    width: 140px;
+    height: 140px;
+}
+
+.page-style-profile .profile-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page-style-profile .profile-hero-info {
+    padding-bottom: 10px;
+    min-width: 0;         /* allow text to shrink/wrap */
+}
+
+.page-style-profile .profile-hero-info h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.page-style-profile .profile-hero-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 5px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.page-style-profile .profile-hero-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.page-style-profile .profile-hero-ign {
+    color: #fff;
+    font-size: 0.8rem;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+/* ── Avatar action buttons ── */
+.page-style-profile .profile-avatar-btn {
+    position: absolute;
+    width: 32px !important;
+    min-width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1;
+    gap: 0 !important;
+}
+
+.page-style-profile .profile-avatar-btn--camera {
+    bottom: 0;
+    right: 0;
+    border-radius: 0 !important;
+}
+
+.page-style-profile .profile-avatar-btn--marco {
+    top: -10px;
+    left: -10px;
+    border-radius: 50% !important;
+}
+
+/* ── Avatar initials fallback ── */
+.page-style-profile .profile-avatar-initials {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.2rem, 6vw, 3rem);
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 600px) {
+    .page-style-profile {
+        --profile-marco-padding: 7px;
+    }
+
+    .page-style-profile .profile-cover {
+        min-height: 180px;
+    }
+
+    .page-style-profile .profile-cover-btn {
+        top: 8px;
+        right: 8px;
+        max-width: 46vw;
+        padding: 5px 10px;
+        font-size: 0.62rem;
+    }
+
+    .page-style-profile .profile-avatar-wrap {
+        width: 100px;
+        height: 100px;
+    }
+    .page-style-profile .profile-avatar-inner {
+        width: 100px;
+        height: 100px;
+    }
+    .page-style-profile .profile-avatar-btn {
+        width: 26px !important;
+        min-width: 26px !important;
+        height: 26px !important;
+        font-size: 0.7rem;
+    }
+    .page-style-profile .profile-hero-bottom {
+        bottom: 14px;
+        left: 14px;
+        gap: 12px;
+        right: 8px;
+    }
+    .page-style-profile .profile-hero-info h2 {
+        font-size: 1.1rem !important;
+    }
+
+    .page-style-profile .profile-hero-ign {
+        font-size: 0.72rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .page-style-profile {
+        --profile-marco-padding: 5px;
+    }
+
+    .page-style-profile .profile-cover {
+        min-height: 160px;
+    }
+
+    .page-style-profile .profile-cover-btn {
+        top: 6px;
+        right: 6px;
+        width: 36px;
+        min-width: 36px;
+        height: 30px;
+        padding: 0;
+    }
+
+    .page-style-profile .profile-cover-btn-label {
+        display: none;
+    }
+
+    .page-style-profile .profile-avatar-wrap {
+        width: 72px;
+        height: 72px;
+    }
+    .page-style-profile .profile-avatar-inner {
+        width: 72px;
+        height: 72px;
+    }
+    .page-style-profile .profile-avatar-btn {
+        width: 22px !important;
+        min-width: 22px !important;
+        height: 22px !important;
+        font-size: 0.6rem;
+    }
+    .page-style-profile .profile-avatar-btn--marco {
+        top: -6px;
+        left: -6px;
+    }
+    .page-style-profile .profile-hero-bottom {
+        bottom: 8px;
+        left: 8px;
+        gap: 8px;
+    }
+    .page-style-profile .profile-hero-info h2 {
+        font-size: 0.9rem !important;
+    }
+
+    .page-style-profile .profile-hero-ign {
+        font-size: 0.62rem;
+    }
+
+    .page-style-profile .profile-hero-info .badge {
+        font-size: 0.65rem !important;
+        padding: 3px 7px !important;
+    }
+}
+
+/* Badge del rol sobre la portada: fondo oscuro para legibilidad */
+.page-style-profile .profile-cover-badge {
+    background: rgba(0, 0, 0, 0.72) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.page-style-profile .profile-role-badge--designer {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    box-shadow: 0 0 15px rgba(255, 190, 0, 0.6);
+}
+
+.page-style-profile .profile-role-badge--admin {
+    padding: 8px 14px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #ff4500, #ff6600, #ff4500);
+    background-size: 200% 100%;
+    font-size: 0.9rem;
+    font-weight: 900;
+    animation: profileFireGlow 1.5s ease infinite;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.6), 0 0 40px rgba(255, 69, 0, 0.3);
+}
+
+@keyframes profileFireGlow {
+    0%,
+    100% {
+        background-position: 0 50%;
+        box-shadow: 0 0 20px rgba(255, 69, 0, 0.6), 0 0 40px rgba(255, 69, 0, 0.3);
+    }
+
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 0 0 30px rgba(255, 100, 0, 0.8), 0 0 60px rgba(255, 69, 0, 0.5);
+    }
+}

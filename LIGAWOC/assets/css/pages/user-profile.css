@@ -1,0 +1,619 @@
+/* =========================================================
+   user-profile.css
+   Scoped under .page-style-user-profile
+   ========================================================= */
+
+.page-style-user-profile .up-page-header {
+    margin-bottom: 0;
+}
+
+.page-style-user-profile .up-page-title-hidden {
+    display: none;
+}
+
+.page-style-user-profile .up-profile-hero {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.page-style-user-profile .up-cover {
+    height: 240px;
+    position: relative;
+}
+
+.page-style-user-profile .up-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 10, 18, 0.08) 0%, rgba(8, 10, 18, 0.75) 100%);
+    pointer-events: none;
+}
+
+.page-style-user-profile .up-cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page-style-user-profile .up-banned-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(220, 38, 38, 0.9);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.page-style-user-profile .up-identity-row {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    z-index: 2;
+}
+
+.page-style-user-profile .up-avatar-shell {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.page-style-user-profile .up-avatar-frame {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(12, 15, 24, 0.75);
+}
+
+.page-style-user-profile .up-avatar-frame.has-marco {
+    border: none;
+}
+
+.page-style-user-profile .up-marco-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.page-style-user-profile .up-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page-style-user-profile .up-avatar-frame.has-marco .up-avatar-img {
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 18px;
+}
+
+.page-style-user-profile .up-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.page-style-user-profile .up-avatar-frame.has-marco .up-avatar-placeholder {
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 18px;
+}
+
+.page-style-user-profile .up-user-meta {
+    padding-bottom: 10px;
+}
+
+.page-style-user-profile .up-username {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 5px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.page-style-user-profile .up-identity-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.page-style-user-profile .up-role-badge {
+    border-radius: 20px;
+    line-height: 1;
+}
+
+.page-style-user-profile .up-role-admin {
+    font-weight: 900;
+    font-size: 0.9rem;
+    padding: 8px 14px;
+    color: #fff;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ff4500, #ff6600, #ff4500);
+    background-size: 200% 100%;
+    animation: upFireGlow 1.5s ease infinite;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.6), 0 0 40px rgba(255, 69, 0, 0.3);
+}
+
+.page-style-user-profile .up-role-designer {
+    font-weight: 900;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #ffbe00, #ff9500);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255, 190, 0, 0.6);
+    color: #000;
+}
+
+.page-style-user-profile .up-role-player {
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    background: rgba(124, 92, 252, 0.3);
+    color: #fff;
+}
+
+.page-style-user-profile .up-ign {
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.page-style-user-profile .up-section-title {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-style-user-profile .up-section-title-sm {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.page-style-user-profile .up-section-icon {
+    width: 20px;
+    color: var(--accent-bright);
+}
+
+.page-style-user-profile .up-section-icon-sm {
+    width: 18px;
+}
+
+.page-style-user-profile .up-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.page-style-user-profile .up-stat-card {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.page-style-user-profile .up-stat-value {
+    font-size: 1.3rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.page-style-user-profile .up-stat-positive {
+    color: var(--success);
+}
+
+.page-style-user-profile .up-stat-negative {
+    color: var(--danger);
+}
+
+.page-style-user-profile .up-stat-kda {
+    color: var(--neon-orchid);
+}
+
+.page-style-user-profile .up-stat-kda-line {
+    font-size: 0.9rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.page-style-user-profile .up-stat-deaths {
+    color: var(--danger);
+}
+
+.page-style-user-profile .up-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+.page-style-user-profile .up-hero-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.page-style-user-profile .up-hero-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.page-style-user-profile .up-hero-item:hover {
+    background: rgba(124, 92, 252, 0.1);
+    transform: translateX(4px);
+}
+
+.page-style-user-profile .up-hero-img,
+.page-style-user-profile .up-hero-fallback {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+.page-style-user-profile .up-hero-img {
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-style-user-profile .up-hero-img.is-top {
+    border-color: var(--neon-orchid);
+}
+
+.page-style-user-profile .up-hero-fallback {
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-muted);
+}
+
+.page-style-user-profile .up-hero-info {
+    flex: 1;
+}
+
+.page-style-user-profile .up-hero-name {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.page-style-user-profile .up-hero-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.page-style-user-profile .up-hero-grade {
+    color: var(--accent-light);
+}
+
+.page-style-user-profile .up-hero-kda-box {
+    text-align: right;
+}
+
+.page-style-user-profile .up-hero-kda-value {
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    color: var(--accent-main);
+}
+
+.page-style-user-profile .up-hero-kda-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.page-style-user-profile .up-team-card {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(20, 24, 34, 0.8));
+    border-top-color: var(--accent) !important;
+    padding: 24px;
+}
+
+.page-style-user-profile .up-team-title {
+    color: #fff;
+}
+
+.page-style-user-profile .up-team-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+}
+
+.page-style-user-profile .up-team-head {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.page-style-user-profile .up-team-logo,
+.page-style-user-profile .up-team-logo-placeholder {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+}
+
+.page-style-user-profile .up-team-logo {
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 15px rgba(124, 92, 252, 0.3);
+}
+
+.page-style-user-profile .up-team-logo-placeholder {
+    font-size: 1.8rem;
+}
+
+.page-style-user-profile .up-team-name {
+    font-weight: 900;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.page-style-user-profile .up-team-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.page-style-user-profile .up-mini-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+}
+
+.page-style-user-profile .up-cap-badge {
+    box-shadow: 0 0 10px rgba(255, 190, 0, 0.3);
+}
+
+.page-style-user-profile .up-team-btn {
+    padding: 12px;
+    font-size: 0.95rem;
+    border-color: rgba(124, 92, 252, 0.3);
+    color: #fff;
+}
+
+.page-style-user-profile .up-empty-state {
+    padding: 30px 20px;
+}
+
+.page-style-user-profile .up-empty-state-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+}
+
+.page-style-user-profile .up-empty-state-svg {
+    width: 24px;
+    height: 24px;
+}
+
+.page-style-user-profile .up-empty-state-title {
+    font-size: 1.1rem;
+}
+
+.page-style-user-profile .up-empty-state-text {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.page-style-user-profile .up-recent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.page-style-user-profile .up-recent-item {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--danger);
+    border-radius: 6px;
+}
+
+.page-style-user-profile .up-recent-item.won {
+    border-left-color: var(--success);
+}
+
+.page-style-user-profile .up-recent-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.page-style-user-profile .up-result-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--danger);
+}
+
+.page-style-user-profile .up-result-badge.won {
+    color: var(--success);
+}
+
+.page-style-user-profile .up-time-ago {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.page-style-user-profile .up-recent-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-style-user-profile .up-hero-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-style-user-profile .up-hero-mini-img,
+.page-style-user-profile .up-hero-mini-fallback {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+
+.page-style-user-profile .up-hero-mini-img {
+    object-fit: cover;
+}
+
+.page-style-user-profile .up-hero-mini-fallback {
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.page-style-user-profile .up-hero-mini-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.page-style-user-profile .up-hero-mini-kda {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.page-style-user-profile .up-score-box {
+    text-align: right;
+}
+
+.page-style-user-profile .up-score-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.page-style-user-profile .up-score-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    color: var(--text-primary);
+}
+
+.page-style-user-profile .up-history-actions {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.page-style-user-profile .up-history-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+}
+
+.page-style-user-profile .up-member-since {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+@keyframes upFireGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        box-shadow: 0 0 20px rgba(255, 69, 0, 0.6), 0 0 40px rgba(255, 69, 0, 0.3);
+    }
+    50% {
+        background-position: 100% 50%;
+        box-shadow: 0 0 30px rgba(255, 100, 0, 0.8), 0 0 60px rgba(255, 69, 0, 0.5);
+    }
+}
+
+@media (max-width: 992px) {
+    .page-style-user-profile .up-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .page-style-user-profile .up-cover {
+        height: 280px;
+    }
+
+    .page-style-user-profile .up-identity-row {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .page-style-user-profile .up-avatar-shell,
+    .page-style-user-profile .up-avatar-frame {
+        width: 96px;
+        height: 96px;
+    }
+
+    .page-style-user-profile .up-avatar-frame.has-marco .up-avatar-img,
+    .page-style-user-profile .up-avatar-frame.has-marco .up-avatar-placeholder {
+        padding: 7px;
+    }
+
+    .page-style-user-profile .up-username {
+        font-size: 1.15rem;
+    }
+
+    .page-style-user-profile .up-role-admin,
+    .page-style-user-profile .up-role-designer,
+    .page-style-user-profile .up-role-player {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .page-style-user-profile .up-hero-item {
+        gap: 10px;
+    }
+
+    .page-style-user-profile .up-hero-img,
+    .page-style-user-profile .up-hero-fallback {
+        width: 52px;
+        height: 52px;
+    }
+}

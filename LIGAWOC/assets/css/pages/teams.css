@@ -1,0 +1,281 @@
+/* =========================
+   TITLES & BUTTON: Responsive Sizing (Equipos)
+========================= */
+
+@media (max-width: 599px) {
+    .page-title {
+        font-size: 1.1rem !important;
+    }
+    .page-subtitle {
+        font-size: 0.85rem !important;
+    }
+    .btn {
+        font-size: 0.80rem !important;
+        padding: 6px 14px !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .page-title {
+        font-size: 0.95rem !important;
+    }
+    .page-subtitle {
+        font-size: 0.75rem !important;
+    }
+    .btn {
+        font-size: 0.70rem !important;
+        padding: 5px 10px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .page-title {
+        font-size: 0.80rem !important;
+    }
+    .page-subtitle {
+        font-size: 0.65rem !important;
+    }
+    .btn {
+        font-size: 0.60rem !important;
+        padding: 4px 8px !important;
+    }
+}
+.page-style-teams .teams-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.page-style-teams .teams-main > * {
+    margin-bottom: 0 !important;
+}
+
+.page-style-teams .teams-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.page-style-teams .teams-search-form {
+    margin-bottom: 0;
+}
+
+.page-style-teams .teams-search-row {
+    display: flex;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.page-style-teams .teams-grid {
+    gap: 24px !important;
+}
+
+.page-style-teams .teams-card-link {
+    text-decoration: none;
+}
+
+/* Badge reclutando normal */
+.page-style-teams .team-recruiting-badge {
+    font-size: 0.95rem;
+    padding: 2px 12px;
+    border-radius: 8px;
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+/* Tamaño normal para desktop */
+.page-style-teams .team-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 24px;
+}
+.page-style-teams .team-name {
+    font-size: 1.25rem;
+}
+
+.page-style-teams .page-title {
+    font-size: 1.6rem;
+}
+
+/* =========================
+   MÓVILES (hasta 599px)
+========================= */
+@media (max-width: 599px) {
+
+    .page-style-teams .teams-search-row {
+        max-width: none;
+    }
+
+    /* 🔥 SIEMPRE 2 COLUMNAS */
+    .page-style-teams .teams-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .page-style-teams .btn.btn-primary,
+    .page-style-teams .btn.btn-secondary {
+        padding: 4px 8px !important;
+        font-size: 0.60rem !important;
+    }
+
+    .page-style-teams .team-logo {
+        width: 44px !important;
+        height: 44px !important;
+        margin-top: 18px !important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-style-teams .team-name {
+        font-size: 0.85rem !important;
+        text-align: center;
+    }
+
+    .page-style-teams .page-title {
+        font-size: 1.05rem !important;
+    }
+
+    .page-style-teams .team-stats {
+        font-size: 0.80rem !important;
+        text-align: center;
+    }
+
+    .page-style-teams .team-stat-value {
+        font-size: 1.05rem !important;
+    }
+
+    .page-style-teams .team-stat-label {
+        font-size: 0.65rem !important;
+    }
+
+    .page-style-teams .team-recruiting-badge {
+        font-size: 0.70rem !important;
+        padding: 1px 7px !important;
+        display: block;
+        margin: 0 auto 4px auto;
+    }
+}
+
+
+@media (max-width: 390px) {
+
+    .page-style-teams .teams-search-row {
+        max-width: none;
+    }
+
+    /* 🔥 SIEMPRE 2 COLUMNAS */
+    .page-style-teams .teams-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .page-style-teams .btn.btn-primary,
+    .page-style-teams .btn.btn-secondary {
+        padding: 4px 8px !important;
+        font-size: 0.60rem !important;
+    }
+
+    .page-style-teams .team-logo {
+        width: 44px !important;
+        height: 44px !important;
+        margin-top: 18px !important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-style-teams .team-name {
+        font-size: 0.65rem !important;
+        text-align: center;
+    }
+
+    .page-style-teams .page-title {
+        font-size: 1.05rem !important;
+    }
+
+    .page-style-teams .team-stats {
+        font-size: 0.60rem !important;
+        text-align: center;
+    }
+
+    .page-style-teams .team-stat-value {
+        font-size: 1.05rem !important;
+    }
+
+    .page-style-teams .team-stat-label {
+        font-size: 0.50rem !important;
+    }
+
+    .page-style-teams .team-recruiting-badge {
+        font-size: 0.70rem !important;
+        padding: 1px 7px !important;
+        display: block;
+        margin: 0 auto 4px auto;
+    }
+
+    
+}
+
+
+@media (max-width: 360px) {
+
+    .page-style-teams .teams-search-row {
+        max-width: none;
+    }
+
+    /* 🔥 SIEMPRE 2 COLUMNAS */
+    .page-style-teams .teams-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .page-style-teams .btn.btn-primary,
+    .page-style-teams .btn.btn-secondary {
+        padding: 4px 8px !important;
+        font-size: 0.60rem !important;
+    }
+
+    .page-style-teams .team-logo {
+        width: 44px !important;
+        height: 44px !important;
+        margin-top: 18px !important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-style-teams .team-name {
+        font-size: 0.45rem !important;
+        text-align: center;
+    }
+
+    .page-style-teams .page-title {
+        font-size: 1.05rem !important;
+    }
+
+    .page-style-teams .team-stats {
+        font-size: 0.40rem !important;
+        text-align: center;
+    }
+
+    .page-style-teams .team-stat-value {
+        font-size: 0.85rem !important;
+    }
+
+    .page-style-teams .team-stat-label {
+        font-size: 0.50rem !important;
+    }
+
+    .page-style-teams .team-recruiting-badge {
+        font-size: 0.70rem !important;
+        padding: 1px 7px !important;
+        display: block;
+        margin: 0 auto 4px auto;
+    }
+
+    
+}

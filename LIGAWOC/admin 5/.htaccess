@@ -1,0 +1,168 @@
+# ====================================
+# BLOQUEAR ACCESO DIRECTO A ARCHIVOS PHP
+# ====================================
+
+# Bloquear acceso directo a index.php (forzar rutas limpias)
+<Files "index.php">
+    <IfModule mod_rewrite.c>
+        # Se permite acceso para el router
+    </IfModule>
+</Files>
+
+# Bloquear .php directo en carpetas sensibles (redundancia de seguridad)
+<DirectoryMatch "^/(config|includes|libs|database|logs|cgi-bin)">
+    <FilesMatch "\.php$">
+        <IfModule mod_authz_core.c>
+            Require all denied
+        </IfModule>
+        <IfModule !mod_authz_core.c>
+            Order allow,deny
+            Deny from all
+        </IfModule>
+    </FilesMatch>
+</DirectoryMatch>
+
+# ====================================
+# SEGURIDAD - Liga WOC
+# ====================================
+
+# Bloquear archivos de configuración sensibles
+<FilesMatch "^(\.|\.env|\.git|\.htaccess|error_log.*|web\.config|\.php\~|\.php\.bak)">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Bloquear acceso a directorios sensibles
+<DirectoryMatch "^/(config|includes|libs|database|logs|\.git)/">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</DirectoryMatch>
+
+# Bloquear ejecución de PHP en directorios de upload
+<Directory "*/uploads">
+    <FilesMatch "\.php$">
+        <IfModule mod_authz_core.c>
+            Require all denied
+        </IfModule>
+        <IfModule !mod_authz_core.c>
+            Order allow,deny
+            Deny from all
+        </IfModule>
+    </FilesMatch>
+</Directory>
+
+# Bloquear ejecución de PHP en assets
+<Directory "*/assets">
+    <FilesMatch "\.php$">
+        <IfModule mod_authz_core.c>
+            Require all denied
+        </IfModule>
+        <IfModule !mod_authz_core.c>
+            Order allow,deny
+            Deny from all
+        </IfModule>
+    </FilesMatch>
+</Directory>
+
+# ====================================
+# PERFORMANCE & CACHING
+# ====================================
+
+# Habilitar compresión GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css text/javascript application/javascript
+</IfModule>
+
+# Cache para archivos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# ====================================
+# HEADERS DE SEGURIDAD
+# ====================================
+
+<IfModule mod_headers.c>
+    # Evitar MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Prevenir clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # Habilitar XSS protection en navegadores antiguos
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy (Feature Policy)
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # Content Security Policy - Previene XSS e inyección de código
+    # Restricciones: solo 'self' para scripts/styles + protecciones adicionales
+    # frame-ancestors: evita clickjacking
+    # base-uri, form-action: previene control de formularios maliciosos
+    # TODO: Refactorizar código inline para eliminar 'unsafe-inline' completamente
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    
+    # X-Permitted-Cross-Domain-Policies - Controla qué origen puede acceder a contenido
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    
+    # Expect-CT - Transparencia de certificados
+    Header always set Expect-CT "max-age=86400, enforce"
+</IfModule>
+
+# ====================================
+# REWRITE RULES
+# ====================================
+
+# Forzar HTTPS en producción
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{ENV:APP_ENV} production
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Agregar HSTS Header (fuerza HTTPS por 1 año)
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# Remover trailing slash (opcional)
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+# Front controller: redirige todas las rutas limpias a index.php?route=...
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?route=$1 [L,QSA]
+
+# ====================================
+# PREVENT DIRECTORY LISTING
+# ====================================
+
+# Desactivar directory listing
+Options -Indexes
+
+# ====================================
+# CUSTOM ERROR PAGES
+# ====================================
+
+# ErrorDocument 404 /pages/404.php
+# ErrorDocument 500 /pages/500.php

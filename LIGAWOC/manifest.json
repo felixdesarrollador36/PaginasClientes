@@ -1,0 +1,41 @@
+{
+  "name": "Liga WOC",
+  "short_name": "LigaWOC",
+  "description": "Liga de Mobile Legends Wrath of Champions — Torneos, Rankings y Equipos",
+  "start_url": "/LIGAWOC/",
+  "scope": "/LIGAWOC/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0d0520",
+  "theme_color": "#6e41ff",
+  "categories": ["games", "sports"],
+  "icons": [
+    {
+      "src": "/LIGAWOC/assets/img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/LIGAWOC/assets/img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Torneos",
+      "short_name": "Torneos",
+      "url": "/LIGAWOC/tournaments",
+      "icons": [{"src": "/LIGAWOC/assets/img/logo.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "Rankings",
+      "short_name": "Rankings",
+      "url": "/LIGAWOC/rankings",
+      "icons": [{"src": "/LIGAWOC/assets/img/logo.png", "sizes": "96x96"}]
+    }
+  ]
+}

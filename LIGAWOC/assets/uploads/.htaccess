@@ -1,0 +1,50 @@
+# ====================================
+# SEGURIDAD - Carpeta de Uploads
+# ====================================
+
+# Bloquear ejecución de PHP
+<FilesMatch "\.php$|\.phtml$|\.php3$|\.php4$|\.php5$|\.php7$|\.php8$|\.phar$|\.inc$|\.hphp$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Bloquear acceso a .htaccess
+<FilesMatch "^\.htaccess$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Desactivar ejecución de scripts
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php5.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+
+# Impedir ejecución desde CGI
+<IfModule mod_cgi.c>
+    <FilesMatch "\.(php|php3|php4|php5|php6|php7|phtml|pl|py|jsp|asp|aspx|cgi|exe|sh|bat|cmd)$">
+        Deny from all
+    </FilesMatch>
+</IfModule>
+
+# Permitir solo archivos de imagen
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|txt|pdf|doc|docx)$">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+</FilesMatch>

@@ -1,0 +1,258 @@
+/* =========================================================
+   home.css — Liga WOC Landing Page
+   Scoped: .page-style-home
+   ========================================================= */
+
+/* --- Root layout ---------------------------------------- */
+.page-style-home .home-root {
+    flex-direction: column;
+    gap: 0;
+}
+
+.page-style-home .home-hero {
+    padding-bottom: 30px;
+}
+
+/* --- Season banner --------------------------------------- */
+.page-style-home .home-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.page-style-home .season-card {
+    background: linear-gradient(135deg, rgba(26, 10, 46, 0.9), rgba(124, 58, 237, 0.15));
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-style-home .season-glow {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: var(--accent-main);
+    filter: blur(80px);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.page-style-home .season-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.page-style-home .season-badge {
+    margin-bottom: 8px;
+    display: inline-block;
+    font-size: 0.7rem;
+}
+
+.page-style-home .season-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    margin: 0 0 4px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.page-style-home .season-meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.page-style-home .season-action {
+    text-align: right;
+}
+
+/* --- Live & Activity grid -------------------------------- */
+.page-style-home .home-activity {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.page-style-home .activity-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+}
+
+.page-style-home .live-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--danger);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--danger);
+    animation: homePulse 2s infinite;
+    flex-shrink: 0;
+}
+
+.page-style-home .live-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.page-style-home .match-card-live {
+    padding: 16px;
+    border-left: 3px solid var(--danger);
+}
+
+.page-style-home .match-meta {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.page-style-home .match-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-style-home .match-team {
+    text-align: center;
+    flex: 1;
+}
+
+.page-style-home .match-team-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-style-home .match-team-name {
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.page-style-home .match-vs {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding: 0 15px;
+}
+
+/* --- Recent results ------------------------------------- */
+.page-style-home .results-card {
+    padding: 0;
+}
+
+.page-style-home .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+}
+
+.page-style-home .result-row:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.page-style-home .result-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page-style-home .result-meta {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.page-style-home .result-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.page-style-home .result-team-name {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.page-style-home .result-team-name.winner {
+    font-weight: 700;
+    color: var(--success);
+}
+
+.page-style-home .result-score {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.page-style-home .results-more {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: var(--accent-main);
+    text-decoration: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.2s;
+}
+
+.page-style-home .results-more:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Feature cards -------------------------------------- */
+.page-style-home .features-notop {
+    padding-top: 0;
+}
+
+.page-style-home .grid-left {
+    text-align: left;
+}
+
+/* Keep copyright at the true end of page, not fixed over content */
+.page-style-home .hero-footer {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 28px;
+    padding-bottom: calc(88px + env(safe-area-inset-bottom));
+}
+
+/* --- Animations ----------------------------------------- */
+@keyframes homePulse {
+    0%   { transform: scale(1); box-shadow: 0 0 0 0   rgba(239, 68, 68, 0.7); }
+    70%  { transform: scale(1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);   }
+    100% { transform: scale(1); box-shadow: 0 0 0 0   rgba(239, 68, 68, 0);   }
+}

@@ -1,0 +1,38 @@
+Flujo completo de la página team-view.php por rol
+===============================================
+
+1. Visitante (no logueado):
+- No puede ver la página de un equipo, será redirigido al login si intenta acceder a acciones protegidas.
+
+2. Usuario logueado, sin equipo:
+- Puede ver la información del equipo, roster, estadísticas, torneos y últimas partidas.
+- Si el equipo no está lleno y el usuario no es admin/superadmin, verá el botón "Unirse".
+- Al hacer clic en "Unirse", accede al formulario para solicitar unirse al equipo.
+
+3. Miembro del equipo (no capitán):
+- Ve la información del equipo, roster, estadísticas, torneos y últimas partidas.
+- En el roster, junto a su nombre, aparece la opción "Salir del equipo" (formulario POST).
+- Puede ver el botón para ver torneos disponibles.
+
+4. Capitán del equipo:
+- Ve toda la información del equipo y miembros.
+- En el roster, junto a su nombre, aparece el badge de capitán.
+- Ve el botón "Gestionar" para administrar el equipo (acceso a team-manage.php).
+- No puede salir del equipo hasta transferir o eliminar el equipo.
+- Puede ver el botón para ver torneos disponibles.
+
+5. Admin/SuperAdmin:
+- Puede ver la información del equipo, pero no puede unirse ni crear equipos.
+- No ve botones de unirse, salir ni gestionar.
+
+Elementos visibles para todos:
+- Nombre, logo, tag, capitán, región, descripción.
+- Estadísticas: victorias, derrotas, winrate, puntos, partidas jugadas.
+- Roster con KDA y héroe principal de cada miembro.
+- Historial de torneos y últimas partidas jugadas.
+
+Notas adicionales:
+- El flujo de permisos y botones depende de las variables $isMyTeam, $isCaptain, isAdmin(), isSuperAdmin().
+- Las acciones de unirse, salir y gestionar están protegidas por validaciones en el backend (TeamController).
+- El capitán no puede abandonar el equipo sin transferir/eliminar.
+- Los admins no pueden crear ni unirse a equipos.

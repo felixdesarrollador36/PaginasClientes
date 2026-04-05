@@ -1,0 +1,273 @@
+/* =========================================================
+   calendar.css
+   Scoped under .page-style-calendar
+   ========================================================= */
+
+.page-style-calendar .cal-page-header {
+    margin-bottom: 24px;
+}
+
+.page-style-calendar .cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.page-style-calendar .cal-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--accent-main);
+    margin: 0;
+}
+
+.page-style-calendar .cal-board {
+    padding: 20px;
+}
+
+.page-style-calendar .cal-grid-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 8px;
+}
+
+.page-style-calendar .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.page-style-calendar .cal-cell {
+    min-height: 80px;
+    border-radius: 10px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    transition: background 0.2s;
+    overflow: hidden;
+}
+
+.page-style-calendar .cal-cell:not(.cal-empty):hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.page-style-calendar .cal-empty {
+    background: transparent;
+    border-color: transparent;
+}
+
+.page-style-calendar .cal-today {
+    border-color: var(--accent-main) !important;
+    background: rgba(110, 65, 255, 0.07) !important;
+}
+
+.page-style-calendar .cal-today .cal-day-number {
+    color: var(--accent-main);
+    font-weight: 800;
+}
+
+.page-style-calendar .cal-has-matches {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.page-style-calendar .cal-day-number {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    line-height: 1;
+}
+
+.page-style-calendar .cal-match {
+    display: block;
+    padding: 3px 5px;
+    border-radius: 5px;
+    font-size: 0.6rem;
+    line-height: 1.3;
+    text-decoration: none;
+    margin-bottom: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.page-style-calendar .cal-scheduled {
+    background: rgba(110, 65, 255, 0.25);
+    border-left: 2px solid var(--accent-main);
+    color: #c4b5ff;
+}
+
+.page-style-calendar .cal-completed {
+    background: rgba(16, 185, 129, 0.15);
+    border-left: 2px solid var(--success);
+    color: #6ee7b7;
+}
+
+.page-style-calendar .cal-match-time {
+    font-weight: 700;
+    margin-right: 3px;
+}
+
+.page-style-calendar .cal-match-teams {
+    color: inherit;
+    opacity: 0.85;
+}
+
+.page-style-calendar .cal-legend {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 14px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.page-style-calendar .cal-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.page-style-calendar .cal-legend-dot {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+
+.page-style-calendar .cal-legend-dot.today {
+    border-radius: 50%;
+    background: var(--accent-main);
+}
+
+.page-style-calendar .cal-legend-dot.scheduled {
+    border-radius: 3px;
+    background: rgba(110, 65, 255, 0.4);
+}
+
+.page-style-calendar .cal-legend-dot.completed {
+    border-radius: 3px;
+    background: rgba(16, 185, 129, 0.4);
+}
+
+.page-style-calendar .cal-list {
+    display: grid;
+    gap: 8px;
+}
+
+.page-style-calendar .cal-list-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.page-style-calendar .cal-list-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.page-style-calendar .cal-list-date {
+    min-width: 52px;
+    text-align: center;
+}
+
+.page-style-calendar .cal-list-day {
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: var(--accent-main);
+}
+
+.page-style-calendar .cal-list-time {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+}
+
+.page-style-calendar .cal-list-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.page-style-calendar .cal-list-teams {
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-style-calendar .cal-score {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.page-style-calendar .cal-versus {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.page-style-calendar .cal-list-meta {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.page-style-calendar .cal-empty-state {
+    padding: 40px 0;
+    margin-top: 16px;
+}
+
+@media (max-width: 700px) {
+    .page-style-calendar .cal-nav {
+        justify-content: center;
+    }
+
+    .page-style-calendar .cal-title {
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .page-style-calendar .cal-legend {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-style-calendar .cal-board {
+        padding: 12px;
+    }
+
+    .page-style-calendar .cal-cell {
+        min-height: 52px;
+        padding: 4px;
+    }
+
+    .page-style-calendar .cal-match-teams {
+        display: none;
+    }
+
+    .page-style-calendar .cal-match {
+        font-size: 0.55rem;
+    }
+
+    .page-style-calendar .cal-list-item {
+        gap: 10px;
+    }
+}

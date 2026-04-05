@@ -1,0 +1,341 @@
+.page-style-team-view .team-view-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.page-style-team-view .team-view-main > * {
+    margin-bottom: 0 !important;
+}
+
+.page-style-team-view .team-view-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.page-style-team-view .team-view-hero {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.page-style-team-view .team-view-logo,
+.page-style-team-view .team-view-logo-placeholder {
+    width: 100px;
+    height: 100px;
+}
+
+.page-style-team-view .team-view-logo {
+    border: 3px solid var(--electric-indigo);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.page-style-team-view .team-view-logo-placeholder {
+    font-size: 2.5rem;
+}
+
+.page-style-team-view .team-view-summary {
+    flex: 1;
+    min-width: 0;
+}
+
+.page-style-team-view .team-view-title {
+    margin-bottom: 4px;
+}
+
+.page-style-team-view .team-view-tag,
+.page-style-team-view .team-view-highlight {
+    color: var(--neon-orchid);
+}
+
+.page-style-team-view .team-view-tag {
+    font-size: 1rem;
+}
+
+.page-style-team-view .team-view-meta-line {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.page-style-team-view .team-view-description {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.page-style-team-view .team-view-hero-stats {
+    display: flex;
+    gap: 16px;
+    text-align: center;
+}
+
+.page-style-team-view .team-view-hero-stat {
+    min-width: 68px;
+}
+
+.page-style-team-view .team-view-hero-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.page-style-team-view .team-view-hero-value--success {
+    color: var(--success);
+}
+
+.page-style-team-view .team-view-hero-value--danger {
+    color: var(--danger);
+}
+
+.page-style-team-view .team-view-hero-value--accent {
+    color: var(--neon-orchid);
+}
+
+.page-style-team-view .team-view-hero-label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.page-style-team-view .team-view-member {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-style-team-view .team-view-member-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.page-style-team-view .team-view-member-copy {
+    flex: 1;
+    min-width: 0;
+}
+
+.page-style-team-view .team-view-member-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.page-style-team-view .team-view-member-link {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.page-style-team-view .team-view-captain-badge {
+    margin-left: 4px;
+}
+
+.page-style-team-view .team-view-member-meta {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+}
+
+.page-style-team-view .team-view-role-badge {
+    font-size: 0.62rem;
+}
+
+.page-style-team-view .team-view-member-kda-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-style-team-view .team-view-top-hero {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.page-style-team-view .team-view-member-kda {
+    text-align: right;
+}
+
+.page-style-team-view .team-view-member-kda-value {
+    color: var(--accent-main);
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.page-style-team-view .team-view-member-kda-label,
+.page-style-team-view .team-view-member-games {
+    color: var(--text-muted);
+}
+
+.page-style-team-view .team-view-member-kda-label {
+    font-size: 0.6rem;
+}
+
+.page-style-team-view .team-view-member-games {
+    font-size: 0.62rem;
+}
+
+.page-style-team-view .team-view-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.page-style-team-view .team-view-stats-card {
+    text-align: center;
+}
+
+.page-style-team-view .team-view-side-title {
+    margin-bottom: 12px;
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.page-style-team-view .team-view-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.page-style-team-view .team-view-stat-card {
+    flex-direction: column;
+    padding: 14px;
+    text-align: center;
+}
+
+.page-style-team-view .team-view-stat-value {
+    font-size: 1.3rem;
+}
+
+.page-style-team-view .team-view-stat-value--success {
+    color: var(--success) !important;
+}
+
+.page-style-team-view .team-view-stat-value--danger {
+    color: var(--danger) !important;
+}
+
+.page-style-team-view .team-view-card-title {
+    font-size: 0.9rem;
+}
+
+.page-style-team-view .team-view-tournament-link,
+.page-style-team-view .team-view-match-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.page-style-team-view .team-view-tournament-link {
+    text-decoration: none;
+}
+
+.page-style-team-view .team-view-tournament-copy {
+    min-width: 0;
+}
+
+.page-style-team-view .team-view-tournament-name {
+    color: var(--text-primary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-style-team-view .team-view-tournament-meta,
+.page-style-team-view .team-view-match-score,
+.page-style-team-view .team-view-match-tournament {
+    color: var(--text-muted);
+}
+
+.page-style-team-view .team-view-tournament-meta {
+    font-size: 0.68rem;
+}
+
+.page-style-team-view .team-view-tournament-status {
+    font-size: 0.65rem !important;
+}
+
+.page-style-team-view .team-view-match-row {
+    padding: 8px 0;
+}
+
+.page-style-team-view .team-view-match-main {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.page-style-team-view .team-view-result-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0.6rem;
+}
+
+.page-style-team-view .team-view-match-opponent {
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.page-style-team-view .team-view-match-score,
+.page-style-team-view .team-view-match-tournament {
+    font-size: 0.65rem;
+}
+
+.page-style-team-view .team-view-cta {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(26, 10, 46, 0.8));
+}
+
+.page-style-team-view .team-view-cta-icon {
+    margin-bottom: 8px;
+    font-size: 2rem;
+}
+
+.page-style-team-view .team-view-cta-title {
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .page-style-team-view .team-view-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-style-team-view .team-view-hero-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .page-style-team-view .team-view-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-style-team-view .team-view-tournament-link,
+    .page-style-team-view .team-view-match-row,
+    .page-style-team-view .team-view-member {
+        flex-wrap: wrap;
+    }
+
+    .page-style-team-view .team-view-member-kda-row {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

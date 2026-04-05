@@ -1,0 +1,53 @@
+FLUJO DE TODAS LAS PANTALLAS PRINCIPALES POR ROL
+===============================================
+
+1. Dashboard (dashboard.php)
+---------------------------
+- Solo accesible para usuarios logueados (no admins).
+- Muestra resumen de perfil, equipo, estadísticas personales (KDA, winrate, partidas), ranking, héroes más usados y próximos partidos.
+- Si el usuario es admin, redirige a admin.
+- Si el usuario no tiene equipo, no se muestran datos de equipo ni ranking.
+
+2. Equipos (teams.php)
+----------------------
+- Visible para todos los usuarios.
+- Lista de equipos con búsqueda y paginación.
+- Si el usuario no es admin/superadmin, puede crear un equipo (botón visible).
+- Cada equipo muestra nombre, logo, miembros, victorias, derrotas y si está reclutando.
+- Si no hay equipos, muestra estado vacío y opción de crear uno (no admins).
+
+3. Unirse a Equipo (team-join.php)
+-----------------------------------
+- Solo para usuarios logueados sin equipo.
+- Muestra formulario para solicitar unirse a un equipo.
+- Si el usuario ya tiene datos de ML (ID, server, nick), los campos aparecen llenos y bloqueados.
+- Debe seleccionar rol, líneas, héroe principal, rango y puede dejar mensaje.
+- Al enviar, se crea una solicitud pendiente para el capitán.
+
+4. Vista de Equipo (team-view.php)
+-----------------------------------
+- Visible para todos.
+- Muestra info del equipo, roster, estadísticas, torneos y últimas partidas.
+- Si el usuario no tiene equipo y hay cupo, puede ver botón "Unirse".
+- Si es miembro, puede salir del equipo.
+- Si es capitán, puede gestionar el equipo.
+- Admins/superadmins solo visualizan, sin acciones.
+
+5. Gestión de Equipo (team-manage.php)
+--------------------------------------
+- Solo accesible para el capitán del equipo.
+- Muestra solicitudes pendientes (aceptar/rechazar), lista de miembros (cambiar rol, expulsar).
+- El capitán no puede expulsarse a sí mismo.
+- Acciones protegidas por CSRF y validaciones de backend.
+
+6. Torneos (tournaments.php)
+----------------------------
+- Visible para todos.
+- Lista de torneos con tabs por estado (inscripción, en curso, finalizados).
+- Cada torneo muestra nombre, formato, equipos, premios, inscripción, modo, temporada.
+- Si el usuario es admin/superadmin, ve botón para administrar torneos.
+- Si no hay torneos, muestra estado vacío.
+
+...
+
+(Para cada pantalla adicional, se puede agregar una sección similar. Si necesitas el flujo de otra pantalla específica, indícalo.)
