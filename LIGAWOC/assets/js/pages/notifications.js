@@ -26,4 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
             window.alert('No se pudieron marcar las notificaciones.');
         }
     });
+    // Marcar como leída al hacer click en "Ver"
+    document.querySelectorAll('.notification-view-btn').forEach(btn => {
+        btn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            const notifId = this.dataset.id;
+            if (!notifId) {
+                window.location.href = this.href;
+                return;
+            }
+            try {
+                await fetch(`/LIGAWOC/api/notifications/mark-read/${notifId}`, {
+                    method: 'POST',
+                    headers: csrfToken ? { 'X-CSRF-Token': csrfToken } : {},
+                });
+            } catch {}
+            window.location.href = this.href;
+        });
+    });
 });

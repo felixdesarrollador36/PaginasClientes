@@ -1,0 +1,260 @@
+/* =========================
+   BASE
+========================= */
+body {
+    background: var(--bg-base);
+    font-family: var(--font-body);
+    color: var(--text-1);
+    margin: 0;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.shop-modern-wrapper {
+    display: flex;
+    min-height: 100vh;
+    padding: 32px 0;
+    background: var(--bg-base);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.shop-modern-sidebar {
+    background: var(--bg-elevated);
+    padding: 32px 24px;
+    width: 260px;
+    border-radius: 18px;
+    margin: 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: fit-content;
+    box-shadow: 0 4px 24px #0003;
+}
+
+.shop-modern-sidebar h3 {
+    margin: 16px 0 8px 0;
+    font-size: 1.1em;
+    color: var(--accent);
+}
+
+.shop-modern-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+.shop-modern-sidebar li {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+/* Filtro precio */
+.shop-modern-price-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+/* Botón aplicar */
+.shop-modern-apply {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 16px;
+    width: 100%;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+
+.shop-modern-apply:hover {
+    background: var(--accent-bright);
+}
+
+/* Social */
+.shop-modern-social {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+    font-size: 1.3em;
+}
+
+/* =========================
+   MAIN
+========================= */
+.shop-modern-main {
+    flex: 1;
+    padding: 0 32px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* =========================
+   BANNER
+========================= */
+/* .shop-modern-banner {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.shop-modern-banner img {
+    width: 100%;
+    aspect-ratio: 1100 / 733;
+    height: auto;
+    border-radius: 18px;
+    display: block;
+}
+
+/* =========================
+   PRODUCTOS (GRID MODERNO)
+========================= */
+.shop-modern-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+/* =========================
+   CARD PRODUCTO
+========================= */
+.shop-modern-product-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 18px 18px 12px 18px;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 24px #0003;
+    transition: transform 0.18s, background 0.18s;
+}
+
+.shop-modern-product-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.shop-modern-product-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* Info */
+.shop-modern-product-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 1.08em;
+    font-weight: 600;
+}
+
+.shop-modern-platform {
+    color: var(--accent);
+    font-size: 0.95em;
+}
+
+/* Precio */
+.shop-modern-price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.shop-modern-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--yellow);
+}
+
+/* Botón comprar */
+.shop-modern-buy-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 7px 22px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+
+.shop-modern-buy-btn:hover {
+    background: var(--accent-bright);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .shop-modern-wrapper {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .shop-modern-sidebar {
+        margin: 16px;
+        width: auto;
+        border-radius: 14px;
+        box-shadow: none;
+    }
+
+    .shop-modern-main {
+        padding: 0 16px;
+    }
+
+    .shop-modern-products-grid {
+        gap: 16px;
+    }
+
+    .shop-modern-banner img {
+        border-radius: 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .shop-modern-sidebar {
+        padding: 18px 8px;
+        font-size: 0.95em;
+    }
+
+    .shop-modern-main {
+        padding: 0 8px;
+        gap: 20px;
+    }
+
+    .shop-modern-products-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .shop-modern-product-card {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .shop-modern-product-card img {
+        height: 100px;
+    }
+
+    .shop-modern-banner img {
+        border-radius: 10px;
+    }
+}

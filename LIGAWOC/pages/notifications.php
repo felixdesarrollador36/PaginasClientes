@@ -35,7 +35,7 @@ require_once __DIR__ . '/../includes/navbar.php';
                 <div class="notifications-item-time"><?= timeAgo($notif['created_at']) ?></div>
             </div>
             <?php if ($notif['link']): ?>
-            <a href="<?= url($notif['link']) ?>" class="btn btn-sm btn-secondary">Ver</a>
+            <a href="<?= url($notif['link']) ?>" class="btn btn-sm btn-secondary notification-view-btn" data-id="<?= $notif['id'] ?>">Ver</a>
             <?php endif; ?>
         </div>
         <?php endforeach; ?>

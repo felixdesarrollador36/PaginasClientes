@@ -28,7 +28,7 @@
 }
 
 .page-style-shop .shop-items-grid {
-    gap: 20px;
+    gap: 10px;
 }
 
 .page-style-shop .shop-item-card {
@@ -260,6 +260,9 @@
     .page-style-shop .shop-item-card--featured {
         max-width: none;
         justify-self: stretch;
+    }
+    .page-style-shop .shop-items-grid {
+        gap: 6px;
     }
 
     .page-style-shop .shop-search-form {

@@ -89,6 +89,11 @@ require_once __DIR__ . '/../includes/navbar.php';
     <div class="card mb-3 team-view-hero">
         <?php if ($team['logo']): ?>
             <img src="<?= UPLOAD_URL . $team['logo'] ?>" class="team-view-logo" alt="<?= htmlspecialchars($team['name']) ?>">
+            <?php if (isAdmin() || isModerator()): ?>
+                <div style="margin-top: 10px;">
+                    <a href="<?= UPLOAD_URL . $team['logo'] ?>" download="<?= htmlspecialchars($team['name']) ?>_logo.jpg" class="btn btn-sm btn-secondary">Descargar logo</a>
+                </div>
+            <?php endif; ?>
         <?php else: ?>
             <div class="team-logo-placeholder team-view-logo-placeholder"><?= strtoupper(substr($team['name'], 0, 2)) ?></div>
         <?php endif; ?>

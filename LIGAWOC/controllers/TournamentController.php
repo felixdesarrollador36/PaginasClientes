@@ -289,18 +289,18 @@ class TournamentController {
     }
 
     private function generateSingleElimination($tournamentId, $teams) {
+        // Eliminar matches existentes para evitar duplicados
+        $this->db->delete("DELETE FROM tournament_matches WHERE tournament_id = ?", [$tournamentId]);
         $numTeams = count($teams);
         $rounds = ceil(log($numTeams, 2));
         $bracketSize = pow(2, $rounds);
 
-        // Ordenar equipos por ID (como seed ascendente)
-        usort($teams, function($a, $b) {
-            return $a['team_id'] <=> $b['team_id'];
-        });
+        // Mezclar equipos aleatoriamente para sorteo diferente cada vez
+        shuffle($teams);
 
         // Para 24 equipos: 8 seeds altos pasan a octavos (BYE), 16 juegan ronda 1
         $byes = $bracketSize - $numTeams; // 32-24=8 BYE
-        $seedsWithBye = array_slice($teams, 0, $byes); // 8 mejores seeds
+        $seedsWithBye = array_slice($teams, 0, $byes); // 8 equipos con BYE
         $seedsWithoutBye = array_slice($teams, $byes); // 16 restantes
 
         $matchNumber = 1;
@@ -324,8 +324,7 @@ class TournamentController {
             $matchNumber++;
         }
 
-        // OCTAVOS: 8 seeds altos (BYE) vs 8 ganadores de ronda 1
-        // Cada seed con BYE enfrenta a un ganador de ronda 1 (en orden)
+        // OCTAVOS: 8 seeds altos (BYE) vs 8 ganadores de ronda 1 (en orden)
         for ($i = 0; $i < $byes; $i++) {
             $this->db->insert(
                 "INSERT INTO tournament_matches (tournament_id, round, match_number, bracket_type, team1_id, team2_id, status, notes) VALUES (?, 2, ?, 'winners', ?, NULL, 'pending', ?)",
@@ -354,9 +353,13 @@ class TournamentController {
     }
 
     private function generateDoubleElimination($tournamentId, $teams) {
+
         $numTeams = count($teams);
         $rounds   = (int) ceil(log($numTeams, 2));
         $bracketSize = (int) pow(2, $rounds);
+
+        // Mezclar equipos aleatoriamente para sorteo diferente cada vez
+        shuffle($teams);
 
         // ── WINNERS BRACKET (same as single-elim) ──────────────────────────
         $matchNumber = 1;

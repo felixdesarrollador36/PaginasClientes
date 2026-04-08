@@ -1,7 +1,8 @@
+
 <?php
 $pageTitle = 'Tienda WOC';
 $page = 'shop';
-$pageCss = 'shop';
+$pageCss = 'shop-modern';
 $shopCtrl = new ShopController();
 $userId = isLoggedIn() ? currentUserId() : 0;
 
@@ -10,95 +11,72 @@ $selectedCategory = $_GET['category'] ?? null;
 $search = $_GET['q'] ?? '';
 
 $items = $shopCtrl->getItems($selectedCategory, $search);
-$featuredItems = $shopCtrl->getFeaturedItems(6);
+$featuredItems = $shopCtrl->getFeaturedItems(1); // Solo 1 destacado para banner
 $userCoins = $userId ? $shopCtrl->getUserCoins($userId) : 0;
 
 require_once __DIR__ . '/../includes/header.php';
 require_once __DIR__ . '/../includes/navbar.php';
 ?>
-<div class="app-wrapper">
-<div class="main-content shop-page" data-item-api-base="<?= htmlspecialchars(url('api/shop/item/'), ENT_QUOTES) ?>">
-    <div class="page-header">
-        <h1 class="page-title">🏪 Tienda WOC</h1>
-        <?php if ($userId): ?>
-        <div class="shop-header-actions">
-            <span class="coin-balance shop-balance-pill">
-                🪙 <?= number_format($userCoins) ?> WOC
-            </span>
-        </div>
-        <?php endif; ?>
-    </div>
-
-    <?php if (!empty($featuredItems) && !$selectedCategory && !$search): ?>
-    <div class="mb-4">
-        <h3 class="shop-section-title">⭐ Items Destacados</h3>
-        <div class="grid grid-6 shop-featured-grid">
-            <?php foreach ($featuredItems as $item): ?>
-            <div class="shop-item-card shop-item-card--featured" data-open-item-modal="<?= $item['id'] ?>" role="button" tabindex="0">
-                <div class="shop-item-image shop-item-image--featured">
-                    <img src="<?= url('assets/shop/' . $item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>" class="shop-item-image-media">
-                </div>
-                <div class="shop-featured-item-name"><?= htmlspecialchars($item['name']) ?></div>
-                <div class="shop-featured-item-price">🪙 <?= number_format($item['price_coins']) ?></div>
+<link rel="stylesheet" href="../assets/css/pages/shop-modern.css">
+<div class="shop-modern-wrapper">
+    <aside class="shop-modern-sidebar">
+        <h3>Categorías</h3>
+        <form method="GET" action="<?= url('shop') ?>">
+            <ul>
+                <?php foreach ($categories as $cat): ?>
+                <li>
+                    <label>
+                        <input type="radio" name="category" value="<?= $cat['id'] ?>" <?= $selectedCategory == $cat['id'] ? 'checked' : '' ?> onchange="this.form.submit()">
+                        <?= $cat['name'] ?>
+                    </label>
+                </li>
+                <?php endforeach; ?>
+                <li>
+                    <label>
+                        <input type="radio" name="category" value="" <?= empty($selectedCategory) ? 'checked' : '' ?> onchange="this.form.submit()">
+                        Todos
+                    </label>
+                </li>
+            </ul>
+            <h3>Buscar</h3>
+            <div class="shop-modern-price-filter">
+                <input type="text" name="q" placeholder="🔍 Buscar..." value="<?= htmlspecialchars($search) ?>" style="width:100%">
             </div>
-            <?php endforeach; ?>
+            <button type="submit" class="shop-modern-apply">Filtrar</button>
+        </form>
+        <div class="shop-modern-social">
+            <a href="#">🐦</a>
+            <a href="#">📘</a>
+            <a href="#">📸</a>
         </div>
-    </div>
-    <?php endif; ?>
-
-    <div class="shop-category-row">
-        <a href="<?= url('shop') ?>" class="btn btn-sm <?= !$selectedCategory ? 'btn-primary' : 'btn-secondary' ?>">Todos</a>
-        <?php foreach ($categories as $cat): ?>
-        <a href="<?= url('shop?category=' . $cat['id']) ?>" class="btn btn-sm <?= $selectedCategory == $cat['id'] ? 'btn-primary' : 'btn-secondary' ?>">
-            <?= $cat['name'] ?>
-        </a>
-        <?php endforeach; ?>
-    </div>
-
-    <form method="GET" action="<?= url('shop') ?>" class="shop-search-form">
-        <div class="shop-search-row">
-            <input type="text" name="q" class="form-control" placeholder="🔍 Buscar items..." value="<?= htmlspecialchars($search) ?>">
-            <?php if ($selectedCategory): ?>
-            <input type="hidden" name="category" value="<?= $selectedCategory ?>">
+    </aside>
+    <main class="shop-modern-main">
+               <div class="shop-modern-banner">
+            <?php if (!empty($featuredItems)): ?>
+                <img src="<?= url('assets/shop/' . $featuredItems[0]['image']) ?>" alt="<?= htmlspecialchars($featuredItems[0]['name']) ?>">
+            <?php else: ?>
+                <img src="<?= url('assets/img/banner.png') ?>" alt="Banner Tienda" style="height:220px;width:100%;object-fit:cover;border-radius:18px;">
             <?php endif; ?>
-            <button type="submit" class="btn btn-secondary">Buscar</button>
         </div>
-    </form>
-
-    <?php if (empty($items)): ?>
-    <div class="empty-state">
-        <div class="empty-state-icon">🏪</div>
-        <h3 class="empty-state-title">No hay items</h3>
-        <p>No se encontraron items en esta categoría.</p>
-    </div>
-    <?php else: ?>
-    <div class="grid grid-4 shop-items-grid">
-        <?php foreach ($items as $item): ?>
-        <div class="shop-item-card card shop-item-card--catalog" data-open-item-modal="<?= $item['id'] ?>" role="button" tabindex="0">
-            <div class="shop-item-image shop-item-image--catalog">
-                <img src="<?= url('assets/shop/' . $item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>" class="shop-item-image-media">
-            </div>
-            <div class="shop-item-body">
-                <div class="shop-item-category"><?= $item['category_name'] ?></div>
-                <div class="shop-item-name"><?= htmlspecialchars($item['name']) ?></div>
-                <div class="shop-item-meta">
-                    <span class="shop-item-price">🪙 <?= number_format($item['price_coins']) ?></span>
-                    <span class="shop-item-sales"><?= $item['total_sales'] ?> ventas</span>
+        <div class="shop-modern-products-grid">
+            <?php if (empty($items)): ?>
+                <div style="color:var(--text-muted);font-size:1.2em;">No hay items en esta categoría.</div>
+            <?php else: ?>
+                <?php foreach ($items as $item): ?>
+                <div class="shop-modern-product-card">
+                    <img src="<?= url('assets/shop/' . $item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>">
+                    <div class="shop-modern-product-info">
+                        <h4><?= htmlspecialchars($item['name']) ?></h4>
+                        <span class="shop-modern-platform"><?= $item['platform'] ?? $item['category_name'] ?></span>
+                        <div class="shop-modern-price-row">
+                            <span class="shop-modern-price">🪙 <?= number_format($item['price_coins']) ?></span>
+                            <button class="shop-modern-buy-btn">Comprar</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
-        <?php endforeach; ?>
-    </div>
-    <?php endif; ?>
+    </main>
 </div>
-</div>
-
-<!-- Item Detail Modal -->
-<div id="itemModal" class="modal shop-item-modal">
-    <div class="card shop-item-modal-card">
-        <button type="button" data-close-item-modal class="shop-item-modal-close">&times;</button>
-        <div id="itemModalContent">Cargando...</div>
-    </div>
-</div>
-
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

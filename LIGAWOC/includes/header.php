@@ -24,7 +24,7 @@ $layoutNavbarCssVersion = file_exists($layoutNavbarCssPath) ? filemtime($layoutN
 $pageCssVersion = file_exists($pageCssPath) ? filemtime($pageCssPath) : null;
 
 // --- BEGIN PROFILE COMPLETION MIDDLEWARE ---
-if (isLoggedIn() && !isAdmin() && !isSuperAdmin() && $currentPage !== 'complete-profile' && $currentPage !== 'logout') {
+if (isLoggedIn() && !isAdmin() && !isSuperAdmin() && $currentPage !== 'complete-profile' && $currentPage !== 'logout' && $currentPage !== 'shop') {
     $dbInstance = Database::getInstance();
     $uCheck = $dbInstance->fetch("SELECT whatsapp, phone_brand, discord FROM users WHERE id = ?", [currentUserId()]);
     if ($uCheck) {

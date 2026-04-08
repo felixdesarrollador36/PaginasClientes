@@ -2,7 +2,7 @@
 
 </div><!-- .app-wrapper -->
 <footer style="text-align:center; margin: 24px 0 8px 0; font-size: 0.98em;">
-    <a href="/LIGAWOC/PRIVACIDAD_Y_TERMINOS.html" target="_blank" 
+    <a href="/LIGAWOC/PRIVACIDAD_Y_TERMINOS.html"
          style="margin:0 10px; text-decoration:underline; color:rgba(255,255,255,0.92); transition:color 0.2s; font-weight:500; letter-spacing:0.01em;"
          onmouseover="this.style.color='#ffd600'" onmouseout="this.style.color='rgba(255,255,255,0.92)'">
         Política de Privacidad y Términos
