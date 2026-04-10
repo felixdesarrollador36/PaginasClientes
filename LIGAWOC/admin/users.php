@@ -128,8 +128,17 @@ if (isset($_GET['action']) && isset($_GET['uid'])) {
         }
         
         if (!empty($new_role) && in_array($new_role, ['player', 'moderator', 'admin', 'designer'])) {
-            $db->update("UPDATE users SET role = ? WHERE id = ? AND role != 'superadmin'", [$new_role, $uid]);
-            $updated = true;
+            $userInfo = $db->fetch("SELECT role FROM users WHERE id = ?", [$uid]);
+            if ($userInfo && $userInfo['role'] === 'superadmin') {
+                setFlash('error', 'No se puede cambiar el rol de un superadmin.');
+            } elseif ($userInfo && $userInfo['role'] === $new_role) {
+                setFlash('info', 'El usuario ya tiene el rol seleccionado.');
+            } else {
+                $db->update("UPDATE users SET role = ? WHERE id = ? AND role != 'superadmin'", [$new_role, $uid]);
+                auditLog('USER_ROLE_CHANGE', 'user', $uid, $userInfo['role'], $new_role, 'Cambio de rol de usuario');
+                setFlash('success', 'Rol actualizado correctamente.');
+                $updated = true;
+            }
         }
         
         if (isset($_POST['phone_brand'])) {

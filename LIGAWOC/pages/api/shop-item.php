@@ -14,11 +14,30 @@ if (!isset($segments)) {
     $segments = $route ? explode('/', $route) : [];
 }
 
-$action = $segments[2] ?? '';
-$id = intval($segments[3] ?? 0);
+
+$action = $_GET['action'] ?? ($segments[2] ?? '');
+$id = intval($_GET['item_id'] ?? ($segments[3] ?? 0));
 
 $shopCtrl = new ShopController();
 $userId = isLoggedIn() ? currentUserId() : 0;
+
+if ($action === 'purchase' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    header('Content-Type: application/json');
+    $userId = isLoggedIn() ? currentUserId() : 0;
+    if (!$userId) {
+        echo json_encode(['success' => false, 'error' => 'Debes iniciar sesión']);
+        exit;
+    }
+    $itemId = intval($_POST['item_id'] ?? 0);
+    if (!$itemId) {
+        echo json_encode(['success' => false, 'error' => 'ID de producto inválido']);
+        exit;
+    }
+    $shopCtrl = new ShopController();
+    $result = $shopCtrl->purchaseItem($userId, $itemId);
+    echo json_encode($result);
+    exit;
+}
 
 if ($action === 'item' && $id > 0) {
     $item = $shopCtrl->getItem($id);
