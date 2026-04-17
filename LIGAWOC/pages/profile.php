@@ -38,6 +38,7 @@ unset($_SESSION['email_change_pending'], $_SESSION['email_change_success']);
 
 require_once __DIR__ . '/../includes/header.php';
 require_once __DIR__ . '/../includes/navbar.php';
+echo '<link rel="stylesheet" href="' . url('assets/css/profile.css') . '?v=5">';
 ?>
 <div class="app-wrapper">
 <div
@@ -49,87 +50,93 @@ require_once __DIR__ . '/../includes/navbar.php';
     data-email-pending="<?= htmlspecialchars($emailPending, ENT_QUOTES) ?>"
     data-email-success="<?= $emailChangeSuccess ? '1' : '0' ?>"
 >
-    <div class="page-header" style="margin: 0; padding: 0;">
+    <div class="page-header profile-page-header">
         <h1 class="page-title" style="display:none;">👤 Mi Perfil</h1>
     </div>
 
-    <!-- Premium Profile Hero -->
-    <div class="profile-hero card mb-4" style="padding: 0; overflow: hidden; position: relative;">
-        <?php 
+    <?php
         $coverUrl = url('assets/img/pattern.png');
-
         if (!empty($user['cover'])) {
             $coverUrl = url('assets/covers/' . $user['cover']);
         }
-
         if (!empty($equippedPortada) && !empty($equippedPortada['image'])) {
             $coverUrl = url('assets/shop/' . $equippedPortada['image']);
         }
-        ?>
-        <div class="profile-cover">
-            <img src="<?= $coverUrl ?>" class="profile-cover-image" alt="Portada de perfil">
-            <button type="button" data-open-modal="portadaModal" class="btn btn-sm btn-secondary profile-cover-btn">
+
+        $marcoStyle = '';
+        if (!empty($equippedMarco) && !empty($equippedMarco['image'])) {
+            $marcoStyle = 'padding:10px; background-image: url(' . url('assets/shop/' . $equippedMarco['image']) . '); background-size: cover; background-position: center;';
+        }
+
+        $roleBadgeClass = 'badge-purple';
+        $roleStyleClass = '';
+        if ($user['role'] === 'designer') {
+            $roleBadgeClass = 'badge-yellow';
+            $roleStyleClass = 'profile-role-badge--designer';
+        } elseif ($user['role'] === 'admin') {
+            $roleStyleClass = 'profile-role-badge--admin';
+        }
+    ?>
+
+    <section class="profile-banner card mb-4">
+        <div class="profile-banner-media">
+            <img src="<?= $coverUrl ?>" class="profile-banner-cover" alt="Portada de perfil">
+            <div class="profile-banner-scrim"></div>
+            <button type="button" data-open-modal="portadaModal" class="btn btn-secondary profile-banner-cover-btn">
                 <span aria-hidden="true">🖼️</span>
-                <span class="profile-cover-btn-label">Portada</span>
+                <span>Cambiar portada</span>
             </button>
-            
-            <div class="profile-hero-bottom">
-                <div class="profile-avatar-wrap">
-                    <?php 
-                    $marcoStyle = '';
-                    if (!empty($equippedMarco) && !empty($equippedMarco['image'])) {
-                        $marcoStyle = 'border:none; padding:var(--profile-marco-padding, 10px); background-image: url(' . url('assets/shop/' . $equippedMarco['image']) . '); background-size: cover; background-position: center;';
-                    }
-                    ?>
-                    <div class="profile-avatar-inner" style="<?= $marcoStyle ?>">
+            <div class="profile-banner-body">
+                <div class="profile-banner-avatar-stack">
+                    <div class="profile-banner-avatar-shell" style="<?= $marcoStyle ?>">
                         <?php if ($user['avatar']): ?>
-                            <img src="<?= UPLOAD_URL . $user['avatar'] ?>" class="profile-avatar-image">
+                            <img src="<?= UPLOAD_URL . $user['avatar'] ?>" class="profile-banner-avatar" alt="Avatar de <?= htmlspecialchars($user['username']) ?>">
                         <?php else: ?>
-                            <div class="profile-avatar-initials"><?= strtoupper(substr($user['username'], 0, 1)) ?></div>
+                            <div class="profile-banner-avatar-fallback"><?= strtoupper(substr($user['username'], 0, 1)) ?></div>
                         <?php endif; ?>
                     </div>
-                    <label for="avatar-upload" class="btn btn-sm btn-secondary profile-avatar-btn profile-avatar-btn--camera">
-                        📷
-                    </label>
-                    <button type="button" data-open-modal="marcoModal" class="btn btn-sm btn-primary profile-avatar-btn profile-avatar-btn--marco">
-                        🖼️
-                    </button>
                 </div>
-                <div class="profile-hero-info">
-                    <h2 class="profile-hero-name">
-                        <?= htmlspecialchars($user['username']) ?>
-                    </h2>
-                    <div class="profile-hero-meta">
-                        <?php 
-                        $roleBadgeClass = 'badge-purple';
-                        $roleStyleClass = '';
-                        if ($user['role'] === 'designer') {
-                            $roleBadgeClass = 'badge-yellow';
-                            $roleStyleClass = 'profile-role-badge--designer';
-                        } elseif ($user['role'] === 'admin') {
-                            $roleStyleClass = 'profile-role-badge--admin';
-                        }
-                        ?>
-                        <span class="badge profile-cover-badge <?= $roleBadgeClass ?> <?= $roleStyleClass ?>">
-                            <?= ucfirst($user['role']) ?>
-                        </span>
-                        <?php if ($user['ml_nickname']): ?>
-                            <span class="profile-hero-ign">IGN: <?= htmlspecialchars($user['ml_nickname']) ?></span>
-                        <?php endif; ?>
+
+                <div class="profile-banner-copy">
+                    <div class="profile-banner-headline-row">
+                        <div>
+                            <p class="profile-banner-kicker">Perfil de jugador</p>
+                            <h2 class="profile-banner-name"><?= htmlspecialchars($user['username']) ?></h2>
+                        </div>
+                        <div class="profile-banner-badges">
+                            <span class="badge profile-banner-role <?= $roleBadgeClass ?> <?= $roleStyleClass ?>">
+                                <?= ucfirst($user['role']) ?>
+                            </span>
+                            <?php if ($user['ml_nickname']): ?>
+                                <span class="profile-banner-ign">IGN: <?= htmlspecialchars($user['ml_nickname']) ?></span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                    <div class="profile-banner-actions">
+                        <label for="avatar-upload" class="btn btn-secondary profile-banner-action">
+                            Cambiar avatar
+                        </label>
+                        <button type="button" data-open-modal="marcoModal" class="btn btn-secondary profile-banner-action">
+                            Cambiar marco
+                        </button>
+                        <button type="button" data-open-modal="portadaModal" class="btn btn-secondary profile-banner-action">
+                            Cambiar portada
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     
-    <div class="profile-sub-grid">
+    <div class="profile-layout-grid">
         <!-- Settings Form -->
-        <div class="card" style="border-top: 2px solid var(--accent); box-shadow: 0 10px 40px rgba(0,0,0,0.6);">
-            <div class="card-header border-bottom-0 pb-0" style="padding: 0;">
-                <h3 class="card-title" style="font-size: 1.2rem; display:flex; align-items:center; gap: 10px; font-weight: 800; text-transform:uppercase; letter-spacing: 1px;">
+        <div class="card profile-surface profile-surface--main">
+            <div class="card-header border-bottom-0 pb-0 profile-surface-header">
+                <h3 class="card-title profile-surface-title">
                     Ajustes de Perfil
                 </h3>
-                <p style="font-family: var(--font-alt); color: var(--text-secondary); font-size: 0.9rem; margin-top: 8px;">Administra tu información personal y configuración de cuenta.</p>
+                <p class="profile-surface-subtitle">Administra tu información personal y configuración de cuenta.</p>
             </div>
             
             <form method="POST" action="<?= url('profile') ?>" enctype="multipart/form-data" id="profile-form" style="padding: 20px;">
@@ -225,31 +232,31 @@ require_once __DIR__ . '/../includes/navbar.php';
         </div>
 
         <!-- Sidebar Info -->
-        <div>
-            <div class="card mb-4" style="border-top: 2px solid rgba(255,255,255,0.1); background: rgba(16, 19, 28, 0.4);">
-                <div class="card-header pb-0 border-0" style="padding: 20px;">
-                    <h3 class="card-title" style="font-size: 1.1rem; display:flex; align-items:center; gap: 8px;">
+        <div class="profile-sidebar-column">
+            <div class="card profile-surface profile-surface--sidebar mb-4">
+                <div class="card-header pb-0 border-0 profile-surface-header profile-surface-header--sidebar">
+                    <h3 class="card-title profile-surface-title profile-surface-title--small">
                         INFO DE CUENTA
                     </h3>
                 </div>
                 
-                <div style="padding: 0 20px 20px;">
-                    <div class="profile-info-item" style="padding: 14px 16px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.02);">
+                <div class="profile-surface-body">
+                    <div class="profile-info-item profile-info-card">
                         <div class="pi-label">Miembro desde</div>
                         <div class="pi-value text-accent-light"><?= date('d M Y', strtotime($user['created_at'])) ?></div>
                     </div>
                     
                     <?php if ($user['last_login']): ?>
-                    <div class="profile-info-item" style="padding: 14px 16px; background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.02);">
+                    <div class="profile-info-item profile-info-card">
                         <div class="pi-label">Último acceso</div>
                         <div class="pi-value"><?= timeAgo($user['last_login']) ?></div>
                     </div>
                     <?php endif; ?>
                     
-                    <div class="profile-info-item" style="padding: 14px 16px; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid rgba(255,255,255,0.02);">
+                    <div class="profile-info-item profile-info-card">
                         <div class="pi-label">Estado</div>
-                        <div class="pi-value" style="display:flex; align-items:center; gap:6px;">
-                            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--success); box-shadow:0 0 8px var(--success);"></span>
+                        <div class="pi-value profile-status-pill">
+                            <span class="profile-status-pill-dot"></span>
                             <span style="color: var(--success); text-shadow: 0 0 5px rgba(0,214,143,0.5);">Activo</span>
                         </div>
                     </div>
@@ -257,32 +264,32 @@ require_once __DIR__ . '/../includes/navbar.php';
             </div>
 
             <?php if ($myTeam): ?>
-            <div class="team-card card" style="background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(20,24,34,0.8)); border-top-color: var(--accent) !important; padding: 20px;">
-                <h3 class="card-title" style="margin-bottom:20px; color: #fff; font-size:1.1rem; display:flex; align-items:center; gap:8px;">
+            <div class="team-card card profile-surface profile-team-surface">
+                <h3 class="card-title profile-surface-title profile-surface-title--small" style="margin-bottom:20px;">
                     EQUIPO ACTUAL
                 </h3>
                 
-                <div style="display:flex;align-items:center;gap:20px; margin-bottom: 24px;">
+                <div class="profile-team-summary">
                     <?php
                         $logoPath = __DIR__ . '/../assets/uploads/teams/' . ($myTeam['logo'] ?? '');
                         $logoUrl = UPLOAD_URL . 'teams/' . ($myTeam['logo'] ?? '');
                         $defaultLogo = url('assets/img/default_team.png'); // Cambia la ruta si tu imagen por defecto está en otro lugar
                         if (!empty($myTeam['logo']) && file_exists($logoPath)) {
                     ?>
-                        <img src="<?= $logoUrl ?>" style="width:72px;height:72px;border-radius:14px;object-fit:cover;border:2px solid var(--accent);">
+                        <img src="<?= $logoUrl ?>" class="profile-team-logo" alt="Logo de <?= htmlspecialchars($myTeam['team_name']) ?>">
                     <?php } else { ?>
-                        <img src="<?= $defaultLogo ?>" style="width:72px;height:72px;border-radius:14px;object-fit:cover;border:2px solid var(--accent);">
+                        <img src="<?= $defaultLogo ?>" class="profile-team-logo" alt="Logo por defecto del equipo">
                     <?php } ?>
                     <div>
-                        <div style="font-weight:900; font-family: var(--font-heading); font-size: 1.25rem; text-transform:uppercase; letter-spacing: 0.5px; color: #fff;"><?= htmlspecialchars($myTeam['team_name']) ?></div>
-                        <div style="font-size:0.85rem;color:var(--text-muted); margin-top: 8px; display:flex; gap:8px;">
+                        <div class="profile-team-name"><?= htmlspecialchars($myTeam['team_name']) ?></div>
+                        <div class="profile-team-meta">
                             <span class="badge badge-purple" style="font-size: 0.7rem; padding: 4px 8px;"><?= ML_ROLES[$myTeam['role']] ?? $myTeam['role'] ?></span>
                             <?= $myTeam['is_captain'] ? '<span class="badge badge-yellow" style="font-size: 0.7rem; padding: 4px 8px;">👑 Cap</span>' : '' ?>
                         </div>
                     </div>
                 </div>
                 
-                <a href="<?= url('teams/view/' . $myTeam['team_id']) ?>" class="btn btn-secondary btn-block" style="padding: 12px; font-size:0.95rem;">
+                <a href="<?= url('teams/view/' . $myTeam['team_id']) ?>" class="btn btn-secondary btn-block profile-team-link" style="font-size:0.95rem;">
                     Visitar Perfil del Equipo
                 </a>
             </div>

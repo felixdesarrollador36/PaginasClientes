@@ -161,6 +161,9 @@ if ($page === 'admin') {
 if ($method === 'POST') {
     $postHandled = true;
     switch ($page) {
+            case 'perfilNuevo':
+                $pageFile = 'perfilNuevo';
+                break;
         case 'teams':
             $ctrl = new TeamController();
             if ($action === 'create') $ctrl->create();

@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const REQUIRED_WIDTH = 1920;
-    const REQUIRED_HEIGHT = 500;
+    const REQUIRED_WIDTH = 1109;
+    const REQUIRED_HEIGHT = 340;
 
     function normalize(value) {
         return String(value || '').toLowerCase();
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const imageSize = await readImageSize(file);
             if (imageSize.width !== REQUIRED_WIDTH || imageSize.height !== REQUIRED_HEIGHT) {
-                notifyError(`Para categoria Portada, la imagen debe medir exactamente ${REQUIRED_WIDTH} x ${REQUIRED_HEIGHT} px. Imagen seleccionada: ${imageSize.width} x ${imageSize.height} px.`);
+                notifyError(`Para categoría Portada, la imagen debe medir exactamente ${REQUIRED_WIDTH} x ${REQUIRED_HEIGHT} px. Imagen seleccionada: ${imageSize.width} x ${imageSize.height} px.`);
                 imageInput.value = '';
             }
         } catch (_error) {

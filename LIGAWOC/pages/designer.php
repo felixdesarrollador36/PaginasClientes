@@ -100,8 +100,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_item'])) {
             $fileInfo = $validation['file'];
 
             if ($isPortadaCategory) {
-                $requiredPortadaWidth = 1920;
-                $requiredPortadaHeight = 500;
+                $requiredPortadaWidth = 1109;
+                $requiredPortadaHeight = 340;
                 $imageDimensions = @getimagesize($fileInfo['tmp_name']);
 
                 if ($imageDimensions === false) {
@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_item'])) {
                 $imageHeight = (int)$imageDimensions[1];
 
                 if ($imageWidth !== $requiredPortadaWidth || $imageHeight !== $requiredPortadaHeight) {
-                    setFlash('error', 'Para categoría Portada, la imagen debe medir exactamente 1920 x 500 px. Imagen recibida: ' . $imageWidth . ' x ' . $imageHeight . ' px.');
+                    setFlash('error', 'Para categoría Portada, la imagen debe medir exactamente 1109 x 340 px. Imagen recibida: ' . $imageWidth . ' x ' . $imageHeight . ' px.');
                     redirect('designer');
                 }
             }
@@ -206,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_item'])) {
                 <div class="form-group">
                     <label class="form-label">Imagen</label>
                     <input type="file" name="image" class="form-control" accept="image/*" required>
-                    <small class="designer-portada-hint" data-portada-hint hidden>Si seleccionas categoría Portada, la imagen debe ser exactamente 1920 x 500 px.</small>
+                    <small class="designer-portada-hint" data-portada-hint hidden>Si seleccionas categoría Portada, la imagen debe ser exactamente 1109 x 340 px.</small>
                 </div>
                 <button type="submit" name="create_item" class="btn btn-primary designer-submit-btn">➕ Crear Item</button>
             </form>
